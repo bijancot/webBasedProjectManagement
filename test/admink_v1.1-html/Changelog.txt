@@ -1,0 +1,7 @@
+Version 1.1
+* Fix: Breadcrumbs styles improved
+* Update: Google Map
+* Fix: Masked Input Fields
+
+Version 1.0
+Release
