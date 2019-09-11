@@ -16,5 +16,11 @@ break;
 // 	require "php/css/ck.php";
 // break;
 
+ case 'managerole':
+	require 'view/layout/Roleheader.php';
+	require 'view/layout/Rolesidebar.php';
+	require 'view/layout/Rolemain.php';
+	require 'view/layout/Rolefooter.php';
+ break;
 }
 ?>
