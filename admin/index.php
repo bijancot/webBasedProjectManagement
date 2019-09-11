@@ -17,10 +17,18 @@ break;
 // break;
 
  case 'managerole':
-	require 'view/layout/Roleheader.php';
-	require 'view/layout/Rolesidebar.php';
-	require 'view/layout/Rolemain.php';
-	require 'view/layout/Rolefooter.php';
+	require 'view/layout/managerole/header.php';
+	require 'view/layout/managerole/sidebar.php';
+	require 'view/layout/managerole/main.php';
+	require 'view/layout/managerole/footer.php';
+	require 'view/layout/managerole/query.php';
+ break;
+ case 'addrole':
+	require 'view/layout/managerole/header.php';
+	require 'view/layout/managerole/sidebar.php';
+	require 'view/layout/managerole/addrole.php';
+	require 'view/layout/managerole/footer.php';
+	require 'view/layout/managerole/query.php';
  break;
 }
 ?>
