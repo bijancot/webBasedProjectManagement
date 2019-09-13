@@ -52,14 +52,14 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Role User</li>
+                    <li class="breadcrumb-current-item">Manage Role User > Add New User Role</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Manage Role
+            Add New Role
         </div>
 
         <!-- Content -->
@@ -72,67 +72,26 @@
 
                     <div class="row mn">
                         <!-- AllCP Grid -->
-                       
-                    <div class="col-md-12">
-                        <div class="panel panel-visible">
-                            <div class="panel-heading">
-                                <div class="row nm">
-                                    <div class="col-md-4"> 
-                                    <div class="panel-title hidden-xs">
-                                    Search Bar Filtering
-                                </div>
-                                </div>
-                                    <div class="col-md-4"></div>
-                                <div class="col-md-4">  
-                                    <div class="panel-title hidden-xs">
-                                    <a href="#">
-                                    <button type="button" class="btn btn-rounded btn-primary btn-block right">+ Tambah Role Baru</button>
-                                    </a>
-                                </div>
-                                </div>
-                                </div>  
-                            </div>
-                            <div class="panel-body pn">
-                                <div class="table-responsive">
-                                    <table class="table table-striped table-hover" id="datatable2" cellspacing="0"
-                                           width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th class="va-m">Nama Role</th>
-                                            <th class="va-m">Deskripsi Role</th>
-                                            <th class="va-m">Menu Yang diizinkan</th>
-                                            <th class="hidden-xs va-m">tanggal dibuat</th>
-                                            <th class="hidden-xs va-m">pembuat role</th>
-                                            <th class="va-m">opsi</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                           foreach ($hasil as $key) {
-                                            echo "<tr>
-                                            <td>$key->roleName</td>
-                                            <td>$key->roleDesc</td>
-                                            <td>$key->MenuList</td>
-                                            <td>$key->createdDate</td>
-                                            <td>$key->createBy</td>
-                                            <td> <a href=\"#\">
-                                            <button type=\"button\" class=\"btn btn-rounded btn-alert btn-block\">Edit Data</button>
-                                            </a>
-                                            <br/>
-                                            <a href=\"#\">
-                                            <button type=\"button\" class=\"btn btn-rounded btn-danger btn-block\">Hapus Data</button>
-                                            </a>
-                                            </td>
-                                        </tr>";
-                                        }
-                                       ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                        <div class="col-md-12">
+                            <div class="panel panel-visible">
+                             <div class="row">
+                                        <div class="col-md-4">
+                                        <div class="col-md-4">
+                                            <div class="section">
+                                                <label class="field prepend-icon">
+                                                    <input type="text" name="firstname" id="firstname" class="gui-input"
+                                                           placeholder="Input icon left">
+                                                    <span class="field-icon">
+                                                        <i class="fa fa-user"></i>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>    
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                    </div>
-
+                 
                         <!-- /AllCP Grid -->
 
                 </div>
