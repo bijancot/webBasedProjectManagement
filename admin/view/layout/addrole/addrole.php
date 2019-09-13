@@ -72,11 +72,8 @@
 
                     <div class="row mn">
                         <!-- AllCP Grid -->
-                        <div class="col-md-12">
-                            <div class="panel panel-visible">
-                             <div class="row">
-                                        <div class="col-md-4">
-                                        <div class="col-md-4">
+                        
+                        <div class="col-md-4">
                                             <div class="section">
                                                 <label class="field prepend-icon">
                                                     <input type="text" name="firstname" id="firstname" class="gui-input"
@@ -86,17 +83,10 @@
                                                     </span>
                                                 </label>
                                             </div>
-                                        </div>    
                                         </div>
-                                    </div>
-                            </div>
-                        </div>
-                 
                         <!-- /AllCP Grid -->
 
-                </div>
-
-
+                    </div>
             </div>
             <!-- /Column Center -->
 
