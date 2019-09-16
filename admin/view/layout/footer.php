@@ -170,7 +170,7 @@
 
 
 
-<script src="view/assets/js/pages/dashboard1.js"></script>
+<!--<script src="view/assets/js/pages/dashboard1.js"></script>-->
 <script src="view/assets/js/pages/tables-data1.js"></script>
 
 
