@@ -11,24 +11,69 @@ default:
 	require 'view/layout/footer.php';
 break;
 
-
-// case 'ck':
-// 	require "php/css/ck.php";
-// break;
-
- case 'managerole':
-	require 'view/layout/managerole/header.php';
-	require 'view/layout/managerole/sidebar.php';
+//managerole
+case 'managerole':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
 	require 'view/layout/managerole/main.php';
-	require 'view/layout/managerole/footer.php';
+	require 'view/layout/footer.php';
 	require 'view/layout/managerole/query.php';
  break;
- case 'addrole':
-	require 'view/layout/managerole/header.php';
-	require 'view/layout/managerole/sidebar.php';
+
+//addrole
+  case 'addrole':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
 	require 'view/layout/managerole/addrole.php';
-	require 'view/layout/managerole/footer.php';
+	require 'view/layout/footer.php';
 	require 'view/layout/managerole/query.php';
  break;
+
+//managejob
+case 'managejob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/job/main.php';
+	require 'view/layout/footer.php';
+ break;
+
+//addjob
+case 'addjob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/job/addjob.php';
+	require 'view/layout/footer.php';
+ break;
+
+//manageitem
+case 'manageitem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/main.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //additem
+case 'additem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/additem.php';
+	require 'view/layout/footer.php';
+ break;
+
+//aksi addjob
+ case 'input_job':
+ 	require 'model/action_input.php';
+ 	break;
+
+//aksi additem
+ case 'input_item':
+ 	require 'model/input_item.php';
+ 	break;
+//aksi hapusitem
+ case 'delete_item':
+ 	require 'model/delete_item.php';
+ 	break;
+
 }
 ?>
