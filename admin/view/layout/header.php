@@ -60,7 +60,9 @@
     
 
     <!-- Datatables CSS -->
-    
+    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/datatables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/datatables/extensions/Editor/css/dataTables.editor.css">
+    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
     
     
 
