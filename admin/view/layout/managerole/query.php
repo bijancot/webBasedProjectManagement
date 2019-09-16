@@ -5,9 +5,7 @@
     $ko->execute();
     $hasil = $ko->fetchAll(PDO::FETCH_OBJ);
 
-    // while($hasil){
-    //     echo $hasil->roleName;
-    // }
+
 
 
 ?>

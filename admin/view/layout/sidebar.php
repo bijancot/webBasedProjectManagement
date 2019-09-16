@@ -29,25 +29,68 @@
             <ul class="nav sidebar-menu">
                 <li class="sidebar-label pt30">Navigation</li>
                 <li>
-                    <a class="accordion-toggle menu-open" href="#">
-                        <span class="caret"></span>
+                    <a href="?mmopilot">
+                       <!--  <span class="caret"></span> -->
                         <span class="sidebar-title">Dashboard</span>
+                        <span class="sb-menu-icon fa fa-home"></span>
+                    </a>
+                </li>
+                <!--------------JOB--------------->
+                <li>
+                    <a class="accordion-toggle menu-close" href="#">
+                        <span class="caret"></span>
+                        <span class="sidebar-title">Job</span>
                         <span class="sb-menu-icon fa fa-home"></span>
                     </a>
                     <ul class="nav sub-nav">
                         <li class="active">
-                            <a href="index.html">
-                                Layout 1 
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index2.html">
-                                Layout 2 
+                            <a href="?mmopilot=managejob">
+                                Manage Job 
                             </a>
                         </li>
                     </ul>
+                </li>
+                 <!--------------ITEM--------------->
+                <li>
+                    <a class="accordion-toggle menu-close" href="#">
+                        <span class="caret"></span>
+                        <span class="sidebar-title">Item</span>
+                        <span class="sb-menu-icon fa fa-home"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li class="active">
+                            <a href="?mmopilot=manageitem">
+                                Manage Item
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="?mmopilot=additem">
+                                Add Item
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                 <!--------------ROLE--------------->
+                <li>
+                    <a class="accordion-toggle menu-close" href="#">
+                        <span class="caret"></span>
+                        <span class="sidebar-title">Role</span>
+                        <span class="sb-menu-icon fa fa-home"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li class="active">
+                            <a href="#">
+                                Add Role
+                            </a>
+                        </li>
+                        <li>
+                            <a href="?mmopilot=managerole">
+                                Manage Role
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-            </ul>
             <!-- /Sidebar Menu  -->
 
         </div>

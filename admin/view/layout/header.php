@@ -22,8 +22,8 @@
     <!-- AnimatedSVGIcons -->
     <link rel="stylesheet" type="text/css" href="view/assets/fonts/animatedsvgicons/css/codropsicons.css">
 
-    <!-- Iconsweets CSS -->
-    
+  <!-- select2 CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/css/core.css">
 
     <!-- Octicons CSS -->
     
