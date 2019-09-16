@@ -85,7 +85,7 @@
                                     <div class="col-md-4"></div>
                                 <div class="col-md-4">  
                                     <div class="panel-title hidden-xs">
-                                    <a href="http://localhost:9832/admin/index.php?mmopilot=addrole">
+                                    <a href=<?php echo $base_url."admin/index.php?mmopilot=addrole";?>>
                                     <button type="button" class="btn btn-rounded btn-primary btn-block right">+ Tambah Role Baru</button>
                                     </a>
                                 </div>
