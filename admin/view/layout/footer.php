@@ -70,8 +70,10 @@
 <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script>
 
 <!-- Datatables JS -->
-
-
+<script src="view/assets/js/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="view/assets/js/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="view/assets/js/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+<script src="view/assets/js/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
 
 
 
@@ -169,6 +171,7 @@
 
 
 <script src="view/assets/js/pages/dashboard1.js"></script>
+<script src="view/assets/js/pages/tables-data1.js"></script>
 
 
 
