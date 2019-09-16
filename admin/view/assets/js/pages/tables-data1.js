@@ -16,14 +16,8 @@
         Demo.init();
 
         // Init DataTables
-        $('#datatable').dataTable({
-            "sDom": 't<"dt-panelfooter clearfix"ip>',
-            "oTableTools": {
-                "sSwfPath": "assets/js/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf"
-            }
-        });
 
-        $('#datatable2').DataTable({
+        $('#datatable2').dataTable({
             "aoColumnDefs": [{
                 'bSortable': false,
                 'aTargets': [-1]
