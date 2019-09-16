@@ -169,8 +169,11 @@
 
 
 
+<!-- js ini tidak dibutuhkan, ketika ditambahkan justru membuat error bagian sidebar
 
-<!--<script src="view/assets/js/pages/dashboard1.js"></script>-->
+<script src="view/assets/js/pages/dashboard1.js"></script>
+
+-->
 <script src="view/assets/js/pages/tables-data1.js"></script>
 
 
