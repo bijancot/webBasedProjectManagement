@@ -76,5 +76,9 @@ case 'additem':
  	require 'model/delete_item.php';
  	break;
 
+	 case 'input_role':
+ 	require 'model/input_role.php';
+ 	break;
+
 }
 ?>
