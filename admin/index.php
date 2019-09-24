@@ -24,9 +24,9 @@ case 'managerole':
   case 'addrole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
-	require 'view/layout/managerole/addrole.php';
+	require 'view/layout/addrole/addrole.php';
 	require 'view/layout/footer.php';
-	require 'view/layout/managerole/query.php';
+	require 'view/layout/addrole/query.php';
  break;
 
 //managejob
@@ -69,7 +69,8 @@ case 'additem':
 //aksi additem
  case 'input_item':
  	require 'model/input_item.php';
- 	break;
+	 break;
+	 
 //aksi hapusitem
  case 'delete_item':
  	require 'model/delete_item.php';
