@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="view/assets/fonts/animatedsvgicons/css/codropsicons.css">
 
   <!-- select2 CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/css/core.css">
+   <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/select2/css/core.css">
 
     <!-- Octicons CSS -->
     
