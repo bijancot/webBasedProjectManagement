@@ -69,21 +69,94 @@
             <div class="chute chute-center">
 
                 <!-- AllCP Info -->
-
-                    <div class="row mn">
+                    <div class="row">
                         <!-- AllCP Grid -->
-                        
-                        <div class="col-md-4">
-                                            <div class="section">
-                                                <label class="field prepend-icon">
-                                                    <input type="text" name="firstname" id="firstname" class="gui-input"
-                                                           placeholder="Input icon left">
+                        <div class="allcp-form">
+                            <div class="panel">
+                            <div class="panel-heading">
+                                <div class="row nm">
+                                    <div class="col-md-4"> 
+                                    </div>
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">  
+                                    <div class="panel-title hidden-xs">
+                                    ID Role : 
+                                    <?php
+                                        $select = $db->prepare("SELECT count(idRole) FROM mmo_role");
+                                                    $select->execute();
+                                                    $tampil = $select->fetchAll();
+                                          foreach($tampil as $value){
+                                            $ha = $value[0]+1;
+                                            if($ha>=0 && $ha<=9){
+                                                echo "ROLE0".$ha;
+                                            }else if($ha>=9 && $ha<=99){
+                                                echo "ROLE".$ha;
+                                            }
+                                        }
+                                    ?>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>  
+                                <div class="panel-body pn">
+                                    <form method="post" action="#" id="form-ui">
+                                        <!-- Basic -->
+                                    <?php
+                                        $select = $db->prepare("SELECT count(idRole) FROM mmo_role");
+                                                  $select->execute();
+                                                  $tampil = $select->fetchAll();
+                                          foreach($tampil as $value){
+                                            $ha = $value[0]+1;
+                                            if($ha>=0 && $ha<=9){
+                                                echo "<input type =\"hidden\" value=\"ROLE0".$ha."\" name=\"idRole\">";
+                                            }else if($ha>=9 && $ha<=99){
+                                                echo "<input type =\"hidden\" value=\"ROLE".$ha."\" name=\"idRole\">";
+                                            }
+                                        }
+                                    ?>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="section">
+                                                <h5>Role Name</h5>
+                                                    <label class="field prepend-icon">
+                                                        <input type="text" name="roleName" id="firstname" class="gui-input"
+                                                            placeholder="Role Namet">
+                                                        <span class="field-icon">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                    </label><br/><br/><br/>
+                                                    <h5>Role Description</h5>
+                                                    <label class="field prepend-icon">
+                                                    <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="Text area"></textarea>
                                                     <span class="field-icon">
-                                                        <i class="fa fa-user"></i>
+                                                        <i class="fa fa-list"></i>
                                                     </span>
-                                                </label>
+                                                    </label><br/><br/><br/><br/><br/>
+                                                    <button type="submit" class="btn btn-dark btn-block btn-success">Simpan Data</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1"></div>
+                                            <div class="col-md-5">
+                                                <div class="section">
+                                                <h5>Hak Akses menu :</h5>
+                                                <?php
+                                                    $select = $db->prepare("SELECT idMenu,menuName FROM mmo_menu");
+                                                    $select->execute();
+                                                    $tampil = $select->fetchAll();
+
+                                                    foreach($tampil as $value){
+                                                        echo  "<label class=\"option block\">
+                                                        <input type=\"checkbox\" name=\"menuList[]\" value=".$value['idMenu'].">
+                                                        <span class=\"checkbox\"></span>".$value['menuName']."</label><br/>";
+                                                    };
+                                                ?>
+                                                </div>
                                             </div>
                                         </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <!-- /AllCP Grid -->
 
                     </div>
