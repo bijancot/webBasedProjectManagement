@@ -1,4 +1,3 @@
-<?php include "query.php";?>
     <!-- Main Wrapper -->
     <section id="content_wrapper">
 
@@ -99,7 +98,7 @@
                                 </div>
                             </div>  
                                 <div class="panel-body pn">
-                                    <form method="post" action="#" id="form-ui">
+                                    <form method="post" action="?mmopilot=input_role" id="form-ui">
                                         <!-- Basic -->
                                     <?php
                                         $select = $db->prepare("SELECT count(idRole) FROM mmo_role");
@@ -132,7 +131,7 @@
                                                         <i class="fa fa-list"></i>
                                                     </span>
                                                     </label><br/><br/><br/><br/><br/>
-                                                    <button type="submit" class="btn btn-dark btn-block btn-success">Simpan Data</button>
+                                                    <button type="submit" class="btn btn-block btn-success">Simpan Data</button>
                                                 </div>
                                             </div>
                                             <div class="col-md-1"></div>
