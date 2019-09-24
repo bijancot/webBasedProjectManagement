@@ -4,8 +4,4 @@
     $ko->bindParam(":idrole",$kolo);
     $ko->execute();
     $hasil = $ko->fetchAll(PDO::FETCH_OBJ);
-
-
-
-
 ?>
