@@ -76,10 +76,16 @@ case 'additem':
  	require 'model/delete_item.php';
  	break;
 
+<<<<<<< HEAD
 	 //aksi addrole
 case 'add_role':
 require 'model/input_role.php';
 break;
+=======
+	 case 'input_role':
+ 	require 'model/input_role.php';
+ 	break;
+>>>>>>> 22f4f3bdd3859edb8930ba76bf797700821ebe3a
 
 }
 ?>
