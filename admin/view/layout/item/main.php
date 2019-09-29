@@ -109,7 +109,7 @@
                                                     <tr>
                                                         <td><a><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
                                                         <td> <a><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
-                                                        <td> <a href="?mmopilot=delete_item&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+                                                        <td><a href="?mmopilot=delete_item&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
                                                 </table>
                                             </td>
