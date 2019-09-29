@@ -77,6 +77,14 @@ case 'addorder':
 	require 'view/layout/footer.php';
  break;
 
+  //addorder
+case 'editorder':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/order/editorder.php';
+	require 'view/layout/footer.php';
+ break;
+
 //aksi addjob
  case 'input_job':
  	require 'model/action_input.php';
@@ -96,8 +104,16 @@ case 'addorder':
  case 'input_order':
  	require 'model/input_order.php';
 	break;
-	 
+	
+//aksi editorder
+ case 'edit_order':
+ 	require 'model/edit_order.php';
+ 	break;
+
 //aksi hapusorder
+ case 'delete_order':
+ 	require 'model/delete_order.php';
+ 	break;
 
 //aksi addrole
 case 'add_role':
