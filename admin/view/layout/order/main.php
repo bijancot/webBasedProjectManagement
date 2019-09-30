@@ -80,7 +80,7 @@
                             <div class="panel-body pn">
                                 <div class="table-responsive">
                                     <?php
-                                    $select = $db->prepare("SELECT * FROM mmo_item");
+                                    $select = $db->prepare("SELECT * FROM mmo_order");
                                     $select->execute();
                                     $tampil = $select->fetchAll();
                                     ?>
@@ -88,10 +88,11 @@
                                            width="100%">
                                         <thead>
                                         <tr>
-                                            <th class="va-m">ID Item</th>
-                                            <th class="va-m">Nama Item</th>
-                                            <th class="va-m">Deskripsi Item</th>
-                                            <th class="va-m">Link Item</th>
+                                            <th class="va-m">ID Order</th>
+                                            <th class="va-m">ID User</th>
+                                            <th class="va-m">Mata Uang</th>
+                                            <th class="va-m">Nominal</th>
+                                            <th class="va-m">Catatan Order</th>
                                             <th class="va-m">Tanggal Dibuat</th>
                                             <th class="va-m">Opsi</th>
                                         </tr>
@@ -99,17 +100,20 @@
                                         <tbody>
                                         <?php foreach($tampil as $value){ ?>
                                         <tr>
-                                            <td><?php echo $value['idItem']; ?></td>
-                                            <td><?php echo $value['itemName']; ?></td>
-                                            <td><?php echo $value['itemDescription']; ?></td>
-                                            <td><?php echo $value['itemLink'];?></td>
-                                            <td><?php echo $value['createdDate'];?></td>
+                                            <td><?php echo $value['idOrder']; ?></td>
+                                            <td><?php echo $value['idClient']; ?></td>
+                                            <td><?php echo $value['currency']; ?></td>
+                                            <td><?php echo $value['price']; ?></td>
+                                            <td><?php echo $value['orderNote']; ?></td>
+                                            <td><?php echo $value['createdDate']; ?></td>
                                             <td width="15%">
                                                 <table>
                                                     <tr>
                                                         <td><a><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
-                                                        <td> <a><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
-                                                        <td><a href="?mmopilot=delete_item&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+
+                                                       <td> <a href="?mmopilot=editorder&id=<?php echo $value['idOrder'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Hapus"><span class="fa fa-pencil-square-o"></span></button></a></td>
+
+                                                        <td> <a href="?mmopilot=delete_order&id=<?php echo $value['idOrder'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
                                                 </table>
                                             </td>

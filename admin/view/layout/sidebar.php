@@ -70,6 +70,26 @@
                         </li>
                     </ul>
                 </li>
+                 <!--------------ORDER--------------->
+                <li>
+                    <a class="accordion-toggle menu-close" href="#">
+                        <span class="caret"></span>
+                        <span class="sidebar-title">Order</span>
+                        <span class="sb-menu-icon fa fa-home"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li class="active">
+                            <a href="?mmopilot=manageorder">
+                                Manage Order
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="?mmopilot=addorder">
+                                Add Order
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                  <!--------------ROLE--------------->
                 <li>
                     <a class="accordion-toggle menu-close" href="#">

@@ -61,6 +61,30 @@ case 'additem':
 	require 'view/layout/footer.php';
  break;
 
+ //manageorder
+case 'manageorder':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/order/main.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //addorder
+case 'addorder':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/order/addorder.php';
+	require 'view/layout/footer.php';
+ break;
+
+  //addorder
+case 'editorder':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/order/editorder.php';
+	require 'view/layout/footer.php';
+ break;
+
 //aksi addjob
  case 'input_job':
  	require 'model/action_input.php';
@@ -76,6 +100,7 @@ case 'additem':
  	require 'model/delete_item.php';
  	break;
 
+<<<<<<< HEAD
 	 //addrole
 case 'add_role':
 require 'model/input_role.php';
@@ -85,6 +110,32 @@ break;
 	 case 'input_role':
  	require 'model/input_role.php';
  	break;
+=======
+//aksi addorder
+ case 'input_order':
+ 	require 'model/input_order.php';
+	break;
+	
+//aksi editorder
+ case 'edit_order':
+ 	require 'model/edit_order.php';
+ 	break;
+
+//aksi hapusorder
+ case 'delete_order':
+ 	require 'model/delete_order.php';
+ 	break;
+
+//aksi addrole
+case 'add_role':
+require 'model/input_role.php';
+break;
+// ==========================
+	 case 'input_role':
+ 	require 'model/input_role.php';
+ 	break;
+// >>>>>>> 22f4f3bdd3859edb8930ba76bf797700821ebe3a
+>>>>>>> refs/remotes/origin/master
 
 }
 ?>
