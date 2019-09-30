@@ -98,19 +98,20 @@
 
 <!-- Theme Scripts -->
 <script src="view/assets/js/utility/utility.js"></script>
-<script src="view/assets/js/demo/demo.js"></script>
+<!-- Sengaja tidak diload, membuat error
+<script src="view/assets/js/demo/demo.js"></script> -->
 <script src="view/assets/js/main.js"></script>
-<script src="view/assets/js/demo/widgets_sidebar.js"></script>
+<!--<script src="view/assets/js/demo/widgets_sidebar.js"></script>-->
 
 
-<script src="view/assets/js/pages/dashboardcopy.js"></script>
+<!--<script src="view/assets/js/pages/dashboardcopy.js"></script>-->
 
 
 <script src="view/assets/js/pages/tables-data1.js"></script>
 <script src="view/assets/js/pages/allcp_forms-elements.js"></script>
 
 <!--fixed, tidak membuat error-->
-<!-- <script src="view/assets/js/demo/widgets.js"></script> -->
+<script src="view/assets/js/demo/widgets.js"></script>
 
 </body>
 
