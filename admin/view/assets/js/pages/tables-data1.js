@@ -12,8 +12,8 @@
         // Init Theme Core
         Core.init();
 
-        // Init Demo JS
-        Demo.init();
+        // Init Demo JS (yang ini dinonaktifkan karena ada yang membuat error)
+        //Demo.init();
 
         // Init DataTables
 
