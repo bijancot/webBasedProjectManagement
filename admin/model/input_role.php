@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-echo "kolo";
-
-=======
 //var_dump($_POST['menuList']);
 $idRole = htmlentities($_POST['idRole']);
 $roleName = htmlentities($_POST['roleName']);
@@ -36,6 +32,6 @@ $query1->bindParam(":idRole", $idRole);
 $query1->bindParam(":idMenu", $ho);
 $query1->execute();
 }
+
 header('location:?mmopilot=managerole');
->>>>>>> 22f4f3bdd3859edb8930ba76bf797700821ebe3a
 ?>
