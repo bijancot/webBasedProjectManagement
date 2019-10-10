@@ -77,11 +77,19 @@ case 'addorder':
 	require 'view/layout/footer.php';
  break;
 
-  //addorder
+  //editorder
 case 'editorder':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/order/editorder.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //detailorder
+case 'detailorder':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/order/detailoder.php';
 	require 'view/layout/footer.php';
  break;
 
@@ -100,15 +108,6 @@ case 'editorder':
  	require 'model/delete_item.php';
  	break;
 
-	 //addrole
-case 'add_role':
-require 'model/input_role.php';
-break;
-
-//aksi addrole
-	 case 'input_role':
- 	require 'model/input_role.php';
- 	break;
 //aksi addorder
  case 'input_order':
  	require 'model/input_order.php';
@@ -123,5 +122,16 @@ break;
  case 'delete_order':
  	require 'model/delete_order.php';
  	break;
+
+//aksi addrole
+case 'add_role':
+require 'model/input_role.php';
+break;
+// ==========================
+	 case 'input_role':
+ 	require 'model/input_role.php';
+ 	break;
+// >>>>>>> 22f4f3bdd3859edb8930ba76bf797700821ebe3a
+
 }
 ?>
