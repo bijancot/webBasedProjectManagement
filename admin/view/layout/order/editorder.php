@@ -16,8 +16,6 @@
                         <div class="panel">
                             
                             <div class="panel-body">
-
-                            <form class="form-horizontal" action="?mmopilot=edit_oder" method="POST" enctype="multipart/form-data">
                                 <?php
                                 $id = $_GET['id'];
                                 $select = $db->prepare("SELECT * FROM mmo_order where idOrder='$id'");
@@ -25,6 +23,8 @@
                                 $tampil = $select->fetchAll();
                                 foreach($tampil as $value){
                                 ?>
+                            <form class="form-horizontal" action="?mmopilot=edit_order&id=<?php echo $value['idOrder'];?>" method="POST" enctype="multipart/form-data">
+                                
                                 <div class="form-group">
                                     <label for="inputStandard" class="col-lg-3 control-label">ID Order</label>
                                     <div class="col-lg-8">
@@ -39,7 +39,15 @@
                                     <div class="col-lg-8">
                                         <div>
                                             <select class="form-control" name="idUser">
+                                                <?php
+                                                    $select = $db->prepare("SELECT mmo_users.name,mmo_users.idUser from mmo_users JOIN mmo_order ON mmo_users.idUser=mmo_order.idClient WHERE mmo_order.idOrder='ORDE0001'");
+                                                    $select->execute();
+                                                    $tampil2 = $select->fetchAll();
+                                                    foreach($tampil2 as $valuee){
+                                                ?>
+                                                <option value="<?php echo $valuee['idUser']?>"><?php echo $valuee['name']?></option>
                                                 <option>-------- Pilih User --------</option>
+                                            <?php }}?>
                                                 <?php
                                                     $select = $db->prepare("SELECT * FROM mmo_users WHERE idUser!='USR001'AND idUser!='USR002'");
                                                     $select->execute();
@@ -52,12 +60,18 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                 <?php
+                                $id = $_GET['id'];
+                                $select = $db->prepare("SELECT * FROM mmo_order where idOrder='$id'");
+                                $select->execute();
+                                $tampil = $select->fetchAll();
+                                foreach($tampil as $value){
+                                ?>
                                  <div class="form-group">
                                     <label for="inputStandard" class="col-lg-3 control-label">Mata Uang</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="currency">
+                                            <input type="text" id="inputStandard" class="form-control" name="currency" value="<?php echo $value['currency'];?>">
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +80,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Nominal</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="price">
+                                            <input type="text" id="inputStandard" class="form-control" name="price" value="<?php echo $value['price'];?>">
                                         </div>
                                     </div>
                                 </div>
@@ -75,7 +89,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Catatan Order</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="orderNote">
+                                            <input type="text" id="inputStandard" class="form-control" name="orderNote" value="<?php echo $value['orderNote'];?>">
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +98,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Username</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="username">
+                                            <input type="text" id="inputStandard" class="form-control" name="username" value="<?php echo $value['username'];?>">
                                         </div>
                                     </div>
                                 </div>
@@ -93,7 +107,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Password</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="password" id="inputStandard" class="form-control" name="password">
+                                            <input type="password" id="inputStandard" class="form-control" name="password" value="<?php echo $value['password'];?>">
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +116,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Konfirmasi Password</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="password" id="inputStandard" class="form-control" name="konpassword">
+                                            <input type="password" id="inputStandard" class="form-control" name="konpassword" value="<?php echo $value['password'];?>">
                                         </div>
                                     </div>
                                 </div>
