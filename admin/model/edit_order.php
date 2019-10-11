@@ -27,7 +27,7 @@ $query = $db->prepare("UPDATE `mmo_order` SET
 	`lastUpdate`=NOW(),
 	`createdBy`='admin',
 	`updatedBy`= null
-	WHERE :idOrder");
+	WHERE `idOrder`=:idOrder");
 
  $query->bindParam(":idOrder", $idOrder);
  $query->bindParam(":idUser", $idUser);
