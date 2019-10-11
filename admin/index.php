@@ -89,7 +89,7 @@ case 'editorder':
 case 'detailorder':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
-	require 'view/layout/order/detailoder.php';
+	require 'view/layout/order/detailorder.php';
 	require 'view/layout/footer.php';
  break;
 
