@@ -41,8 +41,8 @@
 
 <!-- Jvectormap JS -->
 <script src="view/assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
-<!-- <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script> -->
-<!-- <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script> -->
+<script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script> 
+<script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script>
 
 <!-- Datatables JS -->
 <script src="view/assets/js/plugins/datatables/media/js/jquery.dataTables.js"></script>
@@ -111,7 +111,7 @@
 <script src="view/assets/js/pages/allcp_forms-elements.js"></script>
 
 <!--fixed, tidak membuat error-->
-<script src="view/assets/js/demo/widgets.js"></script>
+<!-- <script src="view/assets/js/demo/widgets.js"></script> -->
 
 </body>
 
