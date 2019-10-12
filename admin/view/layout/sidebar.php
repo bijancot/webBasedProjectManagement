@@ -37,7 +37,7 @@
                 </li>
                 <!--------------JOB--------------->
                 <li>
-                    <a class="accordion-toggle menu-close" href="#">
+                    <a class="menu-open" href="#">
                         <span class="caret"></span>
                         <span class="sidebar-title">Job</span>
                         <span class="sb-menu-icon fa fa-home"></span>
@@ -52,7 +52,7 @@
                 </li>
                  <!--------------ITEM--------------->
                 <li>
-                    <a class="accordion-toggle menu-close" href="#">
+                    <a class="menu-open" href="#">
                         <span class="caret"></span>
                         <span class="sidebar-title">Item</span>
                         <span class="sb-menu-icon fa fa-home"></span>
@@ -72,7 +72,7 @@
                 </li>
                  <!--------------ORDER--------------->
                 <li>
-                    <a class="accordion-toggle menu-close" href="#">
+                    <a class=" menu-open" href="#">
                         <span class="caret"></span>
                         <span class="sidebar-title">Order</span>
                         <span class="sb-menu-icon fa fa-home"></span>
@@ -92,7 +92,7 @@
                 </li>
                  <!--------------ROLE--------------->
                 <li>
-                    <a class="accordion-toggle menu-close" href="#">
+                    <a class="menu-open" href="#">
                         <span class="caret"></span>
                         <span class="sidebar-title">Role</span>
                         <span class="sb-menu-icon fa fa-home"></span>
