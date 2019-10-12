@@ -15,18 +15,16 @@ break;
 case 'managerole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
-	require 'view/layout/managerole/main.php';
+	require 'view/layout/role/manage_role.php';
 	require 'view/layout/footer.php';
-	require 'view/layout/managerole/query.php';
  break;
 
 //addrole
   case 'addrole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
-	require 'view/layout/addrole/addrole.php';
+	require 'view/layout/role/add_role.php';
 	require 'view/layout/footer.php';
-	require 'view/layout/addrole/query.php';
  break;
 
 //managejob
@@ -127,11 +125,12 @@ case 'detailorder':
 case 'add_role':
 require 'model/input_role.php';
 break;
-// ==========================
+
+//Input role
 	 case 'input_role':
  	require 'model/input_role.php';
  	break;
-// >>>>>>> 22f4f3bdd3859edb8930ba76bf797700821ebe3a
+
 
 }
 ?>
