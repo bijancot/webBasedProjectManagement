@@ -119,36 +119,80 @@
                                                 <h5>Role Name</h5>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="roleName" id="firstname" class="gui-input"
-                                                            placeholder="Role Namet">
+                                                            placeholder="Role Name">
                                                         <span class="field-icon">
-                                                            <i class="fa fa-user"></i>
+                                                            <i class="fa fa-slack"></i>
                                                         </span>
-                                                    </label><br/><br/><br/>
+                                                    </label><br/><br/>
                                                     <h5>Role Description</h5>
                                                     <label class="field prepend-icon">
                                                     <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="Text area"></textarea>
                                                     <span class="field-icon">
                                                         <i class="fa fa-list"></i>
                                                     </span>
-                                                    </label><br/><br/><br/><br/><br/>
-                                                    <button type="submit" class="btn btn-block btn-success">Simpan Data</button>
+                                                    </label><br/><br/>
+                                                    <h6>Username</h6>
+                                                    <label class="field prepend-icon">
+                                                        <input type="text" name="usernameRole" id="firstname" class="gui-input"
+                                                            placeholder="username" title="username untuk role ini">
+                                                        <span class="field-icon">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                    </label><br/>
+                                                    <h6>Password Role</h6>
+                                                    <label class="field prepend-icon">
+                                                        <input type="text" name="passwordRole" id="firstname" class="gui-input"
+                                                            placeholder="password" title="password untuk role ini">
+                                                        <span class="field-icon">
+                                                            <i class="fa fa-key"></i>
+                                                        </span>
+                                                    </label><br/><br/>
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-md-1"></div>
                                             <div class="col-md-5">
                                                 <div class="section">
+
+                                                <h6>Role</h6>
+                                                    <label class="field prepend-icon">
+                                                    <label class="field select">
+                                                    <select id="job" name="job">
+                                                        <option value="admin">Admin</option>
+                                                        <option value="operator">Operator</option>
+                                                        <option value="client" selected>Client</option>
+                                                    </select>
+                                                    <i class="arrow"></i>
+                                                </label>
+                                                    </label><br/><br/>
                                                 <h5>Hak Akses menu :</h5>
                                                 <?php
-                                                    $select = $db->prepare("SELECT idMenu,menuName FROM mmo_menu");
+                                                    $select = $db->prepare("SELECT idMenu,menuName,menuParent FROM mmo_menu");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
 
                                                     foreach($tampil as $value){
-                                                        echo  "<label class=\"option block\">
-                                                        <input type=\"checkbox\" name=\"menuList[]\" value=".$value['idMenu'].">
-                                                        <span class=\"checkbox\"></span>".$value['menuName']."</label><br/>";
+                                                        if($value['menuParent']==NULL){
+                                                            echo  "<div><label class=\"option block\">
+                                                            <input type=\"checkbox\" name=\"menuList[]\" value=".$value['idMenu'].">
+                                                            <span class=\"checkbox\"></span>".$value['menuName']."</label><br/></div>";
+                                                                foreach($tampil as $hoho){
+                                                                    if($value['idMenu']==$hoho['menuParent']){
+                                                                        echo  "<div style=\"margin-left:20px !important; \"><label class=\"option block\">
+                                                                        <input type=\"checkbox\" name=\"menuList[]\" value=".$hoho['idMenu'].">
+                                                                        <span class=\"checkbox\"></span>".$hoho['menuName']."</label><br/></div>";
+                                                                    }else{
+                                                                        continue;
+                                                                    }
+                                                                }
+                                                        }elseif($value['menuParent']!=NULL){
+                                                            continue;
+                                                        }
+                                                       
                                                     };
                                                 ?>
+                                                <br/><br/>
+                                                <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>
                                                 </div>
                                             </div>
                                         </div>
