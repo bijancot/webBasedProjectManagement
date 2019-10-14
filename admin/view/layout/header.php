@@ -17,7 +17,8 @@
     <link rel="stylesheet" type="text/css" href="view/assets/skin/css/angular-material.min.css">
     
     <!-- Icomoon -->
-    <link rel="stylesheet" type="text/css" href="view/assets/fonts/icomoon/icomoon.css">    
+    <link rel="stylesheet" type="text/css" href="view/assets/fonts/icomoon/icomoon.css"> 
+    <link rel="stylesheet" type="text/css" href="view/assets/fonts/font-awesome/font-awesome.css">    
     
     <!-- AnimatedSVGIcons -->
     <link rel="stylesheet" type="text/css" href="view/assets/fonts/animatedsvgicons/css/codropsicons.css">
@@ -67,7 +68,7 @@
     
 
     <!-- Fancytree CSS -->
-    
+    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/fancytree/skin-win8/ui.fancytree.min.css">
 
     <!-- X-edit CSS -->
     
