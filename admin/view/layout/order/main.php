@@ -51,14 +51,14 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Item User</li>
+                    <li class="breadcrumb-current-item">Manage Order</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Manage Item
+            Manage Order
         </div>
 
         <!-- Content -->
