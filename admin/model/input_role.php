@@ -3,13 +3,21 @@
 $idRole = htmlentities($_POST['idRole']);
 $roleName = htmlentities($_POST['roleName']);
 $roleDesc = htmlentities($_POST['roleDesc']);
+$password = htmlentities($_POST['passwordRole']);
+$username = htmlentities($_POST['usernameRole']);
+$passhash = md5($password);
+$job = htmlentities($_POST['job']);
 $idMenu = $_POST['menuList'];
 
-$query = $db->prepare("INSERT INTO `mmo_role`(`idRole`, `roleName`, `roleDesc`) VALUES (:idRole,:roleName,:roleDesc)");
+$query = $db->prepare("INSERT INTO `mmo_role`(`idRole`, `roleName`, `roleDesc`,`username`,`password`,`passhash`,`job`) VALUES (:idRole,:roleName,:roleDesc,:username,:password,:passhash,:job)");
 
 $query->bindParam(":idRole", $idRole);
 $query->bindParam(":roleName", $roleName);
 $query->bindParam(":roleDesc", $roleDesc);
+$query->bindParam(":password", $password);
+$query->bindParam(":username", $username);
+$query->bindParam(":passhash", $passhash);
+$query->bindParam(":job", $job);
 
 $query->execute();
 
