@@ -1,4 +1,3 @@
-<?php include "query.php";?>
     <!-- Main Wrapper -->
     <section id="content_wrapper">
 
@@ -109,26 +108,29 @@
                                         <tbody>
                                         <?php
                                             $kolo = "adasdsa";
-                                            $ko = $db->prepare("select a.roleName,a.roleDesc,group_concat(c.menuName) as \"MenuList\",a.createdDate,a.createdBy from mmo_role a join tr_role_menu b on a.idRole = b.idRole join mmo_menu c on b.idMenu=c.idMenu where a.idRole!= :idrole group by a.idRole");
+                                            $ko = $db->prepare("select a.roleName,a.roleDesc,group_concat(c.menuName) as \"MenuList\",a.createdDate,a.createdBy,a.idRole from mmo_role a join tr_role_menu b on a.idRole = b.idRole join mmo_menu c on b.idMenu=c.idMenu where a.idRole!= :idrole group by a.idRole");
                                             $ko->bindParam(":idrole",$kolo);
                                             $ko->execute();
                                             $hasil = $ko->fetchAll(PDO::FETCH_OBJ);
-                                            
+
                                            foreach ($hasil as $key) {
                                             echo "<tr>
                                             <td>$key->roleName</td>
                                             <td>$key->roleDesc</td>
                                             <td>$key->MenuList</td>
                                             <td>$key->createdDate</td>
-                                            <td>$key->createBy</td>
-                                            <td> <a href=\"#\">
-                                            <button type=\"button\" class=\"btn btn-rounded btn-alert btn-block\">Edit Data</button>
-                                            </a>
-                                            <br/>
-                                            <a href=\"#\">
-                                            <button type=\"button\" class=\"btn btn-rounded btn-danger btn-block\">Hapus Data</button>
-                                            </a>
-                                            </td>
+                                            <td>$key->createdBy</td>
+                                            <td width=\"15%\">
+                                            <table>
+                                                <tr>
+                                                    <td><a><button type=\"button\" class=\"btn btn-rounded btn-info btn-block\" title=\"Detail\"><span class=\"fa fa-eye\"></span></button></a></td>
+
+                                                   <td> <a href=\"?mmopilot=edit_role&idRole=".$key->idRole."\"><button type=\"button\" class=\"btn btn-rounded btn-alert btn-block\" title=\"Edit\"><span class=\"fa fa-pencil-square-o\"></span></button></a></td>
+
+                                                    <td> <a href=\"?mmopilot=delete_role&idRole=".$key->idRole."\"><button type=\"button\" class=\"btn btn-rounded btn-danger btn-block\" title=\"Hapus\"><span class=\"fa fa-trash-o\"></span></button></a></td>
+                                                </tr>
+                                            </table>
+                                        </td>
                                         </tr>";
                                         }
                                        ?>
