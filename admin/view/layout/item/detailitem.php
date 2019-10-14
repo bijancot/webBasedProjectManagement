@@ -16,13 +16,21 @@
                             
                             <div class="panel-body">
 
-                            <form class="form-horizontal" action="?mmopilot=input_item" method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal" action=?mmopilot=edit_item&id=<?php echo $_GET['id'];?>" method="POST" enctype="multipart/form-data">
                                 
+
+                                <?php
+                                $id = $_GET['id'];
+                                $select = $db->prepare("SELECT * FROM mmo_item where idItem='$id'");
+                                $select->execute();
+                                $tampil = $select->fetchAll();
+                                foreach($tampil as $value){
+                                ?>
                                 <div class="form-group">
                                     <label for="inputStandard" class="col-lg-3 control-label">ID Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="idItem">
+                                            <input type="text" id="inputStandard" class="form-control" name="idItem" value="<?php echo $value['idItem']?>" disabled>
                                         </div>
                                     </div>
                                 </div>
@@ -31,7 +39,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Nama Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemName">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemName" value="<?php echo $value['itemName']?>">
                                         </div>
                                     </div>
                                 </div>
@@ -40,7 +48,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Deskripsi Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemDescription">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemDescription" value="<?php echo $value['itemDescription']?>">
                                         </div>
                                     </div>
                                 </div>
@@ -58,12 +66,11 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Link Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemLink">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemLink" value="<?php echo $value['itemLink']?>">
                                         </div>
                                     </div>
                                 </div>
-
-                                <input type="submit" class="btn btn-rounded btn-primary btn-block"  name="submit" value="Simpan">
+                                  <?php }?>
                             </form>
                         </div>
                         </div>

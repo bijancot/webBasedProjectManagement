@@ -59,6 +59,22 @@ case 'additem':
 	require 'view/layout/footer.php';
  break;
 
+ //edititem
+case 'edititem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/edititem.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //detailitem
+case 'detailitem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/detailitem.php';
+	require 'view/layout/footer.php';
+ break;
+
  //manageorder
 case 'manageorder':
 	require 'view/layout/header.php';
@@ -99,6 +115,11 @@ case 'detailorder':
 //aksi additem
  case 'input_item':
  	require 'model/input_item.php';
+	 break;
+
+//aksi edititem
+ case 'edit_item':
+ 	require 'model/edit_item.php';
 	 break;
 	 
 //aksi hapusitem
