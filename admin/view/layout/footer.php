@@ -87,6 +87,12 @@
 <!-- PNotify JS -->
 
 <!-- Fancytree JSs -->
+<script src="view/assets/js/plugins/fancytree/jquery.fancytree-all.min.js"></script>
+<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.childcounter.js"></script>
+<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.columnview.js"></script>
+<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.dnd.js"></script>
+<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.edit.js"></script>
+<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.filter.js"></script>
 
 <!-- Ladda JS -->
 
@@ -98,8 +104,8 @@
 
 <!-- Theme Scripts -->
 <script src="view/assets/js/utility/utility.js"></script>
-<!-- Sengaja tidak diload, membuat error
-<script src="view/assets/js/demo/demo.js"></script> -->
+<!-- Sengaja tidak diload, membuat error-->
+<script src="view/assets/js/demo/demo.js"></script>
 <script src="view/assets/js/main.js"></script>
 <!--<script src="view/assets/js/demo/widgets_sidebar.js"></script>-->
 
@@ -112,6 +118,9 @@
 
 <!--fixed, tidak membuat error-->
 <!-- <script src="view/assets/js/demo/widgets.js"></script> -->
+
+<!--tambahan treeview-->
+<script src="view/assets/js/pages/user-forms-treeview.js"></script>
 
 </body>
 
