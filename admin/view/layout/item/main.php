@@ -76,6 +76,9 @@
                         <div class="panel panel-visible">
                             <div class="panel-heading">
                                 <div class="row nm">
+                                    <a href="?mmopilot=additem">
+                                    <button type="button" class="btn btn-rounded btn-primary btn-block right" style="width: 200px;">+ Tambah Item Baru</button>
+                                    </a>
                             </div>
                             <div class="panel-body pn">
                                 <div class="table-responsive">
