@@ -48,6 +48,11 @@
                                 Manage Job 
                             </a>
                         </li>
+                         <li class="active">
+                            <a href="?mmopilot=addjob">
+                                Add Job
+                            </a>
+                        </li>
                     </ul>
                 </li>
                  <!--------------ITEM--------------->
@@ -99,7 +104,7 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li class="active">
-                            <a href="?mmopilot=addrole">
+                            <a href="#">
                                 Add Role
                             </a>
                         </li>
