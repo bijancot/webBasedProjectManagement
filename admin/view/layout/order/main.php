@@ -51,14 +51,14 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Order</li>
+                    <li class="breadcrumb-current-item">Manage Item User</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Manage Order
+            Manage Item
         </div>
 
         <!-- Content -->
@@ -76,6 +76,9 @@
                         <div class="panel panel-visible">
                             <div class="panel-heading">
                                 <div class="row nm">
+                                    <a href="?mmopilot=addorder">
+                                    <button type="button" class="btn btn-rounded btn-primary btn-block right" style="width: 200px;">+ Tambah Order Baru</button>
+                                    </a>
                             </div>
                             <div class="panel-body pn">
                                 <div class="table-responsive">
