@@ -43,6 +43,22 @@ case 'addjob':
 	require 'view/layout/footer.php';
  break;
 
+ //editjob
+case 'editjob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/job/editjob.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //detailjob
+case 'detailjob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/job/detailjob.php';
+	require 'view/layout/footer.php';
+ break;
+
 //manageitem
 case 'manageitem':
 	require 'view/layout/header.php';
