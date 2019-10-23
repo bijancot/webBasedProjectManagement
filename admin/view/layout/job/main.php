@@ -1,4 +1,4 @@
-    <!-- Main Wrapper -->
+   <!-- Main Wrapper -->
     <section id="content_wrapper">
 
                 <!-- Topbar Menu Wrapper -->
@@ -76,22 +76,12 @@
                         <div class="panel panel-visible">
                             <div class="panel-heading">
                                 <div class="row nm">
-                                    <div class="col-md-4"> 
-                                    <div class="panel-title hidden-xs">
-                                    Search Bar Filtering
-                                </div>
-                                </div>
-                                    <div class="col-md-4"></div>
-                                <div class="col-md-4">  
-                                    <div class="panel-title hidden-xs">
                                     <a href="?mmopilot=addjob">
-                                    <button type="button" class="btn btn-rounded btn-primary btn-block right">+ Tambah Job Baru</button>
+                                    <button type="button" class="btn btn-rounded btn-primary btn-block right" style="width: 200px;">+ Tambah Job Baru</button>
                                     </a>
-                                </div>
-                                </div>
                                 </div>  
                             </div>
-                            <div class="panel-body pn">
+                            <div class="panel-body pn>
                                 <div class="table-responsive">
                                     <?php
                                     $select = $db->prepare("SELECT * FROM mmo_job");
@@ -125,12 +115,12 @@
                                                     <tr>
                                                         <td><a><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
                                                         <td> <a><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
-                                                        <td> <a><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+                                                        <td> <a href="?mmopilot=delete_job&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
-                                            <?php } ?>
                                                 </table>
                                             </td>
                                         </tr>
+                                           <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
