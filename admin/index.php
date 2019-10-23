@@ -109,7 +109,12 @@ case 'detailorder':
 
 //aksi addjob
  case 'input_job':
- 	require 'model/action_input.php';
+ 	require 'model/input_job.php';
+ 	break;
+
+//aksi hapusjob
+ case 'delete_job':
+ 	require 'model/delete_job.php';
  	break;
 
 //aksi additem
@@ -142,19 +147,16 @@ case 'detailorder':
  	require 'model/delete_order.php';
  	break;
 
+//aksi addrole
+case 'add_role':
+require 'model/input_role.php';
+break;
+
 //Input role
- case 'input_role':
+	 case 'input_role':
  	require 'model/input_role.php';
  	break;
 
-//Edit role
-case 'edit_role':
-	require 'model/edit_role.php';
-	break;
 
-//Delete role
-case 'delete_role':
-	require 'model/delete_role.php';
-	break;
 }
 ?>
