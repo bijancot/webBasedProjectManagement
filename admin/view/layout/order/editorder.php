@@ -22,6 +22,7 @@
                                 $select->execute();
                                 $tampil = $select->fetchAll();
                                 foreach($tampil as $value){
+                                $ids = $value['idOrder'];
                                 ?>
                             <form class="form-horizontal" action="?mmopilot=edit_order&id=<?php echo $value['idOrder'];?>" method="POST" enctype="multipart/form-data">
                                 
@@ -40,7 +41,7 @@
                                         <div>
                                             <select class="form-control" name="idUser">
                                                 <?php
-                                                    $select = $db->prepare("SELECT mmo_users.name,mmo_users.idUser from mmo_users JOIN mmo_order ON mmo_users.idUser=mmo_order.idClient WHERE mmo_order.idOrder='ORDE0001'");
+                                                    $select = $db->prepare("SELECT mmo_users.name,mmo_users.idUser from mmo_users JOIN mmo_order ON mmo_users.idUser=mmo_order.idClient WHERE mmo_order.idOrder='$ids'");
                                                     $select->execute();
                                                     $tampil2 = $select->fetchAll();
                                                     foreach($tampil2 as $valuee){
