@@ -113,8 +113,8 @@
                                             <td width="15%">
                                                 <table>
                                                     <tr>
-                                                        <td><a><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
-                                                        <td> <a><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
+                                                        <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
+                                                        <td> <a href="?mmopilot=editjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
                                                         <td> <a href="?mmopilot=delete_job&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
                                                 </table>
