@@ -123,6 +123,14 @@ case 'detailorder':
 	require 'view/layout/footer.php';
  break;
 
+  //edit_role
+case 'edit_role':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/role/editRole.php';
+	require 'view/layout/footer.php';
+break;
+
 //aksi addjob
  case 'input_job':
  	require 'model/input_job.php';
@@ -171,8 +179,11 @@ break;
 //Input role
 	 case 'input_role':
  	require 'model/input_role.php';
- 	break;
-
-
+	 break;
+	 
+//aksi editrole
+case 'editedRole':
+require 'model/edit_role.php';
+break;
 }
 ?>
