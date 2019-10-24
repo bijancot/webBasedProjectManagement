@@ -73,46 +73,11 @@
                         <div class="allcp-form">
                             <div class="panel">
                             <div class="panel-heading">
-                                <div class="row nm">
-                                    <div class="col-md-4"> 
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-4">  
-                                    <div class="panel-title hidden-xs">
-                                    ID Role : 
-                                    <?php
-                                        $select = $db->prepare("SELECT count(idRole) FROM mmo_role");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                          foreach($tampil as $value){
-                                            $ha = $value[0]+1;
-                                            if($ha>=0 && $ha<=9){
-                                                echo "ROLE0".$ha;
-                                            }else if($ha>=9 && $ha<=99){
-                                                echo "ROLE".$ha;
-                                            }
-                                        }
-                                    ?>
-                                    </div>
-                                    </div>
-                                </div>
+
                             </div>  
                                 <div class="panel-body pn">
                                     <form method="post" action="?mmopilot=input_role" id="form-ui">
                                         <!-- Basic -->
-                                    <?php
-                                        $select = $db->prepare("SELECT count(idRole) FROM mmo_role");
-                                                  $select->execute();
-                                                  $tampil = $select->fetchAll();
-                                          foreach($tampil as $value){
-                                            $ha = $value[0]+1;
-                                            if($ha>=0 && $ha<=9){
-                                                echo "<input type =\"hidden\" value=\"ROLE0".$ha."\" name=\"idRole\">";
-                                            }else if($ha>=9 && $ha<=99){
-                                                echo "<input type =\"hidden\" value=\"ROLE".$ha."\" name=\"idRole\">";
-                                            }
-                                        }
-                                    ?>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="section">
