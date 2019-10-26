@@ -120,7 +120,7 @@
 <!-- <script src="view/assets/js/demo/widgets.js"></script> -->
 
 <!--tambahan treeview-->
-<script src="view/assets/js/pages/user-forms-treeview.js"></script>
+<!-- <script src="view/assets/js/pages/user-forms-treeview.js"></script> -->
 
 </body>
 
