@@ -91,7 +91,6 @@
                                            width="100%">
                                         <thead>
                                         <tr>
-                                            <th class="va-m">ID Item</th>
                                             <th class="va-m">Nama Item</th>
                                             <th class="va-m">Deskripsi Item</th>
                                             <th class="va-m">Link Item</th>
@@ -102,7 +101,6 @@
                                         <tbody>
                                         <?php foreach($tampil as $value){ ?>
                                         <tr>
-                                            <td><?php echo $value['idItem']; ?></td>
                                             <td><?php echo $value['itemName']; ?></td>
                                             <td><?php echo $value['itemDescription']; ?></td>
                                             <td><?php echo $value['itemLink'];?></td>
