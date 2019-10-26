@@ -75,21 +75,9 @@
                     <div class="col-md-12">
                         <div class="panel panel-visible">
                             <div class="panel-heading">
-                                <div class="row nm">
-                                    <div class="col-md-4"> 
-                                    <div class="panel-title hidden-xs">
-                                    Search Bar Filtering
-                                </div>
-                                </div>
-                                    <div class="col-md-4"></div>
-                                <div class="col-md-4">  
-                                    <div class="panel-title hidden-xs">
-                                    <a href=<?php echo $base_url."admin/index.php?mmopilot=addrole";?>>
-                                    <button type="button" class="btn btn-rounded btn-primary btn-block right">+ Tambah Role Baru</button>
+                            <a href=<?php echo $base_url."admin/index.php?mmopilot=addrole";?>>
+                                    <button type="button" class="btn btn-rounded btn-primary btn-block right" style="width: 200px;">+ Tambah Role Baru</button>
                                     </a>
-                                </div>
-                                </div>
-                                </div>  
                             </div>
                             <div class="panel-body pn">
                                 <div class="table-responsive">
