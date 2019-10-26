@@ -104,7 +104,7 @@
                     </a>
                     <ul class="nav sub-nav">
                         <li class="active">
-                            <a href="#">
+                            <a href="?mmopilot=addrole">
                                 Add Role
                             </a>
                         </li>
