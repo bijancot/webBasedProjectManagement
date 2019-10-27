@@ -72,8 +72,6 @@
 
     <!-- X-edit CSS -->
     
-    
-    
 
     <!-- FooTable CSS -->
     
@@ -97,7 +95,7 @@
     
 
     <!-- select2 CSS -->
-    
+    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/select2/css/core.css">
 
 
     <!-- CSS - allcp forms -->
