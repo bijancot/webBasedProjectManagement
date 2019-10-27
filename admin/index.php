@@ -141,6 +141,11 @@ break;
  	require 'model/delete_job.php';
  	break;
 
+//aksi editjob
+ case 'edit_job':
+ 	require 'model/edit_job.php';
+ 	break;
+
 //aksi additem
  case 'input_item':
  	require 'model/input_item.php';
