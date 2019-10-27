@@ -33,10 +33,10 @@
                                     <h5>Pilih User</h5>
                                     <label class="field prepend-icon">
                                         <label class="field select">
-                                            <select class="form-control" name="idUser">
+                                            <select class="form-control select2-single" name="idUser">
                                                 <option>-------- Pilih User --------</option>
                                                 <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_users WHERE idUser!='USR001'AND idUser!='USR002'");
+                                                    $select = $db->prepare("SELECT * FROM mmo_users");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
                                                     foreach($tampil as $value){
@@ -56,7 +56,7 @@
                                                 <i class="fa fa-dollar"></i>
                                             </span>
                                     </label><br/><br/>
-
+<!-- 
                                     <h6>Password</h6>
                                     <label class="field prepend-icon">
                                         <input type="text" name="password" id="firstname" class="gui-input"
@@ -72,7 +72,7 @@
                                             <span class="field-icon">
                                                 <i class="fa fa-dollar"></i>
                                             </span>
-                                    </label><br/><br/>
+                                    </label><br/><br/> -->
                                     </div>
                                     <div class="col-md-1"></div>
                                     <div class="col-md-6"> 
