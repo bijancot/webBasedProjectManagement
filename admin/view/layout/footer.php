@@ -112,15 +112,18 @@
 
 <!--<script src="view/assets/js/pages/dashboardcopy.js"></script>-->
 
-
 <script src="view/assets/js/pages/tables-data1.js"></script>
 <script src="view/assets/js/pages/allcp_forms-elements.js"></script>
+
+<!-- Select2 JS -->
+<script src="view/assets/js/plugins/select2/select2.min.js"></script>
 
 <!--fixed, tidak membuat error-->
 <!-- <script src="view/assets/js/demo/widgets.js"></script> -->
 
 <!--tambahan treeview-->
 <!-- <script src="view/assets/js/pages/user-forms-treeview.js"></script> -->
+<script src="view/assets/js/pages/user-forms-additional-inputs.js"></script>
 
 </body>
 
