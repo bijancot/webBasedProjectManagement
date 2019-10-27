@@ -28,7 +28,7 @@
             <!-- Sidebar Menu  -->
             <ul class="nav sidebar-menu">
                 <li class="sidebar-label pt30">Navigation</li>
-                <li>
+                <li class="active">
                     <a href="?mmopilot">
                        <!--  <span class="caret"></span> -->
                         <span class="sidebar-title">Dashboard</span>
@@ -51,6 +51,16 @@
                          <li class="active">
                             <a href="?mmopilot=addjob">
                                 Add Job
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="?mmopilot=jobprogress">
+                                Job Progress
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="?mmopilot=progressreport">
+                                Progress Report
                             </a>
                         </li>
                     </ul>
@@ -108,7 +118,7 @@
                                 Add Role
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="?mmopilot=managerole">
                                 Manage Role
                             </a>
@@ -128,7 +138,7 @@
                                 Add Users
                             </a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="?mmopilot=manageusers">
                                 Manage Users
                             </a>
