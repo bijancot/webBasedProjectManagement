@@ -102,8 +102,9 @@ CREATE TABLE `mmo_job_progress` (
   `idProgress` int(11) NOT NULL AUTO_INCREMENT,
   `idJob` int(11) DEFAULT NULL,
   `itemArchived` varchar(10) DEFAULT NULL,
-  `progressDate` datetime DEFAULT CURRENT_TIMESTAMP,
+  `progressDate` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `lastUpdate` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `progressDesc` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idProgress`),
   KEY `fk_mmo_job_progress_1_idx` (`idJob`),
   CONSTRAINT `fk_mmo_job_progress_1` FOREIGN KEY (`idJob`) REFERENCES `mmo_job` (`idJob`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -133,7 +134,7 @@ CREATE TABLE `mmo_menu` (
   `menuDesc` varchar(45) DEFAULT NULL,
   `menuParent` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idMenu`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -203,7 +204,7 @@ CREATE TABLE `mmo_role` (
   `passHash` varchar(100) DEFAULT NULL,
   `job` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idRole`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,7 +213,7 @@ CREATE TABLE `mmo_role` (
 
 LOCK TABLES `mmo_role` WRITE;
 /*!40000 ALTER TABLE `mmo_role` DISABLE KEYS */;
-INSERT INTO `mmo_role` VALUES (1,'dasdasd','dsdads',NULL,NULL,'2019-10-26 06:54:03','2019-10-26 09:43:11','1','dsadsad','dasdasd','0df01ae7dd51cec48fed56952f40842b','admin');
+INSERT INTO `mmo_role` VALUES (1,'dasdasd','dsdads',NULL,NULL,'2019-10-26 06:54:03','2019-10-26 09:43:11','1','dsadsad','dasdasd','0df01ae7dd51cec48fed56952f40842b','admin'),(2,'123','weqwe',NULL,NULL,'2019-10-27 11:46:45','2019-10-27 11:46:45',NULL,'eqweqw','eqweqwe','20fb92b2838715be8cf45679261d646b','operator'),(3,'dasdsd','dasdasd',NULL,NULL,'2019-10-27 13:25:11','2019-10-27 13:25:11',NULL,'dasdadasdasd','dasdadas','2e43738eee28660656e41af3383e5f62','operator');
 /*!40000 ALTER TABLE `mmo_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,6 +255,37 @@ LOCK TABLES `mmo_users` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `mmo_users_shift`
+--
+
+DROP TABLE IF EXISTS `mmo_users_shift`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `mmo_users_shift` (
+  `idShift` int(11) NOT NULL AUTO_INCREMENT,
+  `idOperator` varchar(45) DEFAULT NULL,
+  `idJob` varchar(45) DEFAULT NULL,
+  `senin` varchar(45) DEFAULT NULL,
+  `selasa` varchar(45) DEFAULT NULL,
+  `rabu` varchar(45) DEFAULT NULL,
+  `kamis` varchar(45) DEFAULT NULL,
+  `jumat` varchar(45) DEFAULT NULL,
+  `sabtu` varchar(45) DEFAULT NULL,
+  `minggu` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idShift`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mmo_users_shift`
+--
+
+LOCK TABLES `mmo_users_shift` WRITE;
+/*!40000 ALTER TABLE `mmo_users_shift` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mmo_users_shift` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tr_role_menu`
 --
 
@@ -271,7 +303,7 @@ CREATE TABLE `tr_role_menu` (
   KEY `fk_tr_role_menu_2_idx` (`idMenu`),
   CONSTRAINT `fk_tr_role_menu_1` FOREIGN KEY (`idRole`) REFERENCES `mmo_role` (`idRole`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tr_role_menu_2` FOREIGN KEY (`idMenu`) REFERENCES `mmo_menu` (`idMenu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +312,7 @@ CREATE TABLE `tr_role_menu` (
 
 LOCK TABLES `tr_role_menu` WRITE;
 /*!40000 ALTER TABLE `tr_role_menu` DISABLE KEYS */;
-INSERT INTO `tr_role_menu` VALUES (1,1,5,'2019-10-26 09:43:11','2019-10-26 09:43:11'),(4,1,8,'2019-10-26 09:43:11','2019-10-26 09:43:11');
+INSERT INTO `tr_role_menu` VALUES (1,1,5,'2019-10-26 09:43:11','2019-10-26 09:43:11'),(4,1,8,'2019-10-26 09:43:11','2019-10-26 09:43:11'),(5,2,1,'2019-10-27 11:46:46','2019-10-27 11:46:46'),(6,2,2,'2019-10-27 11:46:46','2019-10-27 11:46:46'),(7,2,8,'2019-10-27 11:46:46','2019-10-27 11:46:46'),(8,2,5,'2019-10-27 11:46:47','2019-10-27 11:46:47'),(9,3,1,'2019-10-27 13:25:12','2019-10-27 13:25:12'),(10,3,2,'2019-10-27 13:25:12','2019-10-27 13:25:12'),(11,3,5,'2019-10-27 13:25:12','2019-10-27 13:25:12');
 /*!40000 ALTER TABLE `tr_role_menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -293,4 +325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-27 11:20:14
+-- Dump completed on 2019-10-28 11:47:01
