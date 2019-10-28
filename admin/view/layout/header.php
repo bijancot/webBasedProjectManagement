@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="view/assets/fonts/animatedsvgicons/css/codropsicons.css">
 
   <!-- select2 CSS -->
-   <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/select2/css/core.css">
+   <!-- <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/select2/css/core.css"> -->
 
     <!-- Octicons CSS -->
     
@@ -116,7 +116,7 @@
 
 </head>
 
-<body class="dashboard-page with-customizer">
+<body class="dashboard-page with-customizer charts-d3">
 
 <!-- Body Wrap  -->
 <div id="main">

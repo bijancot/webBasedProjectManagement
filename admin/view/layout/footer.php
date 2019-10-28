@@ -39,8 +39,8 @@
 
 <!-- Google Map API -->
 
-<!-- Jvectormap JS
-<script src="view/assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
+<!-- Jvectormap JS -->
+<!-- <script src="view/assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
 <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script> 
 <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script> -->
 
@@ -107,8 +107,8 @@
 
 
 <!-- <script src="view/assets/js/pages/dashboardcopy.js"></script> -->
-<!-- <script src="view/assets/js/pages/tables-data1.js"></script>
-<script src="view/assets/js/pages/allcp_forms-elements.js"></script> -->
+<script src="view/assets/js/pages/tables-data1.js"></script>
+<script src="view/assets/js/pages/allcp_forms-elements.js"></script>
 
 <!-- Select2 JS -->
 <script src="view/assets/js/plugins/select2/select2.min.js"></script>
@@ -116,8 +116,6 @@
 <!--fixed, tidak membuat error-->
 <!-- <script src="view/assets/js/demo/widgets.js"></script> -->
 
-<!--tambahan treeview-->
-<!-- <script src="view/assets/js/pages/user-forms-treeview.js"></script> -->
 <!-- <script src="view/assets/js/demo/charts/highcharts.js"></script> -->
 <script src="view/assets/js/demo/charts/d3.js"></script>
 <script src="view/assets/js/pages/dashboard_init.js"></script>
