@@ -145,6 +145,26 @@
                         </li>
                     </ul>
                 </li>
+                 <!--------------JOB PROGRESS--------------->
+                 <!-- <li>
+                    <a class="menu-open" href="#">
+                        <span class="caret"></span>
+                        <span class="sidebar-title">Users</span>
+                        <span class="sb-menu-icon fa fa-home"></span>
+                    </a>
+                    <ul class="nav sub-nav">
+                        <li class="active">
+                            <a href="?mmopilot=addusers">
+                                Report Progress
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="?mmopilot=manageusers">
+                                Manage Job Progress
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
             <!-- /Sidebar Menu  -->
 
         </div>
