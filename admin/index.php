@@ -107,6 +107,14 @@ case 'addorder':
 	require 'view/layout/footer.php';
  break;
 
+	//progressreport
+	case 'progressreport':
+		require 'view/layout/header.php';
+		require 'view/layout/sidebar.php';
+		require 'view/layout/progress/progressreport.php';
+		require 'view/layout/footer.php';
+	break;
+
   //editorder
 case 'editorder':
 	require 'view/layout/header.php';
