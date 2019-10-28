@@ -63,7 +63,7 @@
         </div>
 
         <!-- Content -->
-        <section id="content">
+        <section id="content" class="table-layout animated fadeIn">
 
             <!-- Column Center -->
             <div class="chute chute-center">
@@ -90,3 +90,4 @@
 
     </section>
     <!-- /Main Wrapper -->
+</div>
