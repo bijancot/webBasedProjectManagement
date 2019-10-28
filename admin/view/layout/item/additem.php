@@ -72,7 +72,7 @@
                                                             <i class="fa fa-upload"></i>
                                                         </span>
                                                     </label><br/><br/><br/><br/><br/>
-                                                    <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>
+                                                    <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button>
                                                 </div>
                                             </div>
                                         </div>

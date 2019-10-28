@@ -28,6 +28,7 @@
 
     <!-- Octicons CSS -->
     
+    <link rel="stylesheet" type="text/css" href="assets/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.min.css">
 
     <!-- Stateface CSS -->
     
@@ -36,7 +37,7 @@
     
 
     <!-- Magnific popup -->
-    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/magnific/magnific-popup.css">
+    <!-- <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/magnific/magnific-popup.css"> -->
 
     <!-- c3charts -->
     <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/c3charts/c3.min.css">
@@ -68,7 +69,7 @@
     
 
     <!-- Fancytree CSS -->
-    <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/fancytree/skin-win8/ui.fancytree.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/fancytree/skin-win8/ui.fancytree.min.css"> -->
 
     <!-- X-edit CSS -->
     

@@ -10,7 +10,7 @@
         "use strict";
 
         // Init Demo JS
-        // Demo.init();
+        Demo.init();
 
 
         // Init Theme Core
@@ -85,7 +85,7 @@
 
             $(options).each(function(i, e) {
                 if ($(e).hasClass('block')) {
-                    $(e).removeClass().addClass('block option option-info');
+                    $(e).removeClass().addClass('block mt20 option option-info');
                 } else {
                     $(e).removeClass().addClass('option option-info');
                 }

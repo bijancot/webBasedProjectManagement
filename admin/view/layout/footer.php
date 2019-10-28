@@ -15,7 +15,7 @@
 <script src="view/assets/fonts/animatedsvgicons/js/svgicons-init.js"></script>
 
 <!-- Scroll -->
-<!-- <script src="view/assets/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script> -->
+<script src="view/assets/js/utility/malihu-custom-scrollbar-plugin-master/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Mixitup -->
 
@@ -34,15 +34,15 @@
 <!-- FullCalendar Plugin -->
 
 <!-- Plugins -->
-<!--<script src="view/assets/js/plugins/c3charts/c3.min.js"></script>-->
-<script src="view/assets/js/plugins/circles/circles.js"></script>
+<!-- <script src="view/assets/js/plugins/c3charts/c3.min.js"></script> -->
+<!-- <script src="view/assets/js/plugins/circles/circles.js"></script> -->
 
 <!-- Google Map API -->
 
-<!-- Jvectormap JS -->
+<!-- Jvectormap JS
 <script src="view/assets/js/plugins/jvectormap/jquery.jvectormap.min.js"></script>
 <script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-us-lcc-en.js"></script> 
-<script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script>
+<script src="view/assets/js/plugins/jvectormap/assets/jquery-jvectormap-world-mill-en.js"></script> -->
 
 <!-- Datatables JS -->
 <script src="view/assets/js/plugins/datatables/media/js/jquery.dataTables.js"></script>
@@ -87,12 +87,6 @@
 <!-- PNotify JS -->
 
 <!-- Fancytree JSs -->
-<script src="view/assets/js/plugins/fancytree/jquery.fancytree-all.min.js"></script>
-<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.childcounter.js"></script>
-<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.columnview.js"></script>
-<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.dnd.js"></script>
-<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.edit.js"></script>
-<script src="view/assets/js/plugins/fancytree/extensions/jquery.fancytree.filter.js"></script>
 
 <!-- Ladda JS -->
 
@@ -101,19 +95,20 @@
 <!-- Countdown JS -->
 
 <!-- CanvasBG JS -->
+<script src="view/assets/js/plugins/c3charts/d3.min.js"></script>
+<script src="view/assets/js/plugins/c3charts/c3.min.js"></script>
 
 <!-- Theme Scripts -->
 <script src="view/assets/js/utility/utility.js"></script>
 <!-- Sengaja tidak diload, membuat error-->
 <script src="view/assets/js/demo/demo.js"></script>
 <script src="view/assets/js/main.js"></script>
-<!--<script src="view/assets/js/demo/widgets_sidebar.js"></script>-->
+<script src="view/assets/js/demo/widgets_sidebar.js"></script>
 
 
-<!--<script src="view/assets/js/pages/dashboardcopy.js"></script>-->
-
-<script src="view/assets/js/pages/tables-data1.js"></script>
-<script src="view/assets/js/pages/allcp_forms-elements.js"></script>
+<!-- <script src="view/assets/js/pages/dashboardcopy.js"></script> -->
+<!-- <script src="view/assets/js/pages/tables-data1.js"></script>
+<script src="view/assets/js/pages/allcp_forms-elements.js"></script> -->
 
 <!-- Select2 JS -->
 <script src="view/assets/js/plugins/select2/select2.min.js"></script>
@@ -123,7 +118,12 @@
 
 <!--tambahan treeview-->
 <!-- <script src="view/assets/js/pages/user-forms-treeview.js"></script> -->
+<!-- <script src="view/assets/js/demo/charts/highcharts.js"></script> -->
+<script src="view/assets/js/demo/charts/d3.js"></script>
+<script src="view/assets/js/pages/dashboard_init.js"></script>
 <script src="view/assets/js/pages/user-forms-additional-inputs.js"></script>
+
+
 
 </body>
 

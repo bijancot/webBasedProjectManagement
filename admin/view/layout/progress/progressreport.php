@@ -57,83 +57,87 @@
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Add New Job Progress
+            Progress Report
         </div>
 
         <!-- Content -->
         <section id="content" class="table-layout animated fadeIn">
 
             <!-- Column Center -->
-            <div class="chute chute-center">
+            <div class="row">
+                <div class="col-md-6">
+                <div class="chute chute-center">
 
-                <!-- AllCP Info -->
-                    <div class="row">
-                        <!-- AllCP Grid -->
-                        <div class="allcp-form">
-                            <div class="panel">
-                            <div class="panel-heading">
+<!-- AllCP Info -->
+    <div class="row">
+        <!-- AllCP Grid -->
+        <div class="allcp-form">
+            <div class="panel">
+            <div class="panel-heading">
 
-                            </div>  
-                                <div class="panel-body pn">
-                                    <form method="post" action="?mmopilot=input_role" id="form-ui">
-                                        <!-- Basic -->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="section">
-                                                        <div class="form-group">
-                                                    <h5>Pilih Job</h5>
-                                                        <select class="select2-single form-control" name="idJob">
-                                                            <option>-------- Pilih Job --------</option>
-                                                                <?php
-                                                                    $select = $db->prepare("SELECT * FROM mmo_job");
-                                                                    $select->execute();
-                                                                    $tampil = $select->fetchAll();
-                                                                    foreach($tampil as $value){
-                                                                ?>
-                                                            <option value="<?php echo $value['idJob']?>"><?php echo $value['idJob']?></option>
-                                                            <?php }?>
-                                                        </select>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                        <h5>Item Achived</h5>
-                                                            <label class="field prepend-icon">
-                                                                <input type="text" name="itemAchived" id="firstname" class="gui-input"
-                                                                placeholder="Qty item" title="masukkan Jumlah item yang didapat">
-                                                                    <span class="field-icon">
-                                                                        <i class="fa fa-slack"></i>
-                                                                    </span>
-                                                            </label><br/><br/>          
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <h5>Item Target</h5>
-                                                            <label class="field prepend-icon">
-                                                                <input type="text" name="itemTarget" id="firstname" class="gui-input"
-                                                                placeholder="Username" title="Target Item" value="40" readonly>
-                                                            </label><br/><br/>  
-                                                        </div>
-                                                    </div>    
-                                                    <h5>Progress Notes</h5>
-                                                            <label class="field prepend-icon">
-                                                                <textarea class="gui-textarea" id="comment" name="progressNote" placeholder="Tambahkan catatan progress disini jika ada"></textarea>
-                                                                <span class="field-icon">
-                                                                <i class="fa fa-list"></i>
-                                                                </span>
-                                                            </label><br/><br/><br/>
-                                                        <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>      
-                                                </div>
-                                            </div>         
+            </div>  
+                <div class="panel-body pn">
+                    <form method="post" action="?mmopilot=input_role" id="form-ui">
+                        <!-- Basic -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section">
+                                        <div class="form-group">
+                                    <h5>Pilih Job</h5>
+                                        <select class="select2-single form-control" name="idJob">
+                                            <option>-------- Pilih Job --------</option>
+                                                <?php
+                                                    $select = $db->prepare("SELECT * FROM mmo_job");
+                                                    $select->execute();
+                                                    $tampil = $select->fetchAll();
+                                                    foreach($tampil as $value){
+                                                ?>
+                                            <option value="<?php echo $value['idJob']?>"><?php echo $value['idJob']?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        <h5>Item Achived</h5>
+                                            <label class="field prepend-icon">
+                                                <input type="text" name="itemAchived" id="firstname" class="gui-input"
+                                                placeholder="Qty item" title="masukkan Jumlah item yang didapat">
+                                                    <span class="field-icon">
+                                                        <i class="fa fa-slack"></i>
+                                                    </span>
+                                            </label><br/><br/>          
                                         </div>
-                                    </form>
+                                        <div class="col-md-6">
+                                            <h5>Item Target</h5>
+                                            <label class="field prepend-icon">
+                                                <input type="text" name="itemTarget" id="firstname" class="gui-input"
+                                                placeholder="Username" title="Target Item" value="40" readonly>
+                                            </label><br/><br/>  
+                                        </div>
+                                    </div>    
+                                    <h5>Progress Notes</h5>
+                                            <label class="field prepend-icon">
+                                                <textarea class="gui-textarea" id="comment" name="progressNote" placeholder="Tambahkan catatan progress disini jika ada"></textarea>
+                                                <span class="field-icon">
+                                                <i class="fa fa-list"></i>
+                                                </span>
+                                            </label><br/><br/><br/>
+                                        <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>      
                                 </div>
-                            </div>
+                            </div>         
                         </div>
-                        <!-- /AllCP Grid -->
-
-                    </div>
+                    </form>
+                </div>
             </div>
-            <!-- /Column Center -->
+        </div>
+        <!-- /AllCP Grid -->
 
+    </div>
+</div>
+<!-- /Column Center -->
+</div>
+            </div>
+           
         </section>
         <!-- /Content -->
 

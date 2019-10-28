@@ -63,36 +63,20 @@
         </div>
 
         <!-- Content -->
-        <section id="content" class="table-layout animated fadeIn">
+        <section id="content">
 
             <!-- Column Center -->
             <div class="chute chute-center">
 
                 <!-- AllCP Info -->
-                <div class="allcp-panels fade-onload">
-
-                    <div class="row">
-                        <!-- AllCP Grid -->
-                        <div class="col-md-12 allcp-grid">
-                            
-                                                        <!-- Perfomance -->
-                            <div class="panel mb10" data-panel-title="false">
-                                <div class="text-dark fs24 fw700 mb20">
-                                    Performance
-                                </div>
-                                <div class="panel-body mtn pn">
-                                    <div class="row">
-                                        <!-- Chart -->
-                                        <div class="col-md-12 phn mb10">
-                                            <div id="high-area" style="" class="pln prn high-area-style-1"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /AllCP Grid -->
+                <!-- SubNav Chart -->
+                <div class="panel" id="pchart12">
+                    <div class="panel-heading">
+                        <span class="panel-title pn"> Sub Navigation Chart</span>
                     </div>
-
+                    <div class="panel-body bg-light dark">
+                        <div id="subnav-chart" style="height: 350px; width: 100%;"></div>
+                    </div>
                 </div>
 
 

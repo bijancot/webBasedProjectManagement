@@ -29,34 +29,39 @@
 
                             <form class="form-horizontal" action="?mmopilot=input_order" method="POST" enctype="multipart/form-data">
                                 <div class="row">
-                                    <div class="col-md-5">
-                                    <h5>Pilih User</h5>
-                                    <label class="field prepend-icon">
-                                        <label class="field select">
-                                            <select class="form-control select2-single" name="idUser">
-                                                <option>-------- Pilih User --------</option>
-                                                <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_users");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                                    foreach($tampil as $value){
-                                                ?>
-                                                <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
-                                            <?php }?>
-                                            </select>
-                                        <i class="arrow"></i>
-                                        </label>
-                                    </label><br/><br/>
+                                    <div class="col-md-6">
+                                    <div class="form-group">
+                                            <h5>Pilih User</h5>
+                                                <select class="select2-single form-control" name="idUser">
+                                                    <option>-------- Pilih User --------</option>
+                                                        <?php
+                                                            $select = $db->prepare("SELECT * FROM mmo_users");
+                                                            $select->execute();
+                                                            $tampil = $select->fetchAll();
+                                                            foreach($tampil as $value){
+                                                        ?>
+                                                    <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
+                                                    <?php }?>
+                                                </select>
+                                        </div>
 
-                                    <h6>Username</h6>
+                                    <!-- <h6>Username</h6>
                                     <label class="field prepend-icon">
                                         <input type="text" name="username" id="firstname" class="gui-input"
                                         placeholder="Username" title="masukkan username di sini">
                                             <span class="field-icon">
                                                 <i class="fa fa-dollar"></i>
                                             </span>
-                                    </label><br/><br/>
-<!-- 
+                                    </label><br/><br/> -->
+                                    
+                                    <h5>Order Notes</h5>
+                                    <label class="field prepend-icon">
+                                        <textarea class="gui-textarea" id="comment" name="orderNote" placeholder="Tambahkan catatan order disini jika ada"></textarea>
+                                        <span class="field-icon">
+                                          <i class="fa fa-list"></i>
+                                        </span>
+                                    </label><br/><br/><br/>
+<!--                
                                     <h6>Password</h6>
                                     <label class="field prepend-icon">
                                         <input type="text" name="password" id="firstname" class="gui-input"
@@ -75,7 +80,7 @@
                                     </label><br/><br/> -->
                                     </div>
                                     <div class="col-md-1"></div>
-                                    <div class="col-md-6"> 
+                                    <div class="col-md-5"> 
                                     <h5>Mata Uang</h5>
                                 <div class="row section prn">
                                     <div class="col-md-6">
@@ -101,15 +106,7 @@
                                             <span class="field-icon">
                                                 <i class="fa fa-dollar"></i>
                                             </span>
-                                </label><br/><br/>
-                                    
-                                <h5>Order Notes</h5>
-                                    <label class="field prepend-icon">
-                                        <textarea class="gui-textarea" id="comment" name="orderNote" placeholder="Tambahkan catatan order disini jika ada"></textarea>
-                                        <span class="field-icon">
-                                          <i class="fa fa-list"></i>
-                                        </span>
-                                    </label><br/><br/><br/>
+                                </label><br/><br/><br/><br/><br/>
 
                                 <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button>
                                     </div>

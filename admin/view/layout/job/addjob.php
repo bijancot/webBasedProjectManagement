@@ -77,6 +77,35 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5">
+                                    <div class="row">
+                                                        <div class="col-md-5">
+                                                        <span class="rating block">
+                                        <h6>Job Priority</h6>
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5">
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4">
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2">
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1">
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                        </div>
+                                                </div>
                                         <div class="form-group">
                                             <h6>Pilih Item</h6>
                                                 <select class="select2-single form-control" name="item">
@@ -110,8 +139,7 @@
                                                 <select class="select2-single form-control" name="operator">
                                                  <option>-------- Pilih Operator --------</option>
                                                 <?php
-                                                    $select = $db->prepare("SELECT * FROM `mmo_users`
-                                                                        WHERE name LIKE '%operator%';");
+                                                    $select = $db->prepare("SELECT * FROM mmo_users");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
                                                     foreach($tampil as $value){
@@ -119,35 +147,7 @@
                                                 <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
                                                 <?php }?>
                                                 </select>
-                                                <div class="row">
-                                                        <div class="col-md-5">
-                                                        <span class="rating block">
-                                        <h6>Job Priority</h6>
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5">
-                                              <label class="rating-star" for="r5">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4">
-                                              <label class="rating-star" for="r4">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked>
-                                              <label class="rating-star" for="r3">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2">
-                                              <label class="rating-star" for="r2">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1">
-                                              <label class="rating-star" for="r1">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                            </span>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                        </div>
-                                                </div><br/>
+                                                    <br/><br/><br/><br/>
                                                 <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>
                                         </div>
                                     </div>
