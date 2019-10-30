@@ -159,8 +159,7 @@
                          
 
                             <div class="section">
-                            
-                                 <input type="submit" name="submit" class="btn btn-primary" value="Create Account">
+                                <input type="submit" name="submit" class="btn btn-primary" value="Create Account">
                             </div>
                             <!-- /section -->
 
@@ -210,7 +209,6 @@
 <script src="admin/view/assets/js/plugins/highcharts/highcharts.js"></script>
 
 <!-- Highlight JS -->
-
 
 <!-- Date/Month - Pickers -->
 
@@ -342,7 +340,7 @@
 
 <!-- Theme Scripts -->
 <script src="admin/view/assets/js/utility/utility.js"></script>
-<script src="admin/view/assets/js/demo/demo.js"></script>
+<!-- <script src="admin/view/assets/js/demo/demo.js"></script> -->
 <script src="admin/view/assets/js/main.js"></script>
 <script src="admin/view/assets/js/demo/widgets_sidebar.js"></script>
 <script src="admin/view/assets/js/pages/dashboard_init.js"></script>
