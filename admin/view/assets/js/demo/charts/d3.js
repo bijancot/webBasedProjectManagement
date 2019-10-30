@@ -277,23 +277,52 @@ var D3Charts = function () {
         // SubNav Chart
         var chart8 = c3.generate({
             bindto: '#subnav-chart',
-            color: {
-              pattern: Colors
-            },
-            padding: {
-              left: 25,
-              right: 15,
-              top: 0,
-              bottom: 0
-           },
-            data: {
-                columns: [
-                    ['sample', 200, 240, 280, 300, 120, 0]
-                ]
-            },
-            subchart: {
-                show: true
-            }
+        //     color: {
+        //       pattern: Colors
+        //     },
+        //     padding: {
+        //       left: 25,
+        //       right: 15,
+        //       top: 0,
+        //       bottom: 0
+        //    },
+        //    data: {
+        //             columns: [
+        //                 ['data1', 200, 240, 280, 300, 120, 0],
+        //                 ['data2', 90, 110, 130, 220, 190, 20]
+        //             ]
+        //         },
+        //     subchart: {
+        //         show: true
+        //     },
+        //     types: {
+        //         data1: 'area',
+        //         data2: 'area-spline'
+        //     }
+        color: {
+                  pattern: Colors
+                },
+                padding: {
+                left: 30,
+                  right: 15,
+                  top: 0,
+                  bottom: 0
+               },
+                data: {
+                    columns: [
+                        ['ItemTarget', 400, 400, 400, 400, 400, 400, 400,400,400,400],
+                        ['ItemAchived', 90, 110, 130, 220, 190, 20, 200,800,67,89],
+                        ["panji","500","530","330",879,679,78,900,78,90,97]
+                    ],
+                    types: {
+                        ItemTarget: 'area',
+                        ItemAchived: 'area-spline',
+                        panji: 'area-spline'
+                    }
+                },
+                subchart: {
+                            show: true
+                        }
         });
 
 
