@@ -199,5 +199,10 @@ break;
 case 'editedRole':
 require 'model/edit_role.php';
 break;
+
+//logout
+case 'logout':
+	require '../login/logout.php';
+	break;
 }
 ?>
