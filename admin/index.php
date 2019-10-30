@@ -1,5 +1,6 @@
 <?php
 require "conn/koneksi.php";
+include('../login/session.php');
 
 $mmopilot = $_REQUEST["mmopilot"];
 switch ($mmopilot)	{
