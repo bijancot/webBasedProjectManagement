@@ -157,9 +157,13 @@
                             </div>
                             <!-- /section -->
                          
-
                             <div class="section">
-                                <input type="submit" name="submit" class="btn btn-primary" value="Create Account">
+                                <div class="bs-component pull-left pt5">
+                                    <div class="radio-custom radio-primary mb5 lh25">
+                                       <a href="?mmolog">Have an account?</a>
+                                    </div>
+                                </div>
+                                <input type="submit" name="submit" class="btn btn-bordered btn-primary pull-right" value="CREATE account">
                             </div>
                             <!-- /section -->
 
