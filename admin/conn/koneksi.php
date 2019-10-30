@@ -1,9 +1,9 @@
 <?php
  error_reporting(0);
-	$host="localhost"; //host laptop bisa pakai 127.0.0.1 atau localhost
+	$host="192.168.79.3"; //host laptop bisa pakai 127.0.0.1 atau localhost
 	$dbname="mmopilot"; // nama database
-	$user="root"; // nama user dalam my sql
-	$password=""; // password user, jika kosong beri string kosong
+	$user="budosen"; // nama user dalam my sql
+	$password="bijan2089"; // password user, jika kosong beri string kosong
 	try{
 		$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 	  	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
