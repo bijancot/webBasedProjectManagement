@@ -59,7 +59,7 @@
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Welcome back, <span>Douglas</span>!
+            Welcome back, <span><?php echo $login_session; ?></span>!
         </div>
 
         <!-- Content -->

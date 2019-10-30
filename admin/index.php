@@ -1,5 +1,6 @@
 <?php
 require "conn/koneksi.php";
+include('../login/session.php');
 
 $mmopilot = $_REQUEST["mmopilot"];
 switch ($mmopilot)	{
@@ -198,5 +199,10 @@ break;
 case 'editedRole':
 require 'model/edit_role.php';
 break;
+
+//logout
+case 'logout':
+	require '../login/logout.php';
+	break;
 }
 ?>

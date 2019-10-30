@@ -447,7 +447,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img class="btn-hover-effects" src="view/assets/img/avatars/profile_avatar.jpg" alt="avatar">
                     <span class="hidden-xs">
-                        <span class="name">Doug Adams</span>
+                        <span class="name"><?php echo $login_session; ?></span>
                     </span>
                     <span class="fa fa-caret-down hidden-xs"></span>
                 </a>
@@ -501,7 +501,7 @@
                         </a>
                     </li>
                     <li class="dropdown-footer text-center">
-                        <a href="#" class="btn btn-warning">
+                        <a href="?mmopilot=logout" class="btn btn-warning">
                             logout 
                         </a>
                     </li>
