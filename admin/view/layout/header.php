@@ -501,7 +501,7 @@
                         </a>
                     </li>
                     <li class="dropdown-footer text-center">
-                        <a href="#" class="btn btn-warning">
+                        <a href="?mmopilot=logout" class="btn btn-warning">
                             logout 
                         </a>
                     </li>
