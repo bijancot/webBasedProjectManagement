@@ -59,6 +59,7 @@
 <!-- Bootstrap Maxlength JS -->
 
 <!-- Select2 JS -->
+<script src="view/assets/js/plugins/select2/select2.min.js"></script>
 
 <!-- Typeahead JS -->
 
