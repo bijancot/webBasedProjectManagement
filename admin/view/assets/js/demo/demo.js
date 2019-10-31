@@ -15,27 +15,27 @@ var Demo = function() {
   var runDemoForms = function() {
 
     // Prevents directory response when submitting a demo form
-    $('.allcp-form').on('submit', function(e) {
+    // $('.allcp-form').on('submit', function(e) {
 
-      if ($('body.basic-timeline').length || $('body.forms-validation').length) {
-        return;
-      }
-      e.preventDefault;
-      alert('Your form has submitted!');
-      return false;
-    });
+    //   if ($('body.basic-timeline').length || $('body.forms-validation').length) {
+    //     return;
+    //   }
+    //   e.preventDefault;
+    //   alert('Your form has submitted!');
+    //   return false;
+    // });
 
     // give file-upload preview onclick functionality
-    var fileUpload = $('.fileupload-preview');
-    if (fileUpload.length) {
+  //   var fileUpload = $('.fileupload-preview');
+  //   if (fileUpload.length) {
 
-      fileUpload.each(function(i, e) {
-        var fileForm = $(e).parents('.fileupload').find('.btn-file > input');
-        $(e).on('click', function() {
-          fileForm.click();
-        });
-      });
-    }
+  //     fileUpload.each(function(i, e) {
+  //       var fileForm = $(e).parents('.fileupload').find('.btn-file > input');
+  //       $(e).on('click', function() {
+  //         fileForm.click();
+  //       });
+  //     });
+  //   }
 
   }
 
