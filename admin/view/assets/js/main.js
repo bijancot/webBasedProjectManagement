@@ -276,7 +276,7 @@ var Core = function(options) {
       
    };
 
-   //Flipswitch add class on change
+   // Flipswitch add class on change
    // jQuery(".flipswitch-label").on("click",function(){
    //    if(jQuery(this).hasClass("flipswitch-checked")) {
    //        jQuery(this).removeClass("flipswitch-checked");

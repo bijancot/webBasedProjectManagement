@@ -241,7 +241,6 @@ var demoHighCharts = function () {
                                 bgInfo, bgInfo
                             ],
                             groupPadding: 0,
-                            pointPadding: 0.24,
                             borderWidth: 0
                         }
                     },
