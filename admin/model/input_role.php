@@ -8,6 +8,7 @@ $username = htmlentities($_POST['usernameRole']);
 $passhash = md5($password);
 $job = htmlentities($_POST['job']);
 $idMenu = $_POST['menuList'];
+$idUser = htmlentities($_POST['idUser']);
 
 $query = $db->prepare("INSERT INTO `mmo_role`(`roleName`, `roleDesc`,`username`,`password`,`passhash`,`job`) VALUES (:roleName,:roleDesc,:username,:password,:passhash,:job)");
 
@@ -33,6 +34,11 @@ $query1->bindParam(":idRole", $idRole);
 $query1->bindParam(":idMenu", $ho);
 $query1->execute();
 }
+echo $idRole;
+$update = $db->prepare("UPDATE mmo_users set roleId=:idRole where idUser=:idUser");
+$update->bindParam(":idRole", $idRole);
+$update->bindParam(":idUser", $idUser);
+$update->execute();
 
 header('location:?mmopilot=managerole');
 ?>
