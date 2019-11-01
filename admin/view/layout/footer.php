@@ -95,6 +95,15 @@
 
 <!-- Countdown JS -->
 
+<!-- Select checkbox -->
+<script>
+var clicked = false;
+$(".pilihsemua").on("click", function() {
+  $(".flipswitch-cb").prop("checked", !clicked);
+  clicked = !clicked;
+});
+</script>
+
 <!-- CanvasBG JS -->
 <script src="view/assets/js/plugins/c3charts/d3.min.js"></script>
 <script src="view/assets/js/plugins/c3charts/c3.min.js"></script>
