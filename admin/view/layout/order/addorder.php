@@ -35,12 +35,12 @@
                                                 <select class="select2-single form-control" name="idUser">
                                                     <option>-------- Pilih User --------</option>
                                                         <?php
-                                                            $select = $db->prepare("SELECT * FROM mmo_users");
+                                                            $select = $db->prepare("SELECT a.idUser,a.name,c.job FROM mmo_users a join mmo_role c on a.roleId=c.idRole where job='client'");
                                                             $select->execute();
                                                             $tampil = $select->fetchAll();
                                                             foreach($tampil as $value){
                                                         ?>
-                                                    <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
+                                                    <option value="<?php echo $value['idUser']?>"><?php echo $value['name']." - ".$value['job']?></option>
                                                     <?php }?>
                                                 </select>
                                         </div>

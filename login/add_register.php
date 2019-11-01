@@ -10,7 +10,7 @@ $facebook			= htmlentities($_POST['facebook']);
 $skype  			= htmlentities($_POST['skype']);
 $discord			= htmlentities($_POST['discord']);
 
-$query = $db->prepare("INSERT INTO `mmo_users`(`idUser`, `roleId`, `name`, `email`, `isActive`, `createdBy`, `createdDate`, `updatedBy`, `lastUpdate`, `facebook`, `discord`, `skype`, `whatsapp`, `homeAddress`) VALUES('','1',:name,:email,'0','admin',NOW(),'','',:facebook,:discord,:skype,:whatsapp,:homeAddress)");
+$query = $db->prepare("INSERT INTO `mmo_users`(`name`, `email`, `isActive`, `createdBy`, `facebook`, `discord`, `skype`, `whatsapp`, `homeAddress`) VALUES(:name,:email,'1','admin',:facebook,:discord,:skype,:whatsapp,:homeAddress)");
 
  $query->bindParam(":name", $name);
  $query->bindParam(":email", $email);
@@ -20,6 +20,7 @@ $query = $db->prepare("INSERT INTO `mmo_users`(`idUser`, `roleId`, `name`, `emai
  $query->bindParam(":skype", $skype);
  $query->bindParam(":discord", $discord);
  $query->execute();
+//  var_dump($query->execute());
  header('location:?mmolog');
 
 
