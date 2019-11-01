@@ -17420,7 +17420,7 @@ div.switch.round label:after {
 }
 .flipswitch {
   position: relative;
-  width: 50px;
+  width: 70px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -17497,7 +17497,7 @@ div.flipswitch input {
 }
 .flipswitch-inner:after {
   content: "off";
-  padding-left: 24px;
+  padding-left: 22px;
   color: #c5c6c7;
   font-weight: 700;
 }
@@ -17506,6 +17506,24 @@ div.flipswitch input {
 }
 .flipswitch-inner.no-yes:after {
   content: "no";
+}
+.flipswitch-inner.shift1:before {
+  content: "Shift 1";
+}
+.flipswitch-inner.shift1:after {
+  content: "Shift 1";
+}
+.flipswitch-inner.shift2:before {
+  content: "Shift 2";
+}
+.flipswitch-inner.shift2:after {
+  content: "Shift 2";
+}
+.flipswitch-inner.shift3:before {
+  content: "Shift 3";
+}
+.flipswitch-inner.shift3:after {
+  content: "Shift 3";
 }
 .flipswitch-switch {
   width: 14px;
@@ -17530,7 +17548,7 @@ div.flipswitch input {
   border-radius: 0;
 }
 .flipswitch-cb:checked + .flipswitch-label .flipswitch-inner {
-  margin-left: 0;
+  margin-left: 6px;
 }
 .flipswitch-cb:checked + .flipswitch-label .flipswitch-switch {
   right: 0;
@@ -17539,11 +17557,11 @@ div.flipswitch input {
   background-color: #c5c6c7 !important;
 }
 .flipswitch.switch-lg {
-  width: 65px;
+  width: 75px;
 }
 .flipswitch.switch-lg .flipswitch-inner:after,
 .flipswitch.switch-lg .flipswitch-inner:before {
-  height: 32px;
+  height: 30px;
   line-height: 32px;
   font-size: 14px;
 }
@@ -17551,31 +17569,33 @@ div.flipswitch input {
   width: 22px;
   height: 22px;
   margin: 5px 2px;
-  right: 38px;
+  right: 39px;
 }
 .flipswitch.switch-lg .flipswitch-inner.no-yes:after {
   padding-right: 6px;
 }
 .flipswitch.switch-lg .flipswitch-inner:before {
-  padding-left: 11px;
+  padding-left: px;
 }
 .flipswitch.switch-lg .flipswitch-inner:after {
   padding-right: 11px;
 }
 .flipswitch.switch-md {
-  width: 51px;
+  width: 83px;
 }
 .flipswitch.switch-md .flipswitch-inner:after,
 .flipswitch.switch-md .flipswitch-inner:before {
-  height: 26px;
+  height: 23px;
   line-height: 26px;
   font-size: 13px;
 }
 .flipswitch.switch-md .flipswitch-switch {
   width: 18px;
   height: 18px;
-  margin: 4px 2px;
-  right: 29px;
+  margin-top:4px;
+  margin-left:5px;
+  margin-right:3px;
+  right: 60px;
 }
 .flipswitch.switch-md .flipswitch-inner.no-yes:after {
   padding-right: 6px;
