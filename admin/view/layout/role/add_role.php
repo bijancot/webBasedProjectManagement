@@ -130,6 +130,20 @@
                                                     <i class="arrow"></i>
                                                 </label>
                                                     </label><br/><br/>
+                                                            <div class="form-group">
+                                                    <h5>Pilih User</h5>
+                                                        <select class="select2-single form-control" name="idUser">
+                                                            <option>-------- Pilih User --------</option>
+                                                                <?php
+                                                                    $select = $db->prepare("SELECT * FROM mmo_users where roleId is null");
+                                                                    $select->execute();
+                                                                    $tampil = $select->fetchAll();
+                                                                    foreach($tampil as $value){
+                                                                ?>
+                                                            <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
+                                                            <?php }?>
+                                                        </select>
+                                                </div>
                                                 <h5>Hak Akses menu :</h5>
                                                 <?php
                                                     $select = $db->prepare("SELECT idMenu,menuName,menuParent FROM mmo_menu");
