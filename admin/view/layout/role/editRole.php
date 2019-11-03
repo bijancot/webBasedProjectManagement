@@ -92,7 +92,7 @@
                                                 <h5>Role Name</h5>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="roleName" id="firstname" class="gui-input"
-                                                            placeholder="Role Name" value="<?php echo $value['roleName'];?>">
+                                                            placeholder="Role Name" value="<?php echo $value['roleName'];?>" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-slack"></i>
                                                         </span>
@@ -107,7 +107,7 @@
                                                     <h6>Username</h6>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="usernameRole" id="firstname" class="gui-input"
-                                                            placeholder="username" title="username untuk role ini" value="<?php echo $value['username'];?>">
+                                                            placeholder="username" title="username untuk role ini" value="<?php echo $value['username'];?>" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-user"></i>
                                                         </span>
@@ -115,7 +115,7 @@
                                                     <h6>Password Role</h6>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="passwordRole" id="firstname" class="gui-input"
-                                                            placeholder="password" title="password untuk role ini" value="<?php echo $value['password'];?>">
+                                                            placeholder="password" title="password untuk role ini" value="<?php echo $value['password'];?>" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-key"></i>
                                                         </span>
@@ -130,7 +130,7 @@
                                                 <h6>Role</h6>
                                                     <label class="field prepend-icon">
                                                     <label class="field select">
-                                                    <select id="job" name="job">
+                                                    <select id="job" name="job" required>
                                                         <option value="admin" <?php if($value['job']=="admin"){ echo "selected";}?>>Admin</option>
                                                         <option value="operator" <?php if($value['job']=="operator"){ echo "selected";}?>>Operator</option>
                                                         <option value="client" <?php if($value['job']=="client"){ echo "selected";}?>>Client</option>
