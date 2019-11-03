@@ -37,7 +37,7 @@
                                                 <h5>Nama Item</h5>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="itemName" id="firstname" class="gui-input"
-                                                            placeholder="Nama Item" title="masukkan nama item di sini">
+                                                            placeholder="Nama Item" title="masukkan nama item di sini" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-slack"></i>
                                                         </span>
@@ -45,7 +45,7 @@
                                                     
                                                     <h5>Deskripsi Item</h5>
                                                     <label class="field prepend-icon">
-                                                    <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="masukkan deskripsi item di sini"></textarea>
+                                                    <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="masukkan deskripsi item di sini" required></textarea>
                                                     <span class="field-icon" title="masukkan deskripsi item di sini">
                                                         <i class="fa fa-list"></i>
                                                     </span>
@@ -59,7 +59,7 @@
                                                 <h5>Link Item</h5>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="itemLink" class="gui-input"
-                                                            placeholder="Nama Item" title="masukkan link docs/knowledge base item tersebut ()">
+                                                            placeholder="Nama Item" title="masukkan link docs/knowledge base item tersebut ()" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-link"></i>
                                                         </span>
@@ -68,7 +68,7 @@
                                                     <label class="field prepend-icon">
                                                         <input type="file" name="itemIcon" class="gui-input"
                                                             placeholder="Nama Item" title="Upload Icon untuk Item">
-                                                        <span class="field-icon">
+                                                        <span class="field-icon" required>
                                                             <i class="fa fa-upload"></i>
                                                         </span>
                                                     </label><br/><br/><br/><br/><br/>
