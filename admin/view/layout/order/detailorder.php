@@ -38,7 +38,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Nama User</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <select class="form-control" name="idUser">
+                                            <select class="form-control" name="idUser" required>
                                                 <?php
                                                     $select = $db->prepare("SELECT mmo_users.name,mmo_users.idUser from mmo_users JOIN mmo_order ON mmo_users.idUser=mmo_order.idClient WHERE mmo_order.idOrder='ORDE0001'");
                                                     $select->execute();
@@ -71,7 +71,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Mata Uang</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="currency" value="<?php echo $value['currency'];?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="currency" value="<?php echo $value['currency'];?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +80,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Nominal</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="price" value="<?php echo $value['price'];?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="price" value="<?php echo $value['price'];?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Catatan Order</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="orderNote" value="<?php echo $value['orderNote'];?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="orderNote" value="<?php echo $value['orderNote'];?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Username</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="username" value="<?php echo $value['username'];?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="username" value="<?php echo $value['username'];?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Password</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="password" id="inputStandard" class="form-control" name="password" value="<?php echo $value['password'];?>">
+                                            <input type="password" id="inputStandard" class="form-control" name="password" value="<?php echo $value['password'];?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -116,7 +116,7 @@
                                     <label for="inputStandard" class="col-lg-3 control-label">Konfirmasi Password</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="password" id="inputStandard" class="form-control" name="konpassword" value="<?php echo $value['password'];?>">
+                                            <input type="password" id="inputStandard" class="form-control" name="konpassword" value="<?php echo $value['password'];?>" required>
                                         </div>
                                     </div>
                                 </div>
