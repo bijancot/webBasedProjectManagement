@@ -38,7 +38,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Nama Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemName" value="<?php echo $value['itemName']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemName" value="<?php echo $value['itemName']?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Deskripsi Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemDescription" value="<?php echo $value['itemDescription']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemDescription" value="<?php echo $value['itemDescription']?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Icon Item</label>
                                      <div class="col-lg-8">
                                          <div>
-                                             <input type="file" name="itemIcon">
+                                             <input type="file" name="itemIcon" required>
                                           </div>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Link Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemLink" value="<?php echo $value['itemLink']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemLink" value="<?php echo $value['itemLink']?>" required>
                                         </div>
                                     </div>
                                 </div>
