@@ -83,32 +83,30 @@
                                                 <div class="section">
                                                 <h5>Role Name</h5>
                                                     <label class="field prepend-icon">
-                                                        <input type="text" name="roleName" id="firstname" class="gui-input"
-                                                            placeholder="Role Name" required>
+                                                        <input type="text" name="roleName" id="firstname" class="gui-input" placeholder="Role Name" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-slack"></i>
                                                         </span>
                                                     </label><br/><br/>
                                                     <h5>Role Description</h5>
                                                     <label class="field prepend-icon">
-                                                    <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="Text area"></textarea>
+                                                    <textarea class="gui-textarea" id="comment" name="roleDesc" placeholder="Text area" required></textarea>
                                                     <span class="field-icon">
                                                         <i class="fa fa-list"></i>
                                                     </span>
                                                     </label><br/><br/>
                                                     <h6>Username</h6>
                                                     <label class="field prepend-icon">
-                                                        <input type="text" name="usernameRole" id="firstname" class="gui-input"
-                                                            placeholder="username" title="username untuk role ini">
-                                                        <span class="field-icon" required>
+                                                        <input type="text" name="usernameRole" id="firstname" class="gui-input" placeholder="username" title="username untuk role ini" required>
+                                                        <span class="field-icon">
                                                             <i class="fa fa-user"></i>
                                                         </span>
                                                     </label><br/>
                                                     <h6>Password Role</h6>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="passwordRole" id="firstname" class="gui-input"
-                                                            placeholder="password" title="password untuk role ini">
-                                                        <span class="field-icon" required>
+                                                            placeholder="password" title="password untuk role ini" required>
+                                                        <span class="field-icon">
                                                             <i class="fa fa-key"></i> 
                                                         </span>
                                                     </label><br/><br/>
