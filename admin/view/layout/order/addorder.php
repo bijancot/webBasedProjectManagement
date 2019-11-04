@@ -32,7 +32,7 @@
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <h5>Pilih User</h5>
-                                                <select class="select2-single form-control" name="idUser">
+                                                <select class="select2-single form-control" name="idUser" required>
                                                     <option>-------- Pilih User --------</option>
                                                         <?php
                                                             $select = $db->prepare("SELECT a.idUser,a.name,c.job FROM mmo_users a join mmo_role c on a.roleId=c.idRole where job='client'");
@@ -76,7 +76,7 @@
                                         <h5>Pilih Shift Pengerjaan</h5>
                                         <div class=row>
                                             <div class="col-md-6">
-                                                <button type="button" class="btn btn-success pilihsemua"><strong>Pilih Semua Atau hapus Semua</strong></button>
+                                                <button type="button" class="btn btn-success pilihsemua" required><strong>Pilih Semua Atau hapus Semua</strong></button>
                                             </div>
                                         </div>
                                        
@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se3" >
+                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se3" required>
                                                         <label class="flipswitch-label" for="se3">
                                                             <div class="flipswitch-inner shift2"></div>
                                                             <div class="flipswitch-switch"></div>
@@ -299,13 +299,13 @@
                                 <div class="row section prn">
                                     <div class="col-md-6">
                                     <label class="option">
-                                        <input type="radio" name="currency" value="USD">
+                                        <input type="radio" name="currency" value="USD" required>
                                         <span class="radio"></span>US Dollar ($)
                                     </label>
                                     </div>
                                     <div class="col-md-6">
                                     <label class="option">
-                                        <input type="radio" name="currency" value="Rupiah">
+                                        <input type="radio" name="currency" value="Rupiah" required>
                                         <span class="radio"></span>Rupiah (IDR)
                                     </label>
                                     
@@ -316,14 +316,14 @@
                                 <h5>Nominal</h5>
                                     <label class="field prepend-icon">
                                         <input type="text" name="price" id="firstname" class="gui-input"
-                                        placeholder="Nominal Order" title="masukkan biaya order">
+                                        placeholder="Nominal Order" title="masukkan biaya order" required>
                                             <span class="field-icon">
                                                 <i class="fa fa-dollar"></i>
                                             </span>
                                 </label><br/><br/><br/><br/>
                                 <h5>Order Notes</h5>
                                     <label class="field prepend-icon">
-                                        <textarea class="gui-textarea" id="comment" name="orderNote" placeholder="Tambahkan catatan order disini jika ada"></textarea>
+                                        <textarea class="gui-textarea" id="comment" name="orderNote" placeholder="Tambahkan catatan order disini jika ada" required></textarea>
                                         <span class="field-icon">
                                           <i class="fa fa-list"></i>
                                         </span>

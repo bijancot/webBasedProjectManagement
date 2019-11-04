@@ -42,7 +42,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Item</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <select class="form-control" name="item">
+                                            <select class="form-control" name="item" required>
                                                 <?php
                                                     $select = $db->prepare("SELECT mmo_item.itemName,mmo_item.idItem from mmo_item JOIN mmo_job ON mmo_item.idItem=mmo_job.idItem WHERE mmo_job.idItem='$id_item'");
                                                     $select->execute();
@@ -69,7 +69,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Order</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <select class="form-control" name="order">
+                                            <select class="form-control" name="order" required>
                                                 <?php
                                                     $select = $db->prepare("SELECT mmo_order.idOrder from mmo_order JOIN mmo_job ON mmo_order.idOrder=mmo_job.idOrder WHERE mmo_job.idOrder='$id_order'");
                                                     $select->execute();
@@ -96,7 +96,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Operator</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <select class="form-control" name="operator">
+                                            <select class="form-control" name="operator" required>
                                                 <?php
                                                     $select = $db->prepare("SELECT mmo_users.idUser,mmo_users.name from mmo_users JOIN mmo_job ON mmo_users.idUser=mmo_job.idOperator WHERE mmo_job.idOperator='$id_op'");
                                                     $select->execute();
@@ -132,7 +132,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Job Description</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="jobDescription" value="<?php echo $value['jobDescription']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="jobDescription" value="<?php echo $value['jobDescription']?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +141,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Time</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="time" value="<?php echo $value['time']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="time" value="<?php echo $value['time']?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Item Target</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemTarget" value="<?php echo $value['itemTarget']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="itemTarget" value="<?php echo $value['itemTarget']?>" required>
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Priority</label>
                                     <div class="col-lg-8">
                                         <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="priority" value="<?php echo $value['priority']?>">
+                                            <input type="text" id="inputStandard" class="form-control" name="priority" value="<?php echo $value['priority']?>" required>
                                         </div>
                                     </div>
                                 </div>

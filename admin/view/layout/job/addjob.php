@@ -45,16 +45,21 @@
                                                 <h6>Item Target (Qty)</h6>
                                                 <label class="field prepend-icon">
                                                     <input type="text" name="itemTarget" id="firstname" class="gui-input"
-                                                                placeholder="Qty Item" title="username untuk role ini">
+                                                                placeholder="Qty Item" title="username untuk role ini" required>
                                                 <span class="field-icon">
                                                     <i class="fa fa-bullseye"></i>
-                                                </span>
+                                                </span> 
                                                 </label><br/><br/>
                                             </div>
                                             <div class="col-md-6">
                                             <h6>Target Waktu</h6>
                                                 <label class="field prepend-icon">
+<<<<<<< HEAD
                                                     <input type="date" name="time" class="gui-input">
+=======
+                                                    <input type="text" name="time1" id="firstname" class="gui-input"
+                                                                placeholder="Target waktu penyelesaian" title="username untuk role ini" required>
+>>>>>>> dc7152b9a136bf1b6c3dd6cc1aefd9e34f14b2ef
                                                 <span class="field-icon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
@@ -64,7 +69,7 @@
                                             <h6>Satuan waktu</h6>
                                                     <label class="field prepend-icon">
                                                     <label class="field select">
-                                                    <select id="job" name="job">
+                                                    <select id="job" name="job" required>
                                                         <option value="hari" selected>Hari</option>
                                                         <option value="minggu">Minggu</option>
                                                         <option value="bulan">Bulan</option>
@@ -94,23 +99,23 @@
                                                         <div class="col-md-5">
                                                         <span class="rating block">
                                         <h6>Job Priority</h6>
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5">
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" required>
                                               <label class="rating-star" for="r5">
                                                   <i class="fa fa-star"></i>
                                               </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4">
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" required>
                                               <label class="rating-star" for="r4">
                                                   <i class="fa fa-star"></i>
                                               </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked required>
                                               <label class="rating-star" for="r3">
                                                   <i class="fa fa-star"></i>
                                               </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2">
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" required>
                                               <label class="rating-star" for="r2">
                                                   <i class="fa fa-star"></i>
                                               </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1">
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" required>
                                               <label class="rating-star" for="r1">
                                                   <i class="fa fa-star"></i>
                                               </label>
@@ -121,7 +126,7 @@
                                                 </div>
                                         <div class="form-group">
                                             <h6>Pilih Item</h6>
-                                                <select class="select2-single form-control" name="item">
+                                                <select class="select2-single form-control" name="item" required>
                                                     <option>-------- Pilih Item --------</option>
                                                         <?php
                                                             $select = $db->prepare("SELECT * FROM mmo_item");
@@ -135,7 +140,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h6>Pilih Order</h6>
-                                                <select class="select2-single form-control" name="order">
+                                                <select class="select2-single form-control" name="order" required>
                                                 <option>-------- Pilih ID Order --------</option>
                                                     <?php
                                                         $select = $db->prepare("SELECT * FROM mmo_order");
@@ -149,7 +154,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h6>Pilih Operator</h6>
-                                                <select class="select2-single form-control" name="operator">
+                                                <select class="select2-single form-control" name="operator" required>
                                                  <option>-------- Pilih Operator --------</option>
                                                 <?php
                                                     $select = $db->prepare("SELECT * FROM mmo_users");

@@ -84,7 +84,7 @@
                                                 <h5>Role Name</h5>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="roleName" id="firstname" class="gui-input"
-                                                            placeholder="Role Name">
+                                                            placeholder="Role Name" required>
                                                         <span class="field-icon">
                                                             <i class="fa fa-slack"></i>
                                                         </span>
@@ -100,7 +100,7 @@
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="usernameRole" id="firstname" class="gui-input"
                                                             placeholder="username" title="username untuk role ini">
-                                                        <span class="field-icon">
+                                                        <span class="field-icon" required>
                                                             <i class="fa fa-user"></i>
                                                         </span>
                                                     </label><br/>
@@ -108,8 +108,8 @@
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="passwordRole" id="firstname" class="gui-input"
                                                             placeholder="password" title="password untuk role ini">
-                                                        <span class="field-icon">
-                                                            <i class="fa fa-key"></i>
+                                                        <span class="field-icon" required>
+                                                            <i class="fa fa-key"></i> 
                                                         </span>
                                                     </label><br/><br/>
                                                     
@@ -122,7 +122,7 @@
                                                 <h6>Role</h6>
                                                     <label class="field prepend-icon">
                                                     <label class="field select">
-                                                    <select id="job" name="job">
+                                                    <select id="job" name="job" required>
                                                         <option value="admin">Admin</option>
                                                         <option value="operator">Operator</option>
                                                         <option value="client" selected>Client</option>
@@ -132,7 +132,7 @@
                                                     </label><br/><br/>
                                                             <div class="form-group">
                                                     <h5>Pilih User</h5>
-                                                        <select class="select2-single form-control" name="idUser">
+                                                        <select class="select2-single form-control" name="idUser" required>
                                                             <option>-------- Pilih User --------</option>
                                                                 <?php
                                                                     $select = $db->prepare("SELECT * FROM mmo_users where roleId is null");
