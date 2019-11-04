@@ -54,12 +54,7 @@
                                             <div class="col-md-6">
                                             <h6>Target Waktu</h6>
                                                 <label class="field prepend-icon">
-<<<<<<< HEAD
                                                     <input type="date" name="time" class="gui-input">
-=======
-                                                    <input type="text" name="time1" id="firstname" class="gui-input"
-                                                                placeholder="Target waktu penyelesaian" title="username untuk role ini" required>
->>>>>>> dc7152b9a136bf1b6c3dd6cc1aefd9e34f14b2ef
                                                 <span class="field-icon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
