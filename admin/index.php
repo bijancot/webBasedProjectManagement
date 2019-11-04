@@ -60,6 +60,14 @@ case 'detailjob':
 	require 'view/layout/footer.php';
  break;
 
+ //addsubjob
+case 'add_subjob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/subjob/add_subjob.php';
+	require 'view/layout/footer.php';
+ break;
+
 //manageitem
 case 'manageitem':
 	require 'view/layout/header.php';
@@ -143,6 +151,11 @@ break;
 //aksi addjob
  case 'input_job':
  	require 'model/input_job.php';
+ 	break;
+
+//aksi addsubjob
+ case 'input_subjob':
+ 	require 'model/input_subjob.php';
  	break;
 
 //aksi hapusjob
