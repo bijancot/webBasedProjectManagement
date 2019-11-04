@@ -41,7 +41,7 @@
                                             </span>
                                         </label><br/><br/>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                                 <h6>Item Target (Qty)</h6>
                                                 <label class="field prepend-icon">
                                                     <input type="text" name="itemTarget" id="firstname" class="gui-input"
@@ -51,17 +51,16 @@
                                                 </span>
                                                 </label><br/><br/>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-6">
                                             <h6>Target Waktu</h6>
                                                 <label class="field prepend-icon">
-                                                    <input type="text" name="time1" id="firstname" class="gui-input"
-                                                                placeholder="Target waktu penyelesaian" title="username untuk role ini">
+                                                    <input type="date" name="time" class="gui-input">
                                                 <span class="field-icon">
                                                     <i class="fa fa-calendar"></i>
                                                 </span>
                                                 </label><br/>
                                             </div>
-                                            <div class="col-md-4">
+                                            <!-- <div class="col-md-4">
                                             <h6>Satuan waktu</h6>
                                                     <label class="field prepend-icon">
                                                     <label class="field select">
@@ -73,7 +72,21 @@
                                                     <i class="arrow"></i>
                                                 </label>
                                                     </label><br/><br/>
-                                            </div>
+                                            </div> -->
+                                        </div>
+                                        <div class="form-group">
+                                            <h6>Pilih Parent Job</h6>
+                                                <select class="select2-single form-control" name="parent">
+                                                <option>-------- Pilih Job Parent --------</option>
+                                                    <?php
+                                                        $select = $db->prepare("SELECT * FROM mmo_job");
+                                                        $select->execute();
+                                                        $tampil = $select->fetchAll();
+                                                        foreach($tampil as $value){
+                                                    ?>
+                                                    <option value="<?php echo $value['idJob']?>"><?php echo $value['idJob']." ".$value['jobDescription']?></option>
+                                                    <?php }?>
+                                                </select>
                                         </div>
                                     </div>
                                     <div class="col-md-5">
@@ -148,7 +161,7 @@
                                                 <?php }?>
                                                 </select>
                                                     <br/><br/><br/><br/>
-                                                <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>
+                                                <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button>
                                         </div>
                                     </div>
                                 </div>
