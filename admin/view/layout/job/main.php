@@ -69,10 +69,10 @@
 
                 <!-- AllCP Info -->
 
-                    <div class="row mn">
+                    <div class="row mn ">
                         <!-- AllCP Grid -->
                        
-                    <div class="col-md-12">
+                    <div class="col-md-12 allcp-form">
                         <div class="panel panel-visible">
                             <div class="panel-heading">
                                 <div class="row nm">
@@ -105,7 +105,31 @@
                                         <tr>
                                             <td width="10%"><?php echo $value['idJob']; ?></td>
                                             <td><?php echo $value['jobDescription']; ?></td>
-                                            <td width="15%"><?php echo $value['priority']; ?></td>
+                                            <td width="20%"><?php //echo $value['priority']; ?>
+                                            <span class="rating block">
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value['priority']==5){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value['priority']==4){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value['priority']==3){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value['priority']==2){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value['priority']==1){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span>
+                                            
+                                            </td>
                                             <td width="15%"><?php echo $value['createdDate'];?></td>
                                             <td width="5%">
                                                 <a><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
