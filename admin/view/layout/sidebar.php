@@ -37,10 +37,11 @@
                 </li>
                 <!--------------MENU--------------->
                 <?php
+		
                 $query = $db->prepare("SELECT a.idRole,b.idMenu,c.menuParent,c.menuName,c.menuLink from mmo_role a join tr_role_menu b on a.idRole=b.idRole join mmo_menu c on b.idMenu=c.idMenu where a.idRole='$login_role'");
                 $query->execute();
                 $tampil = $query->fetchAll();
-
+		
                 foreach($tampil as $value){
                     if($value['menuParent']==NULL){
                         echo "<li>

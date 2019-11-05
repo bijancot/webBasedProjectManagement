@@ -1,8 +1,8 @@
 <?php
  error_reporting(0);
-	$host="192.168.79.3"; //host laptop bisa pakai 127.0.0.1 atau localhost
+	$host="172.17.0.3"; //host laptop bisa pakai 127.0.0.1 atau localhost
 	$dbname="mmopilot"; // nama database
-	$user="budosen"; // nama user dalam my sql
+	$user="root"; // nama user dalam my sql
 	$password="bijan2089"; // password user, jika kosong beri string kosong
 	try{
 		$db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
@@ -11,13 +11,13 @@
 		if (!$db){
 			echo "Koneksi Error";
 		}else{
-			//echo "Koneksi Berhasil";
+			echo "Koneksi Berhasil";
 		}
 	}
 
 	catch(PDOException $STH){
 	  echo "<br>".$STH->getMessage();
 	}
-$base_url = "http://localhost:8983/";
+//$base_url = "http://panjibaskoro.web.id/mmo/";
 ini_set('display_errors',0); 
 ?>
