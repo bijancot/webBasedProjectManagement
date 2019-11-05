@@ -9,9 +9,11 @@ $admin->execute(array(
 $row = $admin->fetch(PDO::FETCH_ASSOC);
 
 $login_session=$row['username'];
+$login_job=$row['job'];
+$login_role=$row['idRole'];
 
 if(!isset($login_session))
 {
-header("Location: ?mmolog");
+    header("Location: ../index.php");
 }
 ?>
