@@ -35,136 +35,39 @@
                         <span class="sb-menu-icon fa fa-home"></span>
                     </a>
                 </li>
-                <!--------------JOB--------------->
-                <li>
-                    <a class="menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Job</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=managejob">
-                                Manage Job 
+                <!--------------MENU--------------->
+                <?php
+                $query = $db->prepare("SELECT a.idRole,b.idMenu,c.menuParent,c.menuName,c.menuLink from mmo_role a join tr_role_menu b on a.idRole=b.idRole join mmo_menu c on b.idMenu=c.idMenu where a.idRole='$login_role'");
+                $query->execute();
+                $tampil = $query->fetchAll();
+
+                foreach($tampil as $value){
+                    if($value['menuParent']==NULL){
+                        echo "<li>
+                            <a class=\"menu-open\" href=\"#\">
+                                <span class=\"caret\"></span>
+                                <span class=\"sidebar-title\">".$value['menuName']."</span>
+                                <span class=\"sb-menu-icon fa fa-home\"></span>
                             </a>
-                        </li>
-                         <li class="active">
-                            <a href="?mmopilot=addjob">
-                                Add Job
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=jobprogress">
-                                Job Progress
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=progressreport">
-                                Progress Report
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <!--------------ITEM--------------->
-                <li>
-                    <a class="menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Item</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=manageitem">
-                                Manage Item
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=additem">
-                                Add Item
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <!--------------ORDER--------------->
-                <li>
-                    <a class=" menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Order</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=manageorder">
-                                Manage Order
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=addorder">
-                                Add Order
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <!--------------ROLE--------------->
-                <li>
-                    <a class="menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Role</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=addrole">
-                                Add Role
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=managerole">
-                                Manage Role
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <!--------------USERS--------------->
-                 <li>
-                    <a class="menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Users</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=addusers">
-                                Add Users
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=manageusers">
-                                Manage Users
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                 <!--------------JOB PROGRESS--------------->
-                 <!-- <li>
-                    <a class="menu-open" href="#">
-                        <span class="caret"></span>
-                        <span class="sidebar-title">Users</span>
-                        <span class="sb-menu-icon fa fa-home"></span>
-                    </a>
-                    <ul class="nav sub-nav">
-                        <li class="active">
-                            <a href="?mmopilot=addusers">
-                                Report Progress
-                            </a>
-                        </li>
-                        <li class="active">
-                            <a href="?mmopilot=manageusers">
-                                Manage Job Progress
-                            </a>
-                        </li>
-                    </ul>
-                </li> -->
+                            <ul class=\"nav sub-nav\">";
+                            foreach($tampil as $hoho){
+                                if($value['idMenu']==$hoho['menuParent']){
+                                    echo "<li class=\"active\">
+                                    <a href=\"".$hoho['menuLink']."\">
+                                        ".$hoho['menuName']."
+                                    </a>
+                                </li>";
+                                }else{
+                                    continue;
+                                }
+                            }
+                            echo"</ul></li>";
+                    }elseif($value['menuParent']!=NULL){
+                        continue;
+                    }
+                   
+                };
+                ?>
             <!-- /Sidebar Menu  -->
 
         </div>
