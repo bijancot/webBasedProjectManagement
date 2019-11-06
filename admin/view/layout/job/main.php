@@ -132,7 +132,7 @@
                                             </td>
                                             <td width="15%"><?php echo $value['createdDate'];?></td>
                                             <td width="5%">
-                                                <a href="?mmopilot=add_subjob?>"><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
+                                                <a href="?mmopilot=add_subjob"><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
                                             </td>
                                             <td width="22%">
                                                 <table>
