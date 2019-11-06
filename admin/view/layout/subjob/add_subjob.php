@@ -79,13 +79,28 @@
                                         </div>
                                         <div class="row">
                                         <div class="col-md-7">
-                                             <h6>Job Parent</h6>
+                                             <!-- <h6>Job Parent</h6>
                                                 <label class="field prepend-icon">
                                                     <input type="text" name="jobParent" class="gui-input" value="<?php echo $id;?>">
                                                 <span class="field-icon">
                                                     <i class="fa fa-user"></i>
                                                 </span>
-                                                </label><br/>
+                                                </label><br/> -->
+
+                                                <div class="form-group">
+                                                    <h6>Job Parent</h6>
+                                                        <select class="select2-single form-control" name="item" required>
+                                                            <option>-------- Pilih Parent Job --------</option>
+                                                                <?php
+                                                                    $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
+                                                                    $select->execute();
+                                                                    $tampil = $select->fetchAll();
+                                                                    foreach($tampil as $value){
+                                                                ?>
+                                                            <option value="<?php echo $value['idJob']?>"><?php echo $value['jobDescription']?></option>
+                                                            <?php }?>
+                                                        </select>
+                                                </div>
                                             </div>
                                                 </div>
                                     </div>
