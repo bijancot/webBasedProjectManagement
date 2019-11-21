@@ -33,7 +33,7 @@ case 'managejob':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/job/main.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
  break;
 
 //addjob
