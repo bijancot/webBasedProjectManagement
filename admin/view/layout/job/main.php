@@ -1,3 +1,5 @@
+ <!-- Nestable CSS -->
+   <!--  <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/nestable/nestable.css"> --> 
    <!-- Main Wrapper -->
     <section id="content_wrapper">
 
@@ -81,74 +83,36 @@
                                     </a>
                                 </div>  
                             </div>
-                            <div class="panel-body pn>
-                                <div class="table-responsive">
-                                    <?php
-                                    $select = $db->prepare("SELECT * FROM mmo_job");
-                                    $select->execute();
-                                    $tampil = $select->fetchAll();
-                                    ?>
-                                    <table class="table table-striped table-hover" id="datatable2" cellspacing="0"
-                                           width="100%">
-                                        <thead>
-                                        <tr>
-                                            <th class="va-m">ID Job</th>
-                                            <th class="va-m">Deskripsi Job</th>
-                                            <th class="va-m">Priority</th>
-                                            <th class="va-m">Tanggal Dibuat</th>
-                                            <th class="va-m">Sub Job</th>
-                                            <th class="va-m">Opsi</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php foreach($tampil as $value){ ?>
-                                        <tr>
-                                            <td width="10%"><?php echo $value['idJob']; ?></td>
-                                            <td><?php echo $value['jobDescription']; ?></td>
-                                            <td width="20%"><?php //echo $value['priority']; ?>
-                                            <span class="rating block">
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value['priority']==5){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r5">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value['priority']==4){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r4">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value['priority']==3){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r3">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value['priority']==2){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r2">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value['priority']==1){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r1">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                            </span>
                                             
-                                            </td>
-                                            <td width="15%"><?php echo $value['createdDate'];?></td>
-                                            <td width="5%">
-                                                <a href="?mmopilot=add_subjob"><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
-                                            </td>
-                                            <td width="22%">
-                                                <table>
-                                                    <tr>
-                                                        <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-success btn-block" title="Tambah Sub Job"><span class="fa fa-list-ul"></span></button></a></td>
-                                                        <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
-                                                        <td> <a href="?mmopilot=editjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
-                                                        <td> <a href="?mmopilot=delete_job&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                           <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <!-----------------------------------NESTABLE------------------------------------------->
+                            <div class="dd mb35" id="nestable">
+                            <ol class="dd-list">
+                                <li class="dd-item" data-id="3">
+                                    <div class="dd-handle">
+                                        SPEE
+                                    </div>
+                                    <ol class="dd-list">
+                                        <li class="dd-item" data-id="4">
+                                            <div class="dd-handle">Item 4</div>
+                                            <ol class="dd-list">
+                                                <li class="dd-item" data-id="1">
+                                                    <div class="dd-handle">Item 1</div>
+                                                </li>
+                                                <li class="dd-item" data-id="2">
+                                                    <div class="dd-handle">Item 2</div>
+                                                </li>
+                                                <li class="dd-item" data-id="3">
+                                                    <div class="dd-handle">Item 3</div>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        
+                                    </ol>
+                                </li>
+                            </ol>
+                        </div>
+                        <!-----------------------------------NESTABLE------------------------------------------->
+              </TABLE>
                             </div>
                         </div>
                     </div>
@@ -168,3 +132,10 @@
 
     </section>
     <!-- /Main Wrapper -->
+
+<!-- Plugins -->
+<!-- <script src="view/assets/js/plugins/holder/holder.min.js"></script> -->
+<!-- Nestable JS -->
+<!-- <script src="view/assets/js/plugins/nestable/jquery.nestable.js"></script>
+<script src="view/assets/js/pages/user-forms-nestable.js"></script>
+ -->
