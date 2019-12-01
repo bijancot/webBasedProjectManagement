@@ -4,10 +4,10 @@ if(isset($_POST['submit'])){
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-$admin = $db->prepare('SELECT * FROM mmo_role WHERE username = :username and password = :passcode');
+$admin = $db->prepare('SELECT * FROM mmo_users WHERE email = :username and passhash = :passcode');
 $admin->execute(array(
                   ':username' => $_POST['username'],
-                  'passcode' => $_POST['password']
+                  'passcode' => md5($_POST['password'])
                   ));
 $row = $admin->fetch(PDO::FETCH_ASSOC);
  
