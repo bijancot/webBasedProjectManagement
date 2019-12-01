@@ -68,9 +68,9 @@
                             <div class="section">
                                 <label for="username" class="field prepend-icon">
                                     <input type="text" name="username" id="username" class="gui-input"
-                                           placeholder="Username">
+                                           placeholder="Your Email">
                                     <span class="field-icon">
-                                        <i class="fa fa-user"></i>
+                                        <i class="fa fa-envelope"></i>
                                     </span>
                                 </label>
                             </div>
