@@ -150,7 +150,7 @@
                         </div>
 
                         <div class="pull-right">
-                                    <strong style="color:black;"><?php echo $login_job; ?></strong>
+                                    <strong style="color:black;"><?php echo $login_session; ?></strong>
                         </div>
                     </li>
                     <li class="dropdown-footer text-center">
