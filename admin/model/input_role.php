@@ -10,13 +10,10 @@ $job = htmlentities($_POST['job']);
 $idMenu = $_POST['menuList'];
 $idUser = htmlentities($_POST['idUser']);
 
-$query = $db->prepare("INSERT INTO `mmo_role`(`roleName`, `roleDesc`,`username`,`password`,`passhash`,`job`) VALUES (:roleName,:roleDesc,:username,:password,:passhash,:job)");
+$query = $db->prepare("INSERT INTO `mmo_role`(`roleName`, `roleDesc`,`job`) VALUES (:roleName,:roleDesc,:job)");
 
 $query->bindParam(":roleName", $roleName);
 $query->bindParam(":roleDesc", $roleDesc);
-$query->bindParam(":password", $password);
-$query->bindParam(":username", $username);
-$query->bindParam(":passhash", $passhash);
 $query->bindParam(":job", $job);
 
 $query->execute();
