@@ -95,7 +95,7 @@
                                                         <i class="fa fa-list"></i>
                                                     </span>
                                                     </label><br/><br/>
-                                                    <h6>Username</h6>
+                                                    <!-- <h6>Username</h6>
                                                     <label class="field prepend-icon">
                                                         <input type="text" name="usernameRole" id="firstname" class="gui-input" placeholder="username" title="username untuk role ini" required>
                                                         <span class="field-icon">
@@ -109,7 +109,7 @@
                                                         <span class="field-icon">
                                                             <i class="fa fa-key"></i> 
                                                         </span>
-                                                    </label><br/><br/>
+                                                    </label><br/><br/> -->
                                                     
                                                 </div>
                                             </div>
