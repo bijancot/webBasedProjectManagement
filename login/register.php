@@ -93,7 +93,32 @@
                                 </label>
                             </div>
                             <!-- /section -->
+                            <div class="section row mh10m">
+                                <div class="col-md-6 ph10">
+                                    <label for="firstname" class="field prepend-icon">
+                                        <input type="password" name="password" id="password1"
+                                               class="gui-input"
+                                               placeholder="Your Password">
+                                        <span class="field-icon">
+                                            <i class="fa fa-key"></i>
+                                        </span>
+                                    </label>
+                                </div>
+                                <!-- /section -->
 
+                                <div class="col-md-6 ph10">
+                                    <label for="lastname" class="field prepend-icon">
+                                        <input type="password" name="passwordver" id="password2" class="gui-input"
+                                               placeholder="Verify your password">
+                                        <span class="field-icon">
+                                            <i class="fa fa-lock"></i>
+                                        </span>
+                                    </label><br/>
+                                    <h6 id="validate-status"></h6>
+                                </div>
+                                <!-- /section -->
+                            </div>
+                            
                             <div class="section">
                                 <label for="email" class="field prepend-icon">
                                     <input type="text" name="homeAddress" id="homeAddress" class="gui-input"
@@ -347,8 +372,29 @@
 <!-- <script src="admin/view/assets/js/demo/demo.js"></script> -->
 <script src="admin/view/assets/js/main.js"></script>
 <script src="admin/view/assets/js/demo/widgets_sidebar.js"></script>
-<script src="admin/view/assets/js/pages/dashboard_init.js"></script>
+<!-- <script src="admin/view/assets/js/pages/dashboard_init.js"></script> -->
+<script>
+$(document).ready(function() {
+  $("#password2").keyup(validate);
+});
+function validate() {
+  var password1 = $("#password1").val();
+  var password2 = $("#password2").val();
 
+    if(password1 == password2) {
+       $("#validate-status").text("password match");
+       document.getElementById("password2").style.border="1px solid lightgreen"; 
+       document.getElementById("validate-status").style.color="green"; 
+       document.getElementById("validate-status").style.fontWeight="bold";
+    }
+    else {
+        $("#validate-status").text("password didn't match");  
+        document.getElementById("password2").style.border="1px solid red";  
+        document.getElementById("validate-status").style.color="red";
+       document.getElementById("validate-status").style.fontWeight="bold";
+    }    
+}
+</script>
 <!-- /Scripts -->
 
 </body>
