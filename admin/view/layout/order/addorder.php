@@ -223,7 +223,7 @@
                                                 </div>
                                                  <div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id=j4" >
+                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j4" >
                                                         <label class="flipswitch-label" for="j4">
                                                             <div class="flipswitch-inner shift3"></div>
                                                             <div class="flipswitch-switch"></div>
