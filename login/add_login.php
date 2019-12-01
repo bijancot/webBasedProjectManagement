@@ -11,7 +11,7 @@ $admin->execute(array(
                   ));
 $row = $admin->fetch(PDO::FETCH_ASSOC);
  
-if(empty($row['username'])){
+if(empty($row['email'])){
 echo "<script type=\"text/javascript\">alert('Your Login Name or Password is invalid');document.location='?mmolog';</script>";
 
 }
