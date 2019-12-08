@@ -67,7 +67,7 @@
 
                             <div class="section">
                                 <label for="username" class="field prepend-icon">
-                                    <input type="text" name="username" id="username" class="gui-input"
+                                    <input type="email" name="email" id="email" class="gui-input"
                                            placeholder="Your Email">
                                     <span class="field-icon">
                                         <i class="fa fa-envelope"></i>
