@@ -148,6 +148,32 @@ case 'edit_role':
 	require 'view/layout/footer.php';
 break;
 
+ //addoperator
+case 'addoperator':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/addoperator.php';
+	require 'view/layout/footer.php';
+ break;
+
+  //addadmin
+case 'addadmin':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/addadmin.php';
+	require 'view/layout/footer.php';
+ break;
+
+//aksi addadmin
+ case 'input_addadmin':
+ 	require 'model/input_addadmin.php';
+ 	break;
+
+//aksi addoperator
+ case 'input_addoperator':
+ 	require 'model/input_addoperator.php';
+ 	break;
+
 //aksi addjob
  case 'input_job':
  	require 'model/input_job.php';
