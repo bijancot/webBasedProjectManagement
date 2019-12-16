@@ -2,13 +2,13 @@
 //require'../conn/koneksi.php';
 if(isset($_POST['submit'])){
 
-echo $idItem				= htmlentities($_POST['item']);
-echo $idOrder			= htmlentities($_POST['order']);
-echo $idUser				= htmlentities($_POST['operator']);
-echo $jobDescription		= htmlentities($_POST['jobDescription']); 
-echo $time 				= htmlentities($_POST['time']);
-echo $itemTarget			= htmlentities($_POST['itemTarget']);
-echo $priority			= htmlentities($_POST['priority']);
+$idItem				= htmlentities($_POST['item']);
+$idOrder			= htmlentities($_POST['order']);
+$idUser				= htmlentities($_POST['operator']);
+$jobDescription		= htmlentities($_POST['jobDescription']); 
+$time 				= htmlentities($_POST['time']);
+$itemTarget			= htmlentities($_POST['itemTarget']);
+$priority			= htmlentities($_POST['priority']);
 //echo $parent 			= htmlentities($_POST['parent']);
 $status = "1";
 $cr = "admin";
@@ -25,8 +25,20 @@ $query->bindParam(":itemTarget",$itemTarget);
 $query->bindParam(":priority",$priority);
 $query->bindParam(":createdBy",$cr);
 
-
  $query->execute();
+
+ $select = $db->prepare("SELECT idJob FROM mmo_job where idOrder=$idOrder");
+ $select->execute();
+ $tampil = $select->fetchAll();
+ 
+ foreach ($tampil as $key) {
+     echo $idid = $key['idJob'];
+ }
+ $quer2 = $db->prepare("UPDATE mmo_operator_shift set idJob=:idJob where idOrder=:idOrder");
+
+ $quer2->bindParam(":idJob", $idid);
+ $quer2->bindParam(":idOrder", $idOrder);
+ $quer2->execute();
  header('location:?mmopilot=managejob');
 }
 ?>

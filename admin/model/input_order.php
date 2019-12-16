@@ -17,11 +17,11 @@ $jumat				= $_POST['jumat'];
 $sabtu				= $_POST['sabtu'];
 $minggu				= $_POST['minggu'];
 
-echo $idUser;
-var_dump($selasa);
-echo $currency;
-echo $price;
-echo $orderNote;
+$idUser;
+($selasa);
+$currency;
+$price;
+$orderNote;
 
 // if ($confirm!=$password) {
 // 	# code...
@@ -35,46 +35,82 @@ $query = $db->prepare("INSERT INTO `mmo_order`( `idClient`, `currency`, `price`,
  $query->bindParam(":currency", $currency);
  $query->bindParam(":price", $price);
  $query->bindParam(":orderNote", $orderNote);
- var_dump($query);
+//  var_dump($query);
  $query->execute();
 
 
+$select = $db->prepare("SELECT idOrder from mmo_order order by createdDate DESC limit 0,1");
+$select->execute();
+$tampil = $select->fetchAll();
+ 
+ foreach ($tampil as $key) {
+     echo $idOrder = $key['idOrder'];
+ }
 // }
-
+$urut=1;
 foreach ($senin as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(senin) value (:senin)");
+	echo $sen;
+	$insert = $db->prepare("INSERT INTO mmo_operator_shift(idOrder,urut,senin) value (:idOrder,:urut,:senin)");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($selasa as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(selasa) value (:senin)");
+	// echo $sen;
+	$insert = $db->prepare("UPDATE mmo_operator_shift set selasa=:senin where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($rabu as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(rabu) value (:senin)");
+	$insert = $db->prepare("UPDATE mmo_operator_shift set rabu=:senin where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($kamis as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(kamis) value (:senin)");
+	$insert = $db->prepare("UPDATE mmo_operator_shift set kamis=:senin where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($jumat as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(jumat) value (:senin)");
+	$insert = $db->prepare("UPDATE mmo_operator_shift set jumat=:senin where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($sabtu as $sen) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(sabtu) value (:senin)");
+	$insert = $db->prepare("UPDATE mmo_operator_shift set sabtu=:senin where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':senin',$sen);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
+$urut=1;
 foreach ($minggu as $ming) {
-	$insert = $db->prepare("INSERT INTO mmo_operator_shift(minggu) value (:minggu)");
+	$insert = $db->prepare("UPDATE mmo_operator_shift set minggu=:minggu where idOrder=:idOrder && urut=:urut");
+	$insert->bindParam(':idOrder',$idOrder);
 	$insert->bindParam(':minggu',$ming);
+	$insert->bindParam(':urut',$urut);
 	$insert->execute();
+	$urut=$urut+1;
 }
 header('location:?mmopilot=manageorder');
 }
