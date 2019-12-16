@@ -131,7 +131,20 @@ $(".pilihsemua").on("click", function() {
 <script src="view/assets/js/pages/dashboard_init.js"></script>
 <script src="view/assets/js/pages/user-forms-additional-inputs.js"></script>
 
+<script>
 
+$('form').submit(function () {
+    $(this).find('input[type="checkbox"]').each( function () {
+        var checkbox = $(this);
+        if( checkbox.is(':checked')) {
+            checkbox.attr('value','on');
+        } else {
+            checkbox.after().append(checkbox.clone().attr({type:'hidden', value:'off'}));
+            checkbox.prop('disabled', true);
+        }
+    })
+});
+</script>
 
 </body>
 

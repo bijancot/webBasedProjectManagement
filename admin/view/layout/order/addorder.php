@@ -82,215 +82,126 @@
                                        
                                             <div class="col-md-4">
                                             <h6>Senin</h6>
-                                                <div class="mt20">
+                                                <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se2" >
-                                                        <label class="flipswitch-label" for="se2">
+                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se'. $e.'" >
+                                                        <label class="flipswitch-label" for="se'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se3" required>
-                                                        <label class="flipswitch-label" for="se3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se4" >
-                                                        <label class="flipswitch-label" for="se4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Selasa</h6>
-                                                <div class="mt20">
+                                            <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="selasa[]" class="flipswitch-cb" id="sa2" >
-                                                        <label class="flipswitch-label" for="sa2">
+                                                        <input type="checkbox" name="selasa[]" class="flipswitch-cb" id="sa'. $e.'" value="on">
+                                                        <label class="flipswitch-label" for="sa'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="selasa[]" class="flipswitch-cb" id="sa3" >
-                                                        <label class="flipswitch-label" for="sa3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="selasa[]" class="flipswitch-cb" id="sa4" >
-                                                        <label class="flipswitch-label" for="sa4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Rabu</h6>
-                                                <div class="mt20">
+                                            <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="rabu[]" class="flipswitch-cb" id="r2" >
-                                                        <label class="flipswitch-label" for="r2">
+                                                        <input type="checkbox" name="rabu[]" class="flipswitch-cb" id="r'. $e.'" value="on">
+                                                        <label class="flipswitch-label" for="r'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="rabu[]" class="flipswitch-cb" id="r3" >
-                                                        <label class="flipswitch-label" for="r3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="rabu[]" class="flipswitch-cb" id="r4" >
-                                                        <label class="flipswitch-label" for="r4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-12" style="height:15px;"></div>
                                             <div class="col-md-4">
                                             <h6>Kamis</h6>
-                                                <div class="mt20">
+                                            <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="kamis[]" class="flipswitch-cb" id="k2" >
-                                                        <label class="flipswitch-label" for="k2">
+                                                        <input type="checkbox" name="kamis[]" class="flipswitch-cb" id="k'. $e.'" value="on">
+                                                        <label class="flipswitch-label" for="k'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="kamis[]" class="flipswitch-cb" id="k3" >
-                                                        <label class="flipswitch-label" for="k3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="kamis[]" class="flipswitch-cb" id="k4" >
-                                                        <label class="flipswitch-label" for="k4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Jumat</h6>
-                                                <div class="mt20">
+                                            <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j2" >
-                                                        <label class="flipswitch-label" for="j2">
+                                                    
+                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j'. $e.'" >
+                                                        <label class="flipswitch-label" for="j'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j3" >
-                                                        <label class="flipswitch-label" for="j3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j4" >
-                                                        <label class="flipswitch-label" for="j4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-4">
                                                 <h6>Sabtu</h6>
-                                                <div class="mt20">
+                                                <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="sabtu[]" class="flipswitch-cb" id="tu2" >
-                                                        <label class="flipswitch-label" for="tu2">
+                                                    
+                                                        <input type="checkbox" name="sabtu[]" class="flipswitch-cb" id="tu'. $e.'" >
+                                                        <label class="flipswitch-label" for="tu'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="sabtu[]" class="flipswitch-cb" id="tu3" >
-                                                        <label class="flipswitch-label" for="tu3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="sabtu[]" class="flipswitch-cb" id="tu4" >
-                                                        <label class="flipswitch-label" for="tu4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                             <div class="col-md-12" style="height:15px;"></div>
                                             <div class="col-md-4">
-                                                <h6>Minggu</h6>
-                                                <div class="mt20">
+                                            <?php
+                                                
+                                                for($e=2;$e<5;$e++){
+                                                    echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="minggu[]" class="flipswitch-cb" id="m2" >
-                                                        <label class="flipswitch-label" for="m2">
+                                                    
+                                                        <input type="checkbox" name="minggu[]" class="flipswitch-cb" id="m'. $e.'" >
+                                                        <label class="flipswitch-label" for="m'. $e.'">
                                                             <div class="flipswitch-inner shift1"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
-                                                </div>
-                                                <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="minggu[]" class="flipswitch-cb" id="m3" >
-                                                        <label class="flipswitch-label" for="m3">
-                                                            <div class="flipswitch-inner shift2"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                 <div class="mt20">
-                                                    <div class="flipswitch switch-info-light switch-inline-table switch-md">
-                                                        <input type="checkbox" name="minggu[]" class="flipswitch-cb" id="m4" >
-                                                        <label class="flipswitch-label" for="m4">
-                                                            <div class="flipswitch-inner shift3"></div>
-                                                            <div class="flipswitch-switch"></div>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                                </div>';
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                     </div>
@@ -299,7 +210,7 @@
                                 <div class="row section prn">
                                     <div class="col-md-6">
                                     <label class="option">
-                                        <input type="radio" name="currency" value="USD" required>
+                                        <input type="radio" name="currency" value="USD" required checked>
                                         <span class="radio"></span>US Dollar ($)
                                     </label>
                                     </div>
