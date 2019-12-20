@@ -108,7 +108,7 @@
                                             <td width="15%">
                                                 <table>
                                                     <tr>
-                                                        <td><a a href="?mmopilot=detailitem&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
+                                                        <td><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail" data-toggle="modal" data-target="#myModal<?php echo $value['idItem'];?>"><span class="fa fa-eye"></span></button></td>
                                                         <td> <a href="?mmopilot=edititem&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
                                                         <td><a href="?mmopilot=delete_item&id=<?php echo $value['idItem'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
@@ -118,6 +118,87 @@
                                           <?php } ?>
                                         </tbody>
                                     </table>
+                                    <?php
+                                    $select = $db->prepare("SELECT * FROM mmo_item");
+                                    $select->execute();
+                                    $tampil = $select->fetchAll();
+                                    ?>
+                                    <?php foreach($tampil as $value){ ?>
+                                     <!-- Modal -->
+                                  <div class="modal fade" id="myModal<?php echo $value['idItem'];?>" role="dialog">
+                                    <div class="modal-dialog">
+                                    
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                          
+                                        <div class="allcp-form">
+                                        <div class="panel">  
+                                            
+                                        <div class="panel-body">
+
+                                             <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">ID Item</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="idItem" value="<?php echo $value['idItem']?>" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label" for="textArea3">Nama Item</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="itemName" value="<?php echo $value['itemName']?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label" for="textArea3">Deskripsi Item</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="itemDescription" value="<?php echo $value['itemDescription']?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label" for="textArea3">Icon Item</label>
+                                     <div class="col-lg-8">
+                                         <div>
+                                             <input type="file" name="itemIcon" required>
+                                          </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label" for="textArea3">Link Item</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="itemLink" value="<?php echo $value['itemLink']?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                        </div> 
+                                        </div> 
+                                        </div> 
+                                        </div>
+
+                                
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                    <?php }?>
                                 </div>
                             </div>
                         </div>
