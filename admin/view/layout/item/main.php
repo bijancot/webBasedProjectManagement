@@ -171,7 +171,7 @@
                                     <label class="col-lg-3 control-label" for="textArea3">Icon Item</label>
                                      <div class="col-lg-8">
                                          <div>
-                                             <input type="file" name="itemIcon" required>
+                                             <img src="<?php echo $value['itemIcon']?>" style="width: 100%">
                                           </div>
                                     </div>
                                 </div>
