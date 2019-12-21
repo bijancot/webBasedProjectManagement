@@ -97,7 +97,8 @@
 
     <!-- select2 CSS -->
     <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/select2/css/core.css">
-
+    <script src="view/assets/highcharts-gantt.js"></script>
+                <script src="view/assets/exporting.js"></script>
 
     <!-- CSS - allcp forms -->
     <link rel="stylesheet" type="text/css" href="view/assets/allcp/forms/css/forms.css">
