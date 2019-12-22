@@ -84,13 +84,13 @@
 
 ?>
 <script>
-var today = new Date(<?php echo $a?>),
+// Set to 00:00:00:000 today
+var today = new Date(),
     day = 1000 * 60 * 60 * 24,
-    // Utility functions
+    map = Highcharts.map,
     dateFormat = Highcharts.dateFormat,
-    defined = Highcharts.defined,
-    isObject = Highcharts.isObject,
-    reduce = Highcharts.reduce;
+    series,
+    cars;
 
 // Set to 00:00:00:000 today
 today.setUTCHours(0);
@@ -99,89 +99,152 @@ today.setUTCSeconds(0);
 today.setUTCMilliseconds(0);
 today = today.getTime();
 
-Highcharts.ganttChart('container', {
-    series: [{
-        name: 'job for <?php echo $value['nem']?>',
-        data: [{
-            name: '<?php echo $value['hoho']?>',
-            id: 'prepare_building',
-            color:'red',
-            start: today + (1*day),
-            end: <?php echo $c?>+ (1*day),
-            completed: {
-                amount: 0.2
-            },
-            owner: ' <?php echo $value['nem']?>'
-        }, {
-            name: 'Inspect building',
-            id: 'inspect_building',
-            start: today + 6 * day,
-            end: today + 8 * day,
-            owner: 'Ivy'
-        }, {
-            name: 'Passed inspection',
-            id: 'passed_inspection',
-            dependency: 'inspect_building',
-            start: today + 9.5 * day,
-            milestone: true,
-            owner: 'Peter'
-        }]
-    }],
-    tooltip: {
-        pointFormatter: function () {
-            var point = this,
-                format = '%e. %b',
-                options = point.options,
-                completed = options.completed,
-                amount = isObject(completed) ? completed.amount : completed,
-                status = ((amount || 0) * 100) + '%',
-                lines;
+cars = [{
+    model: 'Nissan Leaf',
+    current: 0,
+    deals: [{
+        rentedTo: 'Lisa Star',
+        from: today - 1 * day,
+        to: today + 2 * day
+    }, {
+        rentedTo: 'Shane Long',
+        from: today - 3 * day,
+        to: today - 2 * day
+    }, {
+        rentedTo: 'Jack Coleman',
+        from: today + 5 * day,
+        to: today + 6 * day
+    }]
+}, {
+    model: 'Jaguar E-type',
+    current: 0,
+    deals: [{
+        rentedTo: 'Martin Hammond',
+        from: today - 2 * day,
+        to: today + 1 * day
+    }, {
+        rentedTo: 'Linda Jackson',
+        from: today - 2 * day,
+        to: today + 1 * day
+    }, {
+        rentedTo: 'Robert Sailor',
+        from: today + 2 * day,
+        to: today + 6 * day
+    }]
+}, {
+    model: 'Volvo V60',
+    current: 0,
+    deals: [{
+        rentedTo: 'Mona Ricci',
+        from: today + 0 * day,
+        to: today + 3 * day
+    }, {
+        rentedTo: 'Jane Dockerman',
+        from: today + 3 * day,
+        to: today + 4 * day
+    }, {
+        rentedTo: 'Bob Shurro',
+        from: today + 6 * day,
+        to: today + 8 * day
+    }]
+}, {
+    model: 'Volkswagen Golf',
+    current: 0,
+    deals: [{
+        rentedTo: 'Hailie Marshall',
+        from: today - 1 * day,
+        to: today + 1 * day
+    }, {
+        rentedTo: 'Morgan Nicholson',
+        from: today - 3 * day,
+        to: today - 2 * day
+    }, {
+        rentedTo: 'William Harriet',
+        from: today + 2 * day,
+        to: today + 3 * day
+    }]
+}, {
+    model: 'Peugeot 208',
+    current: 0,
+    deals: [{
+        rentedTo: 'Harry Peterson',
+        from: today - 1 * day,
+        to: today + 2 * day
+    }, {
+        rentedTo: 'Emma Wilson',
+        from: today + 3 * day,
+        to: today + 4 * day
+    }, {
+        rentedTo: 'Ron Donald',
+        from: today + 5 * day,
+        to: today + 6 * day
+    }]
+}];
 
-            lines = [{
-                value: point.name,
-                style: 'font-weight: bold;'
-            }, {
-                title: 'Start',
-                value: dateFormat(format, point.start)
-            }, {
-                visible: !options.milestone,
-                title: 'End',
-                value: dateFormat(format, point.end)
-            }, {
-                title: 'Completed',
-                value: status
-            }, {
-                title: 'Owner',
-                value: options.owner || 'unassigned'
-            }];
-
-            return reduce(lines, function (str, line) {
-                var s = '',
-                    style = (
-                        defined(line.style) ? line.style : 'font-size: 0.8em;'
-                    );
-                if (line.visible !== false) {
-                    s = (
-                        '<span style="' + style + '">' +
-                        (defined(line.title) ? line.title + ': ' : '') +
-                        (defined(line.value) ? line.value : '') +
-                        '</span><br/>'
-                    );
-                }
-                return str + s;
-            }, '');
-        }
-    },
-    title: {
-        text: 'Your Timeline'
-    },
-    xAxis: {
-        currentDateIndicator: true,
-        min: today - 3 * day,
-        max: today + 18 * day
-    }
+// Parse car data into series.
+series = cars.map(function (car, i) {
+    var data = car.deals.map(function (deal) {
+        return {
+            id: 'deal-' + i,
+            rentedTo: deal.rentedTo,
+            start: deal.from,
+            end: deal.to,
+            y: i
+        };
+    });
+    return {
+        name: car.model,
+        data: data,
+        current: car.deals[car.current]
+    };
 });
 
+Highcharts.ganttChart('container', {
+    series: series,
+    title: {
+        text: 'Car Rental Schedule'
+    },
+    tooltip: {
+        pointFormat: '<span>Rented To: {point.rentedTo}</span><br/><span>From: {point.start:%e. %b}</span><br/><span>To: {point.end:%e. %b}</span>'
+    },
+    xAxis: {
+        currentDateIndicator: true
+    },
+    yAxis: {
+        type: 'category',
+        grid: {
+            columns: [{
+                title: {
+                    text: 'Model'
+                },
+                categories: map(series, function (s) {
+                    return s.name;
+                })
+            }, {
+                title: {
+                    text: 'Rented To'
+                },
+                categories: map(series, function (s) {
+                    return s.current.rentedTo;
+                })
+            }, {
+                title: {
+                    text: 'From'
+                },
+                categories: map(series, function (s) {
+                    return dateFormat('%e. %b', s.current.from);
+                })
+            }, {
+                title: {
+                    text: 'To'
+                },
+                categories: map(series, function (s) {
+                    return dateFormat('%e. %b', s.current.to);
+                })
+            }]
+        }
+    }
+});
 
 </script>
 <!-- AllCP Info -->
