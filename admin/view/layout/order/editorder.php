@@ -1,5 +1,4 @@
    <!-- Main Wrapper -->
-<<<<<<< HEAD
    <section id="content_wrapper">
     <header id="topbar" class="alt">
             <div class="topbar-left">
@@ -17,10 +16,6 @@
             Edit Order
         </div>
 
-=======
-    <section id="content_wrapper">
-
->>>>>>> refs/remotes/origin/master
         <!-- Content -->
         <section id="content" class="table-layout animated fadeIn">
 
@@ -31,7 +26,6 @@
 
                             <div class="panel-body">
                     <!-- Spec Form -->
-<<<<<<< HEAD
                     <div class="allcp-form">
                         <div class="panel">
                             <?php $idOrder = $_GET['id']?>
@@ -392,7 +386,6 @@
                                 <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Update Data</strong></button>
                                     </div>
                                 </div>
-=======
                     <div>
                         <div class="panel">
                             
@@ -504,7 +497,6 @@
                                 </div>
                                 <?php }?>
                                 <input type="submit" class="btn btn-rounded btn-primary btn-block"  name="submit" value="Simpan">
->>>>>>> refs/remotes/origin/master
                             </form>
                         </div>
                         </div>

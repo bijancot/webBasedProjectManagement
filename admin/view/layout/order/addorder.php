@@ -83,51 +83,54 @@
                                             <div class="col-md-4">
                                             <h6>Senin</h6>
                                                 <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                         <input type="checkbox" name="senin[]" class="flipswitch-cb" id="se'. $e.'" >
                                                         <label class="flipswitch-label" for="se'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Selasa</h6>
                                             <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                         <input type="checkbox" name="selasa[]" class="flipswitch-cb" id="sa'. $e.'" value="on">
                                                         <label class="flipswitch-label" for="sa'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
                                                 }
+                                                $a=$a+1;
                                                 ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Rabu</h6>
                                             <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                         <input type="checkbox" name="rabu[]" class="flipswitch-cb" id="r'. $e.'" value="on">
                                                         <label class="flipswitch-label" for="r'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
@@ -135,71 +138,75 @@
                                             <div class="col-md-4">
                                             <h6>Kamis</h6>
                                             <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                         <input type="checkbox" name="kamis[]" class="flipswitch-cb" id="k'. $e.'" value="on">
                                                         <label class="flipswitch-label" for="k'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
                                             <div class="col-md-4">
                                             <h6>Jumat</h6>
                                             <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                     
                                                         <input type="checkbox" name="jumat[]" class="flipswitch-cb" id="j'. $e.'" >
                                                         <label class="flipswitch-label" for="j'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
                                             <div class="col-md-4">
                                                 <h6>Sabtu</h6>
                                                 <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                     
                                                         <input type="checkbox" name="sabtu[]" class="flipswitch-cb" id="tu'. $e.'" >
                                                         <label class="flipswitch-label" for="tu'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
                                             <div class="col-md-12" style="height:15px;"></div>
                                             <div class="col-md-4">
                                             <?php
-                                                
+                                                $a=1;
                                                 for($e=2;$e<5;$e++){
                                                     echo '<div class="mt20">
                                                     <div class="flipswitch switch-info-light switch-inline-table switch-md">
                                                     
                                                         <input type="checkbox" name="minggu[]" class="flipswitch-cb" id="m'. $e.'" >
                                                         <label class="flipswitch-label" for="m'. $e.'">
-                                                            <div class="flipswitch-inner shift1"></div>
+                                                            <div class="flipswitch-inner shift'.$a.'"></div>
                                                             <div class="flipswitch-switch"></div>
                                                         </label>
                                                     </div>
                                                 </div>';
+                                                $a=$a+1;
                                                 }
                                                 ?>
                                             </div>
