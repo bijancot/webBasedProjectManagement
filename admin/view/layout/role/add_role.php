@@ -76,7 +76,7 @@
 
                             </div>  
                                 <div class="panel-body pn">
-                                    <form method="post" action="?mmopilot=input_role" id="form-ui">
+                                    <form method="post" action="?mmopilot=add_role" id="form-ui">
                                         <!-- Basic -->
                                         <div class="row">
                                             <div class="col-md-6">
@@ -128,26 +128,26 @@
                                                     <i class="arrow"></i>
                                                 </label>
                                                     </label><br/><br/>
-                                                            <div class="form-group">
+                                                            <!-- <div class="form-group">
                                                     <h5>Pilih User</h5>
                                                         <select class="select2-single form-control" name="idUser" required>
                                                             <option>-------- Pilih User --------</option>
                                                                 <?php
-                                                                    $select = $db->prepare("SELECT * FROM mmo_users where roleId is null");
-                                                                    $select->execute();
-                                                                    $tampil = $select->fetchAll();
-                                                                    foreach($tampil as $value){
+                                                                    //$select = $db->prepare("SELECT * FROM mmo_users where roleId is null");
+                                                                    //$select->execute();
+                                                                    //$tampil = $select->fetchAll();
+                                                                    //foreach($tampil as $value){
                                                                 ?>
-                                                            <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
-                                                            <?php }?>
+                                                            <option value="<?php //echo $value['idUser']?>"><?php echo $value['name']?></option>
+                                                            <?php //}?>
                                                         </select>
-                                                </div>
+                                                </div> -->
                                                 <h5>Hak Akses menu :</h5>
                                                 <?php
                                                     $select = $db->prepare("SELECT idMenu,menuName,menuParent FROM mmo_menu");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
-
+                                                        //perulangan menu
                                                     foreach($tampil as $value){
                                                         if($value['menuParent']==NULL){
                                                             echo  "<div><label class=\"option block\">
