@@ -122,7 +122,7 @@
                                     $select = $db->prepare("SELECT * FROM mmo_item");
                                     $select->execute();
                                     $tampil = $select->fetchAll();
-                                    ?>
+                                    ?> 
                                     <?php foreach($tampil as $value){ ?>
                                      <!-- Modal -->
                                   <div class="modal fade" id="myModal<?php echo $value['idItem'];?>" role="dialog">
