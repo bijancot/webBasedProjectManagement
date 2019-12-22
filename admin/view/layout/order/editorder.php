@@ -1,92 +1,128 @@
 
    <!-- Main Wrapper -->
     <section id="content_wrapper">
-                  <!-- Topbar -->
-                  <header id="topbar" class="alt">
-            <div class="topbar-left">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-link">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-current-item">Manage Item > Add New Item</li>
-                </ol>
-            </div>
-        </header>
-        <!-- /Topbar -->
 
-        <div class="greeting-field">
-            Add New Item
-        </div>
         <!-- Content -->
         <section id="content" class="table-layout animated fadeIn">
+
+
             <!-- Column Center -->
             <div class="chute chute-center">
 
                 <div class="mw1000 center-block">
 
                     <!-- Spec Form -->
-                    <div class="allcp-form">
-                        <div class="panel">  
+                    <div>
+                        <div class="panel">
                             
                             <div class="panel-body">
-                            
-                            <form class="form-horizontal" action="?mmopilot=edit_item&id=<?php echo $_GET['id'];?>" method="POST" enctype="multipart/form-data">
-                                        <div class="row">
-                                            <?php
-                                            $id = $_GET['id'];
-                                            $select = $db->prepare("SELECT * FROM mmo_item where idItem='$id'");
-                                            $select->execute();
-                                            $tampil = $select->fetchAll();
-                                            foreach($tampil as $value){
-                                            ?>
-                                            <input type="hidden" id="inputStandard" class="form-control" name="idItem" value="<?php echo $value['idItem']?>" disabled>
-                                            <div class="col-md-6">
-                                                <div class="section">
-                                                <h5>Nama Item</h5>
-                                                    <label class="field prepend-icon">
-                                                        <input type="text" name="itemName" id="firstname" class="gui-input"
-                                                            placeholder="Nama Item" title="masukkan nama item di sini" value="<?php echo $value['itemName']?>" required>
-                                                        <span class="field-icon">
-                                                            <i class="fa fa-slack"></i>
-                                                        </span>
-                                                    </label><br/><br/>
-                                                    
-                                                    <h5>Deskripsi Item</h5>
-                                                    <label class="field prepend-icon">
-                                                    <textarea class="gui-textarea" id="comment" name="roleDesc">
-                                                       <?php echo $value['itemDescription']?>
-                                                    </textarea>
-                                                    <span class="field-icon" title="masukkan deskripsi item di sini">
-                                                        <i class="fa fa-list"></i>
-                                                    </span>
-                                                    </label><br/><br/>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-md-1"></div>
-                                            <div class="col-md-5">
-                                                <div class="section">
-                                                <h5>Link Item</h5>
-                                                    <label class="field prepend-icon">
-                                                        <input type="text" name="itemLink" class="gui-input"
-                                                            placeholder="Nama Item" title="masukkan link docs/knowledge base item tersebut ()" value="<?php echo $value['itemLink']?>" required>
-                                                        <span class="field-icon">
-                                                            <i class="fa fa-link"></i>
-                                                        </span>
-                                                    </label><br/><br/>
-                                                    <h5>Item Icon</h5>
-                                                    <label class="field prepend-icon">
-                                                        <input type="file" name="itemIcon" class="gui-input"
-                                                            placeholder="Nama Item" title="Upload Icon untuk Item">
-                                                        <span class="field-icon" required>
-                                                            <i class="fa fa-upload"></i>
-                                                        </span>
-                                                    </label><br/><br/><br/><br/><br/>
-                                                    <?php }?>
-                                                    <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button>
-                                                </div>
-                                            </div>
+                                <?php
+                                $id = $_GET['id'];
+                                $select = $db->prepare("SELECT * FROM mmo_order where idOrder='$id'");
+                                $select->execute();
+                                $tampil = $select->fetchAll();
+                                foreach($tampil as $value){
+                                $ids = $value['idOrder'];
+                                ?>
+                            <form class="form-horizontal" action="?mmopilot=edit_order&id=<?php echo $value['idOrder'];?>" method="POST" enctype="multipart/form-data">
+                                
+                                <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">ID Order</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="idOrder" value="<?php echo $value['idOrder'];?>" disabled>
                                         </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-3 control-label" for="textArea3">Nama User</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <select class="form-control" name="idUser" required>
+                                                <?php
+                                                    $select = $db->prepare("SELECT mmo_users.name,mmo_users.idUser from mmo_users JOIN mmo_order ON mmo_users.idUser=mmo_order.idClient WHERE mmo_order.idOrder='$ids'");
+                                                    $select->execute();
+                                                    $tampil2 = $select->fetchAll();
+                                                    foreach($tampil2 as $valuee){
+                                                ?>
+                                                <option value="<?php echo $valuee['idUser']?>"><?php echo $valuee['name']?></option>
+                                                <option>-------- Pilih User --------</option>
+                                            <?php }}?>
+                                                <?php
+                                                    $select = $db->prepare("SELECT * FROM mmo_users WHERE idUser!='USR001'AND idUser!='USR002'");
+                                                    $select->execute();
+                                                    $tampil = $select->fetchAll();
+                                                    foreach($tampil as $value){
+                                                ?>
+                                                <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
+                                                <?php }?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <?php
+                                $id = $_GET['id'];
+                                $select = $db->prepare("SELECT * FROM mmo_order where idOrder='$id'");
+                                $select->execute();
+                                $tampil = $select->fetchAll();
+                                foreach($tampil as $value){
+                                ?>
+                                 <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Mata Uang</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="currency" value="<?php echo $value['currency'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Nominal</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="price" value="<?php echo $value['price'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Catatan Order</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="orderNote" value="<?php echo $value['orderNote'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Username</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="text" id="inputStandard" class="form-control" name="username" value="<?php echo $value['username'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Password</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="password" id="inputStandard" class="form-control" name="password" value="<?php echo $value['password'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                 <div class="form-group">
+                                    <label for="inputStandard" class="col-lg-3 control-label">Konfirmasi Password</label>
+                                    <div class="col-lg-8">
+                                        <div>
+                                            <input type="password" id="inputStandard" class="form-control" name="konpassword" value="<?php echo $value['password'];?>" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php }?>
+                                <input type="submit" class="btn btn-rounded btn-primary btn-block"  name="submit" value="Simpan">
                             </form>
                         </div>
                         </div>
@@ -101,7 +137,5 @@
         <!-- /Content -->
 
     </section>
-
-
 </div>
 <!-- /Body Wrap  -->
