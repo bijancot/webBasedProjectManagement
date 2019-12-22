@@ -107,7 +107,7 @@
                                             <td><?php echo $value['homeAddress'];?></td>
                                             <td><?php echo $value['whatsapp'];?></td>
                                             <td><?php if($value['roleName']==NULL){
-                                                    echo "<a href=\"some\"><button type=\"button\" class=\"btn btn-rounded btn-primary btn-block\">Beri staff ini role</button><a/>";
+                                                    echo "<a href=\"?mmopilot=stafftorole&id=".$value['idUser']."\"><button type=\"button\" class=\"btn btn-rounded btn-primary btn-block\">Beri staff ini role</button><a/>";
                                                 }else{
                                                     echo $value['roleName'];
                                                 }?></td>

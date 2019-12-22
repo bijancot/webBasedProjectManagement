@@ -83,7 +83,7 @@
                             <div class="panel-body pn">
                                 <div class="table-responsive">
                                     <?php
-                                    $select = $db->prepare("SELECT * FROM mmo_users");
+                                    $select = $db->prepare("SELECT * FROM mmo_users a join mmo_role b on a.roleId=b.idRole where b.job='client'");
                                     $select->execute();
                                     $tampil = $select->fetchAll();
                                     ?>
@@ -107,7 +107,7 @@
                                         <tr>
                                             <td><?php echo $value['name'];?></td>
                                             <td><?php echo $value['username'];?></td>
-                                            <td><?php echo $value['email'];?><</td>
+                                            <td><?php echo $value['email'];?></td>
                                             <td><?php echo $value['homeAddress'];?></td>
                                             <td><?php echo $value['facebook'];?></td>
                                             <td><?php echo $value['discord'];?></td>
