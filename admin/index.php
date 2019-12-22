@@ -25,7 +25,7 @@ case 'managerole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/role/add_role.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
  break;
 
 //managejob
@@ -75,6 +75,33 @@ case 'manageitem':
 	require 'view/layout/item/main.php';
 	require 'view/layout/footer.php';
  break;
+
+//managestaff
+case 'manageusers':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/main.php';
+	require 'view/layout/footer.php';
+ break;
+
+ case 'managestaff':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/managestaff.php';
+	require 'view/layout/footer.php';
+ break;
+//stafftorole
+
+case 'stafftorole':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/stafftorole.php';
+	require 'view/layout/footer.php';
+break;
+
+case 'inputstaffrole':
+	require 'model/input_staffrole.php';
+break;
 
  //additem
 case 'additem':
@@ -236,11 +263,6 @@ break;
 case 'add_role':
 require 'model/input_role.php';
 break;
-
-//Input role
-	 case 'input_role':
- 	require 'model/input_role.php';
-	 break;
 	 
 //aksi editrole
 case 'editedRole':
