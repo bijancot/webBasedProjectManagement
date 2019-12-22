@@ -165,12 +165,12 @@
                                                 <select class="select2-single form-control" name="operator" required>
                                                  <option>-------- Pilih Operator --------</option>
                                                 <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_users");
+                                                    $select = $db->prepare("SELECT a.idUser as idid, a.name as namee FROM mmo_users a join mmo_role b on a.roleId=b.idRole where b.job='operator'");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
                                                     foreach($tampil as $value){
                                                 ?>
-                                                <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
+                                                <option value="<?php echo $value['idid']?>"><?php echo $value['namee']?></option>
                                                 <?php }?>
                                                 </select>
                                                     <br/><br/><br/><br/>
