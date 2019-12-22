@@ -1,5 +1,3 @@
- <!-- Nestable CSS -->
-   <!--  <link rel="stylesheet" type="text/css" href="view/assets/js/plugins/nestable/nestable.css"> --> 
    <!-- Main Wrapper -->
     <section id="content_wrapper">
 
@@ -81,38 +79,204 @@
                                     <a href="?mmopilot=addjob">
                                     <button type="button" class="btn btn-rounded btn-primary btn-block right" style="width: 200px;">+ Tambah Job Baru</button>
                                     </a>
-                                </div>  
                             </div>
+                            </div>
+                            <div class="panel-body pn>
+                                <div class="table-responsive">
+                                    <?php
+                                    $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
+                                    $select->execute();
+                                    $tampil = $select->fetchAll();
+                                    ?>
+                                    <table class="table table-striped table-hover" id="datatable2" cellspacing="0"
+                                           width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th class="va-m">ID Job</th>
+                                            <th class="va-m">Deskripsi Job</th>
+                                            <th class="va-m">Priority</th>
+                                            <th class="va-m">Tanggal Dibuat</th>
+                                            <th class="va-m">Sub Job</th>
+                                            <th class="va-m">Opsi</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach($tampil as $value){ ?>
+                                        <tr>
+                                            <td width="10%"><?php echo $value['idJob']; ?></td>
+                                            <td><?php echo $value['jobDescription']; ?></td>
+                                            <td width="20%"><?php //echo $value['priority']; ?>
+                                            <span class="rating block">
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value['priority']==5){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value['priority']==4){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value['priority']==3){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value['priority']==2){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value['priority']==1){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span>
                                             
-                            <!-----------------------------------NESTABLE------------------------------------------->
-                            <div class="dd mb35" id="nestable">
-                            <ol class="dd-list">
-                                <li class="dd-item" data-id="3">
-                                    <div class="dd-handle">
-                                        SPEE
-                                    </div>
-                                    <ol class="dd-list">
-                                        <li class="dd-item" data-id="4">
-                                            <div class="dd-handle">Item 4</div>
-                                            <ol class="dd-list">
-                                                <li class="dd-item" data-id="1">
-                                                    <div class="dd-handle">Item 1</div>
-                                                </li>
-                                                <li class="dd-item" data-id="2">
-                                                    <div class="dd-handle">Item 2</div>
-                                                </li>
-                                                <li class="dd-item" data-id="3">
-                                                    <div class="dd-handle">Item 3</div>
-                                                </li>
-                                            </ol>
-                                        </li>
-                                        
-                                    </ol>
-                                </li>
-                            </ol>
+                                            </td>
+                                            <td width="15%"><?php echo $value['createdDate'];?></td>
+                                            <td width="5%">
+                                                <a href="?mmopilot=add_subjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
+                                            </td>
+                                            <td width="22%">
+                                                <table>
+                                                    <tr>
+                                                        <td><button type="button" class="btn btn-rounded btn-success btn-block" title="View SubJob" data-toggle="modal" data-target="#myModal<?php echo $value['idJob'];?>"><span class="fa fa-list-ul"></span></button></td>
+                                                        <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
+                                                        <td> <a href="?mmopilot=editjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
+                                                        <td> <a href="?mmopilot=delete_job&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                           <?php } ?>
+                                        </tbody>
+                                    </table>
+                                     <?php
+                                     
+                                    $select = $db->prepare("SELECT * FROM mmo_job");
+                                    $select->execute();
+                                    $tampil = $select->fetchAll();
+                                    ?>
+                                    <?php foreach($tampil as $value){ ?>
+                                     <!-- Modal -->
+                                  <!-- Modal HTML -->
+                                  <div class="modal fade" id="myModal<?php echo $value['idJob'];?>" role="dialog">
+                                      <div class="modal-dialog modal-lg contact-modal">
+                                          <div class="modal-content">
+                                              <form action="/examples/actions/confirmation.php" method="post">
+                                                  <div class="modal-header">              
+                                                      <h4 class="modal-title">Sub Job</h4>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <!-- Content -->
+                                          <section id="content" class="table-layout animated fadeIn">
+
+                                            <!-- Column Center -->
+                                          <!--   <div class="chute chute-center"> -->
+
+                                                <!-- AllCP Info -->
+
+                                                   <!--  <div class="row mn "> -->
+                                                        <!-- AllCP Grid -->
+                       
+                                          <div class="col-md-12 allcp-form">
+                                              <!-- <div class="panel panel-visible">
+                                                  <div class="panel-body pn"> -->
+                                                      <div class="table-responsive">
+                                                        <?php
+                                                          $ids = $value['idJob'];
+                                                          $select1 = $db->prepare("SELECT * FROM mmo_job where jobParent='$ids'");
+                                                          $select1->execute();
+                                                          $tampil1 = $select1->fetchAll();
+                                                          ?>
+                                                         <table class="table table-striped table-hover" id="datatable2" cellspacing="0"
+                                           width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th class="va-m">ID Job</th>
+                                            <th class="va-m">Deskripsi Job</th>
+                                            <th class="va-m">Priority</th>
+                                            <th class="va-m">Tanggal Dibuat</th>
+                                            <th class="va-m">Opsi</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach($tampil1 as $value1){ ?> 
+                                        <tr>
+                                            <td width="10%"><?php echo $value1['idJob']; ?></td>
+                                            <td><?php echo $value1['jobDescription']; ?></td>
+                                            <td width="20%"><?php //echo $value['priority']; ?>
+                                            <span class="rating block">
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value1['priority']==5){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value1['priority']==4){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value1['priority']==3){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value1['priority']==2){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value1['priority']==1){echo "checked";}?> disabled>
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span>
+                                            
+                                            </td>
+                                            <td width="15%"><?php echo $value1['createdDate'];?></td>
+                                            <td width="22%">
+                                                <table>
+                                                    <tr>
+                                                        <td><a href="#"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
+                                                        <td> <a href="#"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
+                                                        <td> <a href="#"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                           <?php } ?>
+                                        </tbody>
+                                    </table>
+
+                                                      </div>
+                                                <!--   </div>
+                                              </div> -->
+                                          </div>
+
+                                              <!-- /AllCP Grid -->
+
+                                  <!--     </div>
+
+
+                                  </div> -->
+                                  <!-- /Column Center -->
+                                  
+                              </section>
+                              <!-- /Content -->
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                             <input type="button" class="btn btn-primary" data-dismiss="modal" value="Close">
+                                          </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <!-----------------------------------NESTABLE------------------------------------------->
-              </TABLE>
+
+                                    <?php }?>
+            </form>
+        </div>
+    </div>
+</div>
+       
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,10 +296,3 @@
 
     </section>
     <!-- /Main Wrapper -->
-
-<!-- Plugins -->
-<!-- <script src="view/assets/js/plugins/holder/holder.min.js"></script> -->
-<!-- Nestable JS -->
-<!-- <script src="view/assets/js/plugins/nestable/jquery.nestable.js"></script>
-<script src="view/assets/js/pages/user-forms-nestable.js"></script>
- -->
