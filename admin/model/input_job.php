@@ -27,18 +27,19 @@ $query->bindParam(":createdBy",$cr);
 
  $query->execute();
 
- $select = $db->prepare("SELECT idJob FROM mmo_job where idOrder=$idOrder");
- $select->execute();
- $tampil = $select->fetchAll();
+ // $select = $db->prepare("SELECT idJob FROM mmo_job where idOrder=$idOrder");
+ // $select->execute();
+ // $tampil = $select->fetchAll();
  
- foreach ($tampil as $key) {
-     echo $idid = $key['idJob'];
- }
- $quer2 = $db->prepare("UPDATE mmo_operator_shift set idJob=:idJob where idOrder=:idOrder");
+ // foreach ($tampil as $key) {
+ //     echo $idid = $key['idJob'];
+ // }
+ // $quer2 = $db->prepare("UPDATE mmo_operator_shift set idJob=:idJob where idOrder=:idOrder");
 
- $quer2->bindParam(":idJob", $idid);
- $quer2->bindParam(":idOrder", $idOrder);
- $quer2->execute();
- header('location:?mmopilot=managejob');
+ // $quer2->bindParam(":idJob", $idid);
+ // $quer2->bindParam(":idOrder", $idOrder);
+ // $quer2->execute();
+ //NB : SORRY TAK KOMEN TAPI TAK CEK GAK JALAN
+ echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>"
 }
 ?>

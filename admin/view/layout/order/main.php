@@ -58,7 +58,7 @@
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Manage Item
+            Manage Order
         </div>
 
         <!-- Content -->
