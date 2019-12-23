@@ -25,7 +25,7 @@ case 'managerole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/role/add_role.php';
-	require 'view/layout/footer2.php';
+	require 'view/layout/footer.php';
  break;
 
 //managejob
@@ -68,6 +68,14 @@ case 'add_subjob':
 	require 'view/layout/footer.php';
  break;
 
+ //editsubjob
+case 'editsubjob':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/subjob/editsubjob.php';
+	require 'view/layout/footer.php';
+ break;
+
 //manageitem
 case 'manageitem':
 	require 'view/layout/header.php';
@@ -75,33 +83,6 @@ case 'manageitem':
 	require 'view/layout/item/main.php';
 	require 'view/layout/footer.php';
  break;
-
-//managestaff
-case 'manageusers':
-	require 'view/layout/header.php';
-	require 'view/layout/sidebar.php';
-	require 'view/layout/user/main.php';
-	require 'view/layout/footer.php';
- break;
-
- case 'managestaff':
-	require 'view/layout/header.php';
-	require 'view/layout/sidebar.php';
-	require 'view/layout/user/managestaff.php';
-	require 'view/layout/footer.php';
- break;
-//stafftorole
-
-case 'stafftorole':
-	require 'view/layout/header.php';
-	require 'view/layout/sidebar.php';
-	require 'view/layout/user/stafftorole.php';
-	require 'view/layout/footer.php';
-break;
-
-case 'inputstaffrole':
-	require 'model/input_staffrole.php';
-break;
 
  //additem
 case 'additem':
@@ -124,6 +105,22 @@ case 'detailitem':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/item/detailitem.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //templateitem
+case 'templateitem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/templateitem.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //templateitem
+case 'addtemplate':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/addtemplate.php';
 	require 'view/layout/footer.php';
  break;
 
@@ -191,13 +188,10 @@ case 'addadmin':
 	require 'view/layout/footer.php';
  break;
 
-  //edit_role
-case 'timeline':
-	require 'view/layout/header.php';
-	require 'view/layout/sidebar.php';
-	require 'view/layout/progress/timeline.php';
-	require 'view/layout/footer.php';
-break;
+//aksi addadmin
+ case 'input_template':
+ 	require 'model/input_template.php';
+ 	break;
 
 //aksi addadmin
  case 'input_addadmin':
@@ -217,6 +211,11 @@ break;
 //aksi addsubjob
  case 'input_subjob':
  	require 'model/input_subjob.php';
+ 	break;
+
+//aksi deletesubjob
+ case 'delete_subjob':
+ 	require 'model/delete_subjob.php';
  	break;
 
 //aksi hapusjob
@@ -263,6 +262,11 @@ break;
 case 'add_role':
 require 'model/input_role.php';
 break;
+
+//Input role
+	 case 'input_role':
+ 	require 'model/input_role.php';
+	 break;
 	 
 //aksi editrole
 case 'editedRole':

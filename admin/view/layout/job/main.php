@@ -138,7 +138,8 @@
                                                 <table>
                                                     <tr>
                                                         <td><button type="button" class="btn btn-rounded btn-success btn-block" title="View SubJob" data-toggle="modal" data-target="#myModal<?php echo $value['idJob'];?>"><span class="fa fa-list-ul"></span></button></td>
-                                                        <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
+                                                        <!-- <td><a href="?mmopilot=detailjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td> -->
+                                                        <td><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail" data-toggle="modal" data-target="#myModalo"><span class="fa fa-eye"></span></button></td>
                                                         <td> <a href="?mmopilot=editjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
                                                         <td> <a href="?mmopilot=delete_job&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
@@ -232,14 +233,18 @@
                                             <td width="22%">
                                                 <table>
                                                     <tr>
-                                                        <td><a href="#"><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail"><span class="fa fa-eye"></span></button></a></td>
-                                                        <td> <a href="#"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
-                                                        <td> <a href="#"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
+                                                        <td><button type="button" class="btn btn-rounded btn-info btn-block" title="Detail" data-toggle="modal" data-target="#myModal<?php echo $value['idJob'];?>"><span class="fa fa-eye"></span></button></td>
+                                                        <td> <a href="?mmopilot=editsubjob&id=<?php echo $value1['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-alert btn-block" title="Edit"><span class="fa fa-pencil-square-o"></span></button></a></td>
+                                                        <td> <a href="?mmopilot=delete_subjob&id=<?php echo $value1['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-danger btn-block" title="Hapus"><span class="fa fa-trash-o"></span></button></a></td>
                                                     </tr>
                                                 </table>
                                             </td>
                                         </tr>
                                            <?php } ?>
+                                                                            
+                                     <!-- Modal -->
+
+                                    
                                         </tbody>
                                     </table>
 
@@ -270,6 +275,46 @@
                         </div>
 
                                     <?php }?>
+                                                                      <!-- Modal HTML -->
+                                  <div class="modal fade" id="myModalo" role="dialog">
+                                      <div class="modal-dialog modal-lg contact-modal">
+                                          <div class="modal-content">
+                                              <form action="/examples/actions/confirmation.php" method="post">
+                                                  <div class="modal-header">              
+                                                      <h4 class="modal-title">Detail Job</h4>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                      <!-- Content -->
+                                          <section id="content" class="table-layout animated fadeIn">
+
+                                            <!-- Column Center -->
+                                          <!--   <div class="chute chute-center"> -->
+
+                                                <!-- AllCP Info -->
+
+                                                   <!--  <div class="row mn "> -->
+                                                        <!-- AllCP Grid -->
+                       
+                                          <div class="col-md-12 allcp-form">
+                                             
+                                          </div>
+                                                <!--   </div>
+                                              </div> -->
+                                          </div>
+                                  
+                              </section>
+                              <!-- /Content -->
+
+
+                                      </div>
+                                      <div class="modal-footer">
+                                             <input type="button" class="btn btn-primary" data-dismiss="modal" value="Close">
+                                          </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
             </form>
         </div>
     </div>
