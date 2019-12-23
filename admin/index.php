@@ -273,5 +273,26 @@ break;
 case 'logout':
 	require '../login/logout.php';
 	break;
+
+	 //templateitem
+case 'templateitem':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/templateitem.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //templateitem
+case 'addtemplate':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/item/addtemplate.php';
+	require 'view/layout/footer.php';
+ break;
+
+ //aksi addadmin
+ case 'input_template':
+	require 'model/input_template.php';
+	break;
 }
 ?>
