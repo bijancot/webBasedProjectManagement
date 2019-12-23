@@ -11,12 +11,12 @@
                 <div class="mw1000 center-block">
 
                     <!-- Spec Form -->
-                    <div>
+                    <div class="allcp-form">
                         <div class="panel">
                             
                             <div class="panel-body">
 
-                            <form class="form-horizontal" action="?mmopilot=edit_job&id=<?php echo $_GET['id'];?>" method="POST">
+                            <form class="form-horizontal" action="#" method="POST">
                                 
                                 <?php
                                 $id = $_GET['id'];
@@ -28,142 +28,157 @@
                                 $id_order = $value['idOrder'];
                                 $id_op    = $value['idOperator'];
                                 ?>
-
-                                <div class="form-group">
-                                    <label for="inputStandard" class="col-lg-3 control-label">ID Job</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="idJob" value="<?php echo $value['idJob']; ?>" disabled> 
+                                <div class="row">
+                                    <div class="col-md-7">
+                                    <h6>Job Description</h6>
+                                        <label class="field prepend-icon">
+                                        <textarea class="gui-textarea" id="comment" name="jobDescription" placeholder="Deskripsi JOB"><?php echo $value['jobDescription'];?></textarea>
+                                            <span class="field-icon">
+                                                <i class="fa fa-list"></i>
+                                            </span>
+                                        </label><br/><br/>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Item Target (Qty)</h6>
+                                                <label class="field prepend-icon">
+                                                    <input type="text" name="itemTarget" id="firstname" class="gui-input" value="<?php echo $value['itemTarget'];?>" 
+                                                                placeholder="Qty Item" title="username untuk role ini" required>
+                                                <span class="field-icon">
+                                                    <i class="fa fa-bullseye"></i>
+                                                </span> 
+                                                </label><br/><br/>
+                                            </div>
+                                            <div class="col-md-6">
+                                             <h6>Target Waktu</h6>
+                                                <label class="field prepend-icon">
+                                                    <input type="date" name="time" class="gui-input" value="<?php echo $value['time']?>">
+                                                <span class="field-icon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                                </label><br/>
+                                            </div>
+                                            <!-- <div class="col-md-4">
+                                            <h6>Satuan waktu</h6>
+                                                    <label class="field prepend-icon">
+                                                    <label class="field select">
+                                                    <select id="job" name="job" required>
+                                                        <option value="hari" selected>Hari</option>
+                                                        <option value="minggu">Minggu</option>
+                                                        <option value="bulan">Bulan</option>
+                                                    </select>
+                                                    <i class="arrow"></i>
+                                                </label>
+                                                    </label><br/><br/>
+                                            </div> -->
                                         </div>
+                                        <div class="row">
+                                        <div class="col-md-4">
+                                        <span class="rating block">
+                                        <h6>Job Priority</h6>
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" required>
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" required>
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked required>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" required>
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" required>
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span>
+                                            </div>
+                                                </div>
                                     </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Item</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <select class="form-control" name="item" required>
-                                                <?php
-                                                    $select = $db->prepare("SELECT mmo_item.itemName,mmo_item.idItem from mmo_item JOIN mmo_job ON mmo_item.idItem=mmo_job.idItem WHERE mmo_job.idItem='$id_item'");
-                                                    $select->execute();
-                                                    $tampil2 = $select->fetchAll();
-                                                    foreach($tampil2 as $valuee){
-                                                ?>
-                                               <option value="<?php echo $valuee['idItem']?>"><?php echo $valuee['itemName']?></option>
-                                                <?php }?>
-                                                <option>-------- Pilih Item --------</option>
-                                                <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_item");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                                    foreach($tampil as $value){
-                                                ?>
-                                                <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
-                                                <?php }?>
-                                            </select>
+                                    <div class="col-md-5">
+                                    <div class="row">
+                                                        <div class="col-md-5">
+                                      <!--                   <span class="rating block">
+                                        <h6>Job Priority</h6>
+                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" required>
+                                              <label class="rating-star" for="r5">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" required>
+                                              <label class="rating-star" for="r4">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked required>
+                                              <label class="rating-star" for="r3">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" required>
+                                              <label class="rating-star" for="r2">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" required>
+                                              <label class="rating-star" for="r1">
+                                                  <i class="fa fa-star"></i>
+                                              </label>
+                                            </span> -->
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                        </div>
+                                                </div>
+                                        <div class="form-group">
+                                            <h6>Pilih Item</h6>
+                                                <select class="select2-single form-control" name="item" required>
+                                                    <option><?php echo $value['idItem'];?></option>
+                                                    <option>-------- Pilih Item --------</option>
+                                                        <?php
+                                                            $select = $db->prepare("SELECT * FROM mmo_item");
+                                                            $select->execute();
+                                                            $tampil = $select->fetchAll();
+                                                            foreach($tampil as $value){
+                                                        ?>
+                                                    <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
+                                                    <?php }?>
+                                                </select>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Order</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <select class="form-control" name="order" required>
-                                                <?php
-                                                    $select = $db->prepare("SELECT mmo_order.idOrder from mmo_order JOIN mmo_job ON mmo_order.idOrder=mmo_job.idOrder WHERE mmo_job.idOrder='$id_order'");
-                                                    $select->execute();
-                                                    $tampil2 = $select->fetchAll();
-                                                    foreach($tampil2 as $valuee){
-                                                ?>
-                                               <option value="<?php echo $valuee['idOrder']?>"><?php echo $valuee['idOrder']?></option>
-                                                <?php }?>
+                                        <div class="form-group">
+                                            <h6>Pilih Order</h6>
+                                                <select class="select2-single form-control" name="order" required>
+                                                <!-- <option><?php echo $value['idOrder'];?></option> -->
                                                 <option>-------- Pilih ID Order --------</option>
-                                                <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_order");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                                    foreach($tampil as $value){
-                                                ?>
-                                                <option value="<?php echo $value['idOrder']?>"><?php echo $value['idOrder']?></option>
-                                                <?php }?>
-                                            </select>
+                                                    <?php
+                                                        $select = $db->prepare("SELECT * FROM mmo_order");
+                                                        $select->execute();
+                                                        $tampil = $select->fetchAll();
+                                                        foreach($tampil as $value){
+                                                    ?>
+                                                    <option value="<?php echo $value['idOrder']?>"><?php echo $value['idOrder']?></option>
+                                                    <?php }?>
+                                                </select>
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Operator</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <select class="form-control" name="operator" required>
+                                        <div class="form-group">
+                                            <h6>Pilih Operator</h6>
+                                                <select class="select2-single form-control" name="operator" required>
+                                                 <!-- <option><?php echo $value['idOperator'];?></option> -->
+                                                 <option>-------- Pilih Operator --------</option>
                                                 <?php
-                                                    $select = $db->prepare("SELECT mmo_users.idUser,mmo_users.name from mmo_users JOIN mmo_job ON mmo_users.idUser=mmo_job.idOperator WHERE mmo_job.idOperator='$id_op'");
-                                                    $select->execute();
-                                                    $tampil2 = $select->fetchAll();
-                                                    foreach($tampil2 as $valuee){
-                                                ?>
-                                               <option value="<?php echo $valuee['idUser']?>"><?php echo $valuee['name']?></option>
-                                                <?php }?>
-                                                <option>-------- Pilih Operator --------</option>
-                                                <?php
-                                                    $select = $db->prepare("SELECT * FROM `mmo_users`
-                                                                        WHERE name LIKE '%operator%';");
+                                                    $select = $db->prepare("SELECT * FROM mmo_users");
                                                     $select->execute();
                                                     $tampil = $select->fetchAll();
                                                     foreach($tampil as $value){
                                                 ?>
                                                 <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
                                                 <?php }?>
-                                            </select>
+                                                </select>
+                                                    <br/><br/><br/><br/>
+                                                <!-- <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button> -->
                                         </div>
                                     </div>
                                 </div>
-
-                                <?php
-                                $id = $_GET['id'];
-                                $select = $db->prepare("SELECT * FROM mmo_job where idJob='$id'");
-                                $select->execute();
-                                $tampil = $select->fetchAll();
-                                foreach($tampil as $value){
-                                ?>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Job Description</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="jobDescription" value="<?php echo $value['jobDescription']?>" required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Time</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="time" value="<?php echo $value['time']?>" required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Item Target</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="itemTarget" value="<?php echo $value['itemTarget']?>" required>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-3 control-label" for="textArea3">Priority</label>
-                                    <div class="col-lg-8">
-                                        <div>
-                                            <input type="text" id="inputStandard" class="form-control" name="priority" value="<?php echo $value['priority']?>" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php }}?>
+                                <?php }?>
                                 <input type="submit" class="btn btn-rounded btn-primary btn-block"  name="submit" value="Simpan">
                             </form>
                         </div>
