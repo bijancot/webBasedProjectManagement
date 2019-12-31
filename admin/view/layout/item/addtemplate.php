@@ -125,36 +125,14 @@
                                     <div class="col-md-5">
                                     <div class="row">
                                                         <div class="col-md-5">
-                                      <!--                   <span class="rating block">
-                                        <h6>Job Priority</h6>
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" required>
-                                              <label class="rating-star" for="r5">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" required>
-                                              <label class="rating-star" for="r4">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" checked required>
-                                              <label class="rating-star" for="r3">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" required>
-                                              <label class="rating-star" for="r2">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" required>
-                                              <label class="rating-star" for="r1">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                            </span> -->
+                                      <!--                </span> -->
                                                         </div>
                                                         <div class="col-md-6">
                                                         </div>
                                                 </div>
                                         <div class="form-group">
                                             <h6>Pilih Item</h6>
-                                                <select class="select2-single form-control" name="item" required>
+                                                <select class="select2-single" name="item">
                                                     <?php
                                                     $ids     = $value['idItem'];
                                                     $select1 = $db->prepare("SELECT * FROM mmo_item where idItem='$ids'");
@@ -177,7 +155,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h6>Pilih Order</h6>
-                                             <select class="select2-single form-control" name="item" required>
+                                             <select class="select2-single" name="order">
                                                   <?php
                                                     $ids     = $value['idItem'];
                                                     $select1 = $db->prepare("SELECT * FROM mmo_item where idItem='$ids'");
@@ -200,7 +178,7 @@
                                         </div>
                                         <div class="form-group">
                                             <h6>Pilih Operator</h6>
-                                             <select class="select2-single form-control" name="operator" required>
+                                             <select class="select2-single" name="operator">
                                                  <option>-------- Pilih Operator --------</option>
                                                 <?php
                                                     $select = $db->prepare("SELECT * FROM mmo_users");
@@ -213,10 +191,11 @@
                                                 </select>
                                                     <br/><br/><br/><br/>
                                                      <?php }?>
-                                                    <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
+                                                     <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
                                                 <!-- <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button> -->
                                         </div>
                                     </div>
+                                    
                                 </div>
                             </form>
                         </div>
