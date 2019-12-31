@@ -89,7 +89,7 @@
 
                                                 <div class="form-group">
                                                     <h6>Job Parent</h6>
-                                                        <select class="select2-single form-control" name="item" required>
+                                                        <select class="select2-single form-control" name="jobParent" required>
                                                             <option>-------- Pilih Parent Job --------</option>
                                                                 <?php
                                                                     $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
