@@ -16,7 +16,7 @@ $passhash           = md5($password);
 if($password!=$passwordver||empty($password)||empty($passwordver)){
     echo "<script type=\"text/javascript\">alert('Something wrong, check your password');document.location='?register';</script>";
 }else{
-    $query = $db->prepare("INSERT INTO `mmo_users`(`name`, `email`, `isActive`, `createdBy`, `facebook`, `discord`, `skype`, `whatsapp`, `homeAddress`,`password`,`passhash`) VALUES(:name,:email,'1','admin',:facebook,:discord,:skype,:whatsapp,:homeAddress,:password,:passhash)");
+    $query = $db->prepare("INSERT INTO `mmo_users`(`roleId`, `name`, `email`, `isActive`, `createdBy`, `facebook`, `discord`, `skype`, `whatsapp`, `homeAddress`,`password`,`passhash`) VALUES('41',:name,:email,'1','admin',:facebook,:discord,:skype,:whatsapp,:homeAddress,:password,:passhash)");
 
  $query->bindParam(":name", $name);
  $query->bindParam(":email", $email);
