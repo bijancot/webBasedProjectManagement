@@ -40,6 +40,6 @@ $query->bindParam(":createdBy",$cr);
  // $quer2->bindParam(":idOrder", $idOrder);
  // $quer2->execute();
  //NB : SORRY TAK KOMEN TAPI TAK CEK GAK JALAN
- echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>"
+ echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>";
 }
 ?>
