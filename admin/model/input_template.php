@@ -4,7 +4,7 @@ if(isset($_POST['submit'])){
 
 $idItem				= htmlentities($_POST['item']);
 $idOrder			= htmlentities($_POST['order']);
-//$idUser				= htmlentities($_POST['operator']);
+$idUser				= htmlentities($_POST['operator']);
 $jobDescription		= htmlentities($_POST['jobDescription']); 
 $time 				= htmlentities($_POST['time']);
 $itemTarget			= htmlentities($_POST['itemTarget']);
@@ -12,7 +12,7 @@ $priority			= htmlentities($_POST['priority']);
 //echo $parent 			= htmlentities($_POST['parent']);
 $status = "1";
 $cr = "admin";
-$query = $db->prepare("INSERT INTO `mmo_job`(`idOperator`, `idOrder`, `idItem`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `priority`, `createdBy`) VALUES ('4',:idOrder,:idItem,:jobDesc,:jobStatus,:time,:itemTarget,:priority,:createdBy)");
+$query = $db->prepare("INSERT INTO `mmo_job`(`idOperator`, `idOrder`, `idItem`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `priority`, `createdBy`) VALUES (:idOperator,:idOrder,:idItem,:jobDesc,:jobStatus,:time,:itemTarget,:priority,:createdBy)");
 
 $query->bindParam(":idOperator",$idUser);
 $query->bindParam(":idOrder",$idOrder);
@@ -40,6 +40,6 @@ $query->bindParam(":createdBy",$cr);
  // $quer2->bindParam(":idOrder", $idOrder);
  // $quer2->execute();
  //NB : SORRY TAK KOMEN TAPI TAK CEK GAK JALAN
- echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>"
+ echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>";
 }
 ?>
