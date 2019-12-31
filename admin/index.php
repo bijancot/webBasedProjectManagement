@@ -12,6 +12,30 @@ default:
 	require 'view/layout/footer.php';
 break;
 
+//managestaff
+case 'manageusers':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/main.php';
+	require 'view/layout/footer.php';
+ break;
+ case 'managestaff':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/managestaff.php';
+	require 'view/layout/footer.php';
+ break;
+//stafftorole
+case 'stafftorole':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/user/stafftorole.php';
+	require 'view/layout/footer.php';
+break;
+case 'inputstaffrole':
+	require 'model/input_staffrole.php';
+break;
+
 //managerole
 case 'managerole':
 	require 'view/layout/header.php';
@@ -25,7 +49,15 @@ case 'managerole':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/role/add_role.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
+ break;
+
+ //addrole
+ case 'timeline':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/progress/timeline.php';
+	require 'view/layout/footer2.php';
  break;
 
 //managejob
@@ -169,11 +201,11 @@ case 'edit_role':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/role/editRole.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
 break;
 
  //addoperator
-case 'addoperator':
+case 'addstaff':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/user/addoperator.php';
@@ -181,12 +213,12 @@ case 'addoperator':
  break;
 
   //addadmin
-case 'addadmin':
-	require 'view/layout/header.php';
-	require 'view/layout/sidebar.php';
-	require 'view/layout/user/addadmin.php';
-	require 'view/layout/footer.php';
- break;
+// case 'addadmin':
+// 	require 'view/layout/header.php';
+// 	require 'view/layout/sidebar.php';
+// 	require 'view/layout/user/addadmin.php';
+// 	require 'view/layout/footer.php';
+//  break;
 
 //aksi addadmin
  case 'input_template':
