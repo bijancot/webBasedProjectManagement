@@ -220,27 +220,6 @@ Highcharts.ganttChart('container', {
                 categories: map(series, function (s) {
                     return s.name;
                 })
-            }, {
-                title: {
-                    text: 'Rented To'
-                },
-                categories: map(series, function (s) {
-                    return s.current.rentedTo;
-                })
-            }, {
-                title: {
-                    text: 'From'
-                },
-                categories: map(series, function (s) {
-                    return dateFormat('%e. %b', s.current.from);
-                })
-            }, {
-                title: {
-                    text: 'To'
-                },
-                categories: map(series, function (s) {
-                    return dateFormat('%e. %b', s.current.to);
-                })
             }]
         }
     }
