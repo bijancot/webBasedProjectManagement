@@ -82,6 +82,10 @@ Highcharts.ganttChart('container', {
             parent: 'relocate',
             start: today + 11 * day,
             end: today + 14 * day
+        },{
+            parent: 'relocate',
+            start: today + 14 * day,
+            end: today + 17 * day
         }]
     }, {
         name: 'Product',
