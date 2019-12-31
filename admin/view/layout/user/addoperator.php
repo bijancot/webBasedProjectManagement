@@ -51,14 +51,14 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage User > Add New Operator</li>
+                    <li class="breadcrumb-current-item">Manage User > Add New Staff</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Add New Operator
+            Add New Staff
         </div>
 
         <!-- Content -->
@@ -80,7 +80,7 @@
                                         <!-- Basic -->
                                        <div class="row">
                                              <div class="section">
-                                <h6>Nama Operator</h6>
+                                <h6>Nama Staff</h6>
                                 <label for="email" class="field prepend-icon">
                                     <input type="text" name="name" id="name" class="gui-input"
                                            placeholder="Name">
