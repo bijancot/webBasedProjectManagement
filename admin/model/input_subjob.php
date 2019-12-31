@@ -13,7 +13,9 @@ $priority			= htmlentities($_POST['priority']);
 //echo $parent 			= htmlentities($_POST['parent']);
 $status = "1";
 $cr = "admin";
-$query = $db->prepare("INSERT INTO `mmo_job`(`idOperator`, `idOrder`, `jobParent` ,`idItem`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `priority`, `createdBy`) VALUES (:idOperator,:idOrder,:jobParent,:idItem,:jobDesc,:jobStatus,:time,:itemTarget,:priority,:createdBy)");
+$query = $db->prepare("INSERT INTO `mmo_job`
+(`idOperator`, `idOrder`, `jobParent` ,`idItem`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `priority`, `createdBy`) 
+VALUES (:idOperator,:idOrder,:jobParent,:idItem,:jobDesc,:jobStatus,:time,:itemTarget,:priority,:createdBy)");
 
 $query->bindParam(":idOperator",$idUser);
 $query->bindParam(":idOrder",$idOrder);
