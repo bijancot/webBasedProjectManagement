@@ -96,6 +96,30 @@
                                             <?php }?>
                                         </select>
                                     </div>
+                                </div>
+                            </div></div>
+
+                             <div class="row">
+                            <div class="col-md-12">
+                                <div class="section">
+                                        <div class="form-group">
+                                    <h5>Pilih Operator</h5>
+                                        <select class="select2-single form-control" name="idJob">
+                                            <option>-------- Pilih Operator --------</option>
+                                                <?php
+                                                    $select = $db->prepare("SELECT * FROM mmo_users WHERE roleId='40'");
+                                                    $select->execute();
+                                                    $tampil = $select->fetchAll();
+                                                    foreach($tampil as $value){
+                                                ?>
+                                            <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div></div>
+
+
                                     <div class="row">
                                         <div class="col-md-6">
                                         <h5>Item Achived</h5>
