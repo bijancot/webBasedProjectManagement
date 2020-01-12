@@ -13,7 +13,7 @@ $passwordver		= htmlentities($_POST['passwordver']);
 $passhash           = md5($password);
 
 if($password!=$passwordver||empty($password)||empty($passwordver)){
-    echo "<script type=\"text/javascript\">alert('Something wrong, check your password');document.location='?mmopilot=addoperator';</script>";
+    echo "<script type=\"text/javascript\">alert('Something wrong, check your password');document.location='?mmopilot=managestaff';</script>";
 }else{
     $query = $db->prepare("INSERT INTO `mmo_users`(`name`, `email`, `isActive`, `createdBy`, `facebook`, `discord`, `skype`, `whatsapp`, `homeAddress`,`password`,`passhash`) VALUES(:name,:email,'1','admin',:facebook,:discord,:skype,:whatsapp,:homeAddress,:password,:passhash)");
 
@@ -29,6 +29,6 @@ if($password!=$passwordver||empty($password)||empty($passwordver)){
  $query->execute();
 //  var_dump($query->execute());
  echo "<script type=\"text/javascript\">alert('Success');document.location='?register';</script>";
- header('location:?mmopilot');
+ header('location:?mmopilot=managestaff');
 }
 ?>
