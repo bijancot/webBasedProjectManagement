@@ -160,18 +160,18 @@
                                                     <?php }?>
                                                 </select>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <h6>Pilih Operator</h6>
                                                 <select class="select2-single form-control" name="operator" required>
                                                  <option>-------- Pilih Operator --------</option>
                                                 <?php
-                                                    $select = $db->prepare("SELECT a.idUser as idid, a.name as namee FROM mmo_users a join mmo_role b on a.roleId=b.idRole where b.job='operator'");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                                    foreach($tampil as $value){
+                                                    // $select = $db->prepare("SELECT a.idUser as idid, a.name as namee FROM mmo_users a join mmo_role b on a.roleId=b.idRole where b.job='operator'");
+                                                    // $select->execute();
+                                                    // $tampil = $select->fetchAll();
+                                                    // foreach($tampil as $value){
                                                 ?>
-                                                <option value="<?php echo $value['idid']?>"><?php echo $value['namee']?></option>
-                                                <?php }?>
+                                                <option value="<?php// echo $value['idid']?>"><?php //echo $value['namee']?></option>
+                                                <?php //}?> -->
                                                 </select>
                                                     <br/><br/><br/><br/>
                                                     <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
