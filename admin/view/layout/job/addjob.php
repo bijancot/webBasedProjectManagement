@@ -1,37 +1,83 @@
-   <!-- Main Wrapper -->
+    <!-- Main Wrapper -->
     <section id="content_wrapper">
-    <header id="topbar" class="alt">
+
+                <!-- Topbar Menu Wrapper -->
+        <div id="topbar-dropmenu-wrapper">
+            <div class="topbar-menu row">
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-danger">
+                        <span class="fa fa-music"></span>
+                        <span class="service-title">Audio</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-success">
+                        <span class="fa fa-picture-o"></span>
+                        <span class="service-title">Images</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-primary">
+                        <span class="fa fa-video-camera"></span>
+                        <span class="service-title">Videos</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-alert">
+                        <span class="fa fa-envelope"></span>
+                        <span class="service-title">Messages</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-system">
+                        <span class="fa fa-cog"></span>
+                        <span class="service-title">Settings</span>
+                    </a>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                    <a href="#" class="service-box bg-dark">
+                        <span class="fa fa-user"></span>
+                        <span class="service-title">Users</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /Topbar Menu Wrapper -->
+
+                <!-- Topbar -->
+        <header id="topbar" class="alt">
             <div class="topbar-left">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Job > Add New Job</li>
+                    <li class="breadcrumb-current-item">Manage Job > Add Assign Job</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Add New Job
+            Add Assign Job
         </div>
+
         <!-- Content -->
         <section id="content" class="table-layout animated fadeIn">
-
 
             <!-- Column Center -->
             <div class="chute chute-center">
 
-                <div class="mw1000 center-block">
+                <!-- AllCP Info -->
+                    <div class="row">
+                        <!-- AllCP Grid -->
+                        <div class="allcp-form">
+                            <div class="panel">
+                            <div class="panel-heading">
 
-                    <!-- Spec Form -->
-                    <div class="allcp-form">
-                        <div class="panel">
-                            
-                            <div class="panel-body">
-
-                            <form class="form-horizontal" action="?mmopilot=input_job" method="POST">
-                                <div class="row">
+                            </div>  
+                                <div class="panel-body pn">
+                            <form action="?mmopilot=input_job" method="POST" id="form-ui">
+                                      <div class="row">
                                     <div class="col-md-7">
                                     <h6>Job Description</h6>
                                         <label class="field prepend-icon">
@@ -133,24 +179,12 @@
                                                         </div>
                                                 </div>
                                         <div class="form-group">
-                                            <h6>Pilih Item</h6>
-                                                <select class="select2-single form-control" name="item" required>
-                                                    <option>-------- Pilih Item --------</option>
+                                                <h6>Order</h6>
+                                                    <label class="field prepend-icon">
+                                                    <label class="field select">
+                                                    <select id="order" name="order" required>
+                                                    <option value="">Pilih Order</option>
                                                         <?php
-                                                            $select = $db->prepare("SELECT * FROM mmo_item");
-                                                            $select->execute();
-                                                            $tampil = $select->fetchAll();
-                                                            foreach($tampil as $value){
-                                                        ?>
-                                                    <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
-                                                    <?php }?>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <h6>Pilih Order</h6>
-                                                <select class="select2-single form-control" name="order" required>
-                                                <option>-------- Pilih ID Order --------</option>
-                                                    <?php
                                                         $select = $db->prepare("SELECT * FROM mmo_order");
                                                         $select->execute();
                                                         $tampil = $select->fetchAll();
@@ -158,42 +192,43 @@
                                                     ?>
                                                     <option value="<?php echo $value['idOrder']?>"><?php echo $value['idOrder']?></option>
                                                     <?php }?>
-                                                </select>
+                                                    </select>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <h6>Pilih Operator</h6>
-                                                <select class="select2-single form-control" name="operator" required>
-                                                 <option>-------- Pilih Operator --------</option>
-                                                <?php
-                                                    // $select = $db->prepare("SELECT a.idUser as idid, a.name as namee FROM mmo_users a join mmo_role b on a.roleId=b.idRole where b.job='operator'");
-                                                    // $select->execute();
-                                                    // $tampil = $select->fetchAll();
-                                                    // foreach($tampil as $value){
-                                                ?>
-                                                <option value="<?php// echo $value['idid']?>"><?php //echo $value['namee']?></option>
-                                                <?php //}?> -->
-                                                </select>
-                                                    <br/><br/><br/><br/>
-                                                    <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
-                                                <!-- <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button> -->
+                                        <div class="form-group">
+                                        <h6>Item</h6>
+                                        <?php
+                                        $select = $db->prepare("SELECT * FROM mmo_item");
+                                        $select->execute();
+                                        $tampil = $select->fetchAll();
+                                        foreach($tampil as $hoho){
+                                                        
+                                        echo  "<div style=\"margin-left:20px !important; \"><label class=\"option block\">
+                                            <input type=\"checkbox\" name=\"idItem[]\" value=".$hoho['idItem'].">
+                                            <span class=\"checkbox\"></span>".$hoho['itemName']."</label><br/></div>";
+                                        }
+                                        ?>
+
                                         </div>
                                     </div>
                                 </div>
-                            </form>
+                            <!-- /section -->
+                             <br><br>
+                            <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        </div>
+                        <!-- /AllCP Grid -->
 
                     </div>
-
-                </div>
             </div>
             <!-- /Column Center -->
 
         </section>
         <!-- /Content -->
 
+        
+
     </section>
-
-
-</div>
-<!-- /Body Wrap  -->
+    <!-- /Main Wrapper -->
