@@ -2,30 +2,42 @@
 //require'../conn/koneksi.php';
 if(isset($_POST['submit'])){
 
-$idItem				= htmlentities($_POST['item']);
 $idOrder			= htmlentities($_POST['order']);
-$idUser				= htmlentities($_POST['operator']);
 $jobDescription		= htmlentities($_POST['jobDescription']); 
-$time 				= htmlentities($_POST['time']);
+$timee 				= htmlentities($_POST['time']);
 $itemTarget			= htmlentities($_POST['itemTarget']);
-$priority			= htmlentities($_POST['priority']);
+var_dump($idItem = $_POST['idItem']);
+//$priority			= htmlentities($_POST['priority']);
 //echo $parent 			= htmlentities($_POST['parent']);
-$status = "1";
-$cr = "admin";
-$query = $db->prepare("INSERT INTO `mmo_job`(`idOperator`, `idOrder`, `idItem`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `priority`, `createdBy`) VALUES (:idOperator,:idOrder,:idItem,:jobDesc,:jobStatus,:time,:itemTarget,:priority,:createdBy)");
+$status 			= "1";
+$cr 				= "admin";
+$idPriority			= "1";
+$query = $db->prepare("INSERT INTO `mmo_job`(`idOrder`, `jobDescription`, `jobStatus`, `time`, `itemTarget`, `idPriority`, `createdBy`) VALUES (:idOrder,:jobDesc,:jobStatus,:timee,:itemTarget,:idPriority,:createdBy)");
 
-$query->bindParam(":idOperator",$idUser);
 $query->bindParam(":idOrder",$idOrder);
-//$query->bindParam(":jobParent",$parent);
-$query->bindParam(":idItem",$idItem);
 $query->bindParam(":jobDesc",$jobDescription);
 $query->bindParam(":jobStatus",$status);
-$query->bindParam(":time",$time);
+$query->bindParam(":timee",$timee);
 $query->bindParam(":itemTarget",$itemTarget);
-$query->bindParam(":priority",$priority);
+$query->bindParam(":idPriority",$idPriority);
 $query->bindParam(":createdBy",$cr);
 
- $query->execute();
+$query->execute();
+
+$select = $db->prepare("SELECT idJob FROM mmo_job where jobDescription=:jobDescription");
+$select->bindParam(":jobDescription", $jobDescription);
+          $select->execute();
+          $tampil = $select->fetchAll();
+  foreach($tampil as $value){
+ $idJob = $value['idJob'];
+}
+foreach($idItem as $it){
+  echo $it;
+$query1 = $db->prepare("INSERT INTO `tr_job_item`( `idJob`, `idItem`,`createdDate`,`lastUpdate`) VALUES (:idJob,:idItem,NOW(),NOW())");
+$query1->bindParam(":idJob", $idJob);
+$query1->bindParam(":idItem", $it);
+$query1->execute();
+}
 
  // $select = $db->prepare("SELECT idJob FROM mmo_job where idOrder=$idOrder");
  // $select->execute();
@@ -41,5 +53,7 @@ $query->bindParam(":createdBy",$cr);
  // $quer2->execute();
  //NB : SORRY TAK KOMEN TAPI TAK CEK GAK JALAN
  echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=managejob';</script>";
+}else{
+echo "<script type=\"text/javascript\">alert('eror');document.location='?mmopilot=managejob';</script>";
 }
 ?>
