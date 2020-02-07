@@ -73,7 +73,7 @@ case 'addjob':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/job/addjob.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
  break;
 
  //editjob
@@ -290,7 +290,7 @@ case 'addstaff':
  	require 'model/delete_order.php';
  	break;
 
-//aksi addrole
+//aksi add
 case 'add_role':
 require 'model/input_role.php';
 break;
