@@ -6,14 +6,14 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Job > Add New Job</li>
+                    <li class="breadcrumb-current-item">Manage Job > Add New Sub Job</li>
                 </ol>
             </div>
         </header>
         <!-- /Topbar -->
 
         <div class="greeting-field">
-            Add New Job
+            Add New Sub Job
         </div>
         <!-- Content -->
         <section id="content" class="table-layout animated fadeIn">
@@ -30,7 +30,7 @@
                             
                             <div class="panel-body">
 
-                            <form class="form-horizontal" action="?mmopilot=input_subjob" method="POST">
+                            <form class="form-horizontal" action="?mmopilot=input_subjob" method="POST" id="form-ui">
                               <?php
                              $id = $_GET['id'];
                               ?>
@@ -87,11 +87,13 @@
                                                 </span>
                                                 </label><br/> -->
 
-                                                <div class="form-group">
-                                                    <h6>Job Parent</h6>
-                                                        <select class="select2-single form-control" name="jobParent" required>
-                                                            <option>-------- Pilih Parent Job --------</option>
-                                                                <?php
+                                                             <div class="form-group">
+                                                <h6>Job Parent</h6>
+                                                    <label class="field prepend-icon">
+                                                    <label class="field select">
+                                                    <select id="jobParent" name="jobParent" required>
+                                                        <option>Pilih Job Parent</option>
+                                                    <?php
                                                                     $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
                                                                     $select->execute();
                                                                     $tampil = $select->fetchAll();
@@ -99,7 +101,7 @@
                                                                 ?>
                                                             <option value="<?php echo $value['idJob']?>"><?php echo $value['jobDescription']?></option>
                                                             <?php }?>
-                                                        </select>
+                                                    </select>
                                                 </div>
                                             </div>
                                                 </div>
@@ -134,25 +136,13 @@
                                                         <div class="col-md-6">
                                                         </div>
                                                 </div>
-                                        <div class="form-group">
-                                            <h6>Pilih Item</h6>
-                                                <select class="select2-single form-control" name="item" required>
-                                                    <option>-------- Pilih Item --------</option>
+                                                          <div class="form-group">
+                                                <h6>Order</h6>
+                                                    <label class="field prepend-icon">
+                                                    <label class="field select">
+                                                    <select id="order" name="order" required>
+                                                    <option value="">Pilih Order</option>
                                                         <?php
-                                                            $select = $db->prepare("SELECT * FROM mmo_item");
-                                                            $select->execute();
-                                                            $tampil = $select->fetchAll();
-                                                            foreach($tampil as $value){
-                                                        ?>
-                                                    <option value="<?php echo $value['idItem']?>"><?php echo $value['itemName']?></option>
-                                                    <?php }?>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <h6>Pilih Order</h6>
-                                                <select class="select2-single form-control" name="order" required>
-                                                <option>-------- Pilih ID Order --------</option>
-                                                    <?php
                                                         $select = $db->prepare("SELECT * FROM mmo_order");
                                                         $select->execute();
                                                         $tampil = $select->fetchAll();
@@ -160,24 +150,28 @@
                                                     ?>
                                                     <option value="<?php echo $value['idOrder']?>"><?php echo $value['idOrder']?></option>
                                                     <?php }?>
-                                                </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <h6>Pilih Operator</h6>
-                                                <select class="select2-single form-control" name="operator" required>
-                                                 <option>-------- Pilih Operator --------</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                <h6>Item</h6>
                                                 <?php
-                                                    $select = $db->prepare("SELECT * FROM mmo_users");
-                                                    $select->execute();
-                                                    $tampil = $select->fetchAll();
-                                                    foreach($tampil as $value){
+                                                $select = $db->prepare("SELECT * FROM mmo_item");
+                                                $select->execute();
+                                                $tampil = $select->fetchAll();
+                                                foreach($tampil as $hoho){
+                                                                
+                                                echo  "<div style=\"margin-left:20px !important; \"><label class=\"option block\">
+                                                    <input type=\"checkbox\" name=\"idItem[]\" value=".$hoho['idItem'].">
+                                                    <span class=\"checkbox\"></span>".$hoho['itemName']."</label><br/></div>";
+                                                }
                                                 ?>
-                                                <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
-                                                <?php }?>
-                                                </select>
-                                                    <br/><br/><br/><br/>
-                                                    <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
-                                                <!-- <button type="submit" class="btn btn-block btn-success" name="submit"><strong>Simpan Data</strong></button> -->
+
+                                                </div>
+                                    </div>
+                                </div>
+                            <!-- /section -->
+                             <br><br>
+                            <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data">
                                         </div>
                                     </div>
                                 </div>
