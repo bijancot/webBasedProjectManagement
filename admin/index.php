@@ -97,7 +97,7 @@ case 'add_subjob':
 	require 'view/layout/header.php';
 	require 'view/layout/sidebar.php';
 	require 'view/layout/subjob/add_subjob.php';
-	require 'view/layout/footer.php';
+	require 'view/layout/footer2.php';
  break;
 
  //editsubjob
