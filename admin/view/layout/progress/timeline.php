@@ -67,21 +67,46 @@
 
                 <div class="chute chute-center">
 <div id="container"></div>
-<?php
- $select = $db->prepare("SELECT a.time as kolo,a.createdDate as kolotero,a.jobDescription as hoho,c.name as nem FROM mmo_job a join mmo_order b on a.idOrder=b.idOrder join mmo_users c on a.idOperator=c.idUser;");
- $select->execute();
- $tampil = $select->fetchAll();
-
- foreach ($tampil as $value) {
-    echo $value['kolo']."<br/>";
-    echo $value['kolotero']."<br/>";
-
-    $a = strtotime(date("d-m-Y",strtotime($value['kolotero'])))*1000;
-    $c = strtotime(date("d-m-Y",strtotime($value['kolo'])))*1000;
-    $b = $a-$c;
+<script src="https://code.highcharts.com/gantt/highcharts-gantt.js"></script>
+<script src="https://code.highcharts.com/gantt/modules/exporting.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<style>
+#container {
+    max-width: 1200px;
+    min-width: 800px;
+    height: 400px;
+    margin: 1em auto;
 }
-//echo date("d-m-Y",strtotime('2019-12-16 23:10:48'))."</br>";
+.scrolling-container {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
 
+</style>
+<div class="scrolling-container">
+	<div id="container"></div>
+</div>
+<?php
+$conn = mysqli_connect('192.168.79.3', 'budosen', 'bijan2089', 'mmopilot');
+// mysqli_set_charset($conn, 'utf8');
+$query = mysqli_query($conn, 'SELECT jobDescription,idJob,SUBSTRING_INDEX(unix_timestamp(time), \'.\', 1)*1000 as end,UNIX_TIMESTAMP(createdDate)*1000 as start FROM mmo_job order by idJob');
+while($row = mysqli_fetch_assoc($query)) {
+	$data[] = array(model=>$row['jobDescription'],
+		current=>0,deals=>
+		array([
+		rentedTo=>$row['idJob'],
+		from=>(int)$row['start'],
+		to=>(int)$row['end']]
+	));
+}
+
+$json = json_encode($data);
+$array_final = preg_replace('/"([a-zA-Z]+[a-zA-Z0-9_]*)":/','$1:',$json);
+
+echo $array_final;
 ?>
 <script>
 // Set to 00:00:00:000 today
@@ -99,87 +124,7 @@ today.setUTCSeconds(0);
 today.setUTCMilliseconds(0);
 today = today.getTime();
 
-cars = [{
-    model: 'Nissan Leaf',
-    current: 0,
-    deals: [{
-        rentedTo: 'Lisa Star',
-        from: today - 1 * day,
-        to: today + 2 * day
-    }, {
-        rentedTo: 'Shane Long',
-        from: today - 3 * day,
-        to: today - 2 * day
-    }, {
-        rentedTo: 'Jack Coleman',
-        from: today + 5 * day,
-        to: today + 6 * day
-    }]
-}, {
-    model: 'Jaguar E-type',
-    current: 0,
-    deals: [{
-        rentedTo: 'Martin Hammond',
-        from: today - 2 * day,
-        to: today + 1 * day
-    }, {
-        rentedTo: 'Linda Jackson',
-        from: today - 2 * day,
-        to: today + 1 * day
-    }, {
-        rentedTo: 'Robert Sailor',
-        from: today + 2 * day,
-        to: today + 6 * day
-    }]
-}, {
-    model: 'Volvo V60',
-    current: 0,
-    deals: [{
-        rentedTo: 'Mona Ricci',
-        from: today + 0 * day,
-        to: today + 3 * day
-    }, {
-        rentedTo: 'Jane Dockerman',
-        from: today + 3 * day,
-        to: today + 4 * day
-    }, {
-        rentedTo: 'Bob Shurro',
-        from: today + 6 * day,
-        to: today + 8 * day
-    }]
-}, {
-    model: 'Volkswagen Golf',
-    current: 0,
-    deals: [{
-        rentedTo: 'Hailie Marshall',
-        from: today - 1 * day,
-        to: today + 1 * day
-    }, {
-        rentedTo: 'Morgan Nicholson',
-        from: today - 3 * day,
-        to: today - 2 * day
-    }, {
-        rentedTo: 'William Harriet',
-        from: today + 2 * day,
-        to: today + 3 * day
-    }]
-}, {
-    model: 'Peugeot 208',
-    current: 0,
-    deals: [{
-        rentedTo: 'Harry Peterson',
-        from: today - 1 * day,
-        to: today + 2 * day
-    }, {
-        rentedTo: 'Emma Wilson',
-        from: today + 3 * day,
-        to: today + 4 * day
-    }, {
-        rentedTo: 'Ron Donald',
-        from: today + 5 * day,
-        to: today + 6 * day
-    }]
-}];
+cars = <?php echo $array_final;?>
 
 // Parse car data into series.
 series = cars.map(function (car, i) {
@@ -219,6 +164,27 @@ Highcharts.ganttChart('container', {
                 },
                 categories: map(series, function (s) {
                     return s.name;
+                })
+            }, {
+                title: {
+                    text: 'Rented To'
+                },
+                categories: map(series, function (s) {
+                    return s.current.rentedTo;
+                })
+            }, {
+                title: {
+                    text: 'From'
+                },
+                categories: map(series, function (s) {
+                    return dateFormat('%e. %b', s.current.from);
+                })
+            }, {
+                title: {
+                    text: 'To'
+                },
+                categories: map(series, function (s) {
+                    return dateFormat('%e. %b', s.current.to);
                 })
             }]
         }
