@@ -27,7 +27,10 @@
 <!-- Highlight JS -->
 
 <!-- Date/Month - Pickers -->
-
+<!-- <script src="assets/allcp/forms/js/jquery-ui-monthpicker.min.js"></script>
+<script src="assets/allcp/forms/js/jquery-ui-datepicker.min.js"></script>
+<script src="assets/allcp/forms/js/jquery.spectrum.min.js"></script>
+<script src="assets/allcp/forms/js/jquery.stepper.min.js"></script> -->
 <!-- Magnific Popup Plugin -->
 <!-- <script src="view/assets/js/plugins/magnific/jquery.magnific-popup.js"></script> -->
 
