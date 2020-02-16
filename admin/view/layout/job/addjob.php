@@ -99,12 +99,11 @@
                                             </div>
                                             <div class="col-md-6">
                                             <h6>Target Waktu</h6>
-                                                <label class="field prepend-icon">
-                                                    <input type="date" name="time" class="gui-input">
-                                                <span class="field-icon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </span>
-                                                </label><br/>
+                                            <label for="datetimepicker2" class="field prepend-picker-icon">
+                                                <input type="text" id="datetimepicker2" name="time"
+                                                       class="gui-input"
+                                                       placeholder="Datetimepicker Addon">
+                                            </label><br/>
                                             </div>
                                             <!-- <div class="col-md-4">
                                             <h6>Satuan waktu</h6>
