@@ -87,7 +87,7 @@
                             <div class="panel-body pn>
                                 <div class="table-responsive">
                                     <?php
-                                    $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
+                                    $select = $db->prepare("select a.idJob,a.jobDescription,a.idPriority,group_concat(c.itemName) as MenuList,b.createdDate from mmo_job a join tr_job_item b on a.idJob = b.idJob join mmo_item c on b.idItem=c.idItem GROUP BY a.idJob");
                                     $select->execute();
                                     $tampil = $select->fetchAll();
                                     ?>
@@ -95,18 +95,16 @@
                                            width="100%">
                                         <thead>
                                         <tr>
-                                            <th class="va-m">ID</th>
                                             <th class="va-m">Deskripsi Job/Item</th>
                                             <th class="va-m">Priority</th>
-                                            <th class="va-m">Tanggal Dibuat</th>
                                             <th class="va-m">Item</th>
+                                            <th class="va-m">Tanggal Dibuat</th>
                                             <th class="va-m">Use Template</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <?php foreach($tampil as $value){ ?>
                                         <tr>
-                                            <td width="10%"><?php echo $value['idJob']; ?></td>
                                             <td><?php echo $value['jobDescription']; ?></td>
                                             <td width="20%"><?php //echo $value['priority']; ?>
                                             <span class="rating block">
@@ -133,16 +131,8 @@
                                             </span>
                                             
                                             </td>
+                                            <td width="25%"><?php echo $value['MenuList'];?></td>
                                             <td width="15%"><?php echo $value['createdDate'];?></td>
-                                            <?php
-                                            $idItem  = $value['idItem'];
-                                            $select1 = $db->prepare("SELECT * FROM mmo_item where idItem='$idItem'");
-                                            $select1->execute();
-                                            $tampil1 = $select1->fetchAll();
-                                            foreach($tampil1 as $value1){
-                                            ?>
-                                            <td width="25%"><?php echo $value1['itemName'];?></td>
-                                          <?php }?>
                                             <td width="10%">
                                                 <table>
                                                     <tr>
