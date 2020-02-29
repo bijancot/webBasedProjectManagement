@@ -240,6 +240,16 @@ case 'addstaff':
  	require 'model/input_job.php';
  	break;
 
+//aksi progress report
+ case 'input_progressreport':
+ 	require 'model/input_progressreport.php';
+ 	break;
+
+//aksi hapus progress report
+ case 'delete_progressreport':
+ 	require 'model/delete_progressreport.php';
+ 	break;
+
 //aksi addsubjob
  case 'input_subjob':
  	require 'model/input_subjob.php';
