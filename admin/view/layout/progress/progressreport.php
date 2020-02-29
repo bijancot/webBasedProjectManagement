@@ -1,5 +1,6 @@
     <!-- Main Wrapper -->
     <section id="content_wrapper">
+
                 <!-- Topbar Menu Wrapper -->
         <div id="topbar-dropmenu-wrapper">
             <div class="topbar-menu row">
@@ -50,7 +51,7 @@
                     <li class="breadcrumb-link">
                         <a href="index.html">Home</a>
                     </li>
-                    <li class="breadcrumb-current-item">Manage Job Progress > Add New Job Progress</li>
+                    <li class="breadcrumb-current-item">Job Progress > Add Progress Report</li>
                 </ol>
             </div>
         </header>
@@ -64,26 +65,21 @@
         <section id="content" class="table-layout animated fadeIn">
 
             <!-- Column Center -->
-            <div class="row">
-                <div class="col-md-6">
-                <div class="chute chute-center">
+            <div class="chute chute-center">
 
-<!-- AllCP Info -->
-    <div class="row">
-        <!-- AllCP Grid -->
-        <div class="allcp-form">
-            <div class="panel">
-            <div class="panel-heading">
+                <!-- AllCP Info -->
+                    <div class="row">
+                        <!-- AllCP Grid -->
+                        <div class="allcp-form">
+                            <div class="panel">
+                            <div class="panel-heading">
 
-            </div>  
-                <div class="panel-body pn">
-                    <form method="post" action="?mmopilot=input_role" id="form-ui">
-                        <!-- Basic -->
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="section">
-                                        <div class="form-group">
-                                    <h5>Pilih Job</h5>
+                            </div>  
+                                <div class="panel-body pn">
+                            <form action="?mmopilot=input_progressreport" method="POST" id="form-ui">
+                                      <div class="row">
+                                    <div class="col-md-6">
+                                    <h6>Job Description</h6>
                                         <select class="select2-single form-control" name="idJob">
                                             <option>-------- Pilih Job --------</option>
                                                 <?php
@@ -92,19 +88,13 @@
                                                     $tampil = $select->fetchAll();
                                                     foreach($tampil as $value){
                                                 ?>
-                                            <option value="<?php echo $value['idJob']?>"><?php echo $value['idJob']?></option>
+                                            <option value="<?php echo $value['idJob']?>"><?php echo $value['jobDescription']?></option>
                                             <?php }?>
                                         </select>
-                                    </div>
-                                </div>
-                            </div></div>
+                                        <br/><br/>
 
-                             <div class="row">
-                            <div class="col-md-12">
-                                <div class="section">
-                                        <div class="form-group">
-                                    <h5>Pilih Operator</h5>
-                                        <select class="select2-single form-control" name="idJob">
+                                        <h6>Operator</h6>
+                                        <select class="select2-single form-control" name="idOperator">
                                             <option>-------- Pilih Operator --------</option>
                                                 <?php
                                                     $select = $db->prepare("SELECT * FROM mmo_users WHERE roleId='40'");
@@ -115,14 +105,20 @@
                                             <option value="<?php echo $value['idUser']?>"><?php echo $value['name']?></option>
                                             <?php }?>
                                         </select>
+                                        <br/><br/>
+                                        <div class="col-md-8">
+                                           <h6>Progress Date</h6>
+                                            <label class="field prepend-picker-icon">
+                                                <input type="date" id="datetimepicker2" name="progressDate"
+                                                       class="gui-input"
+                                                       placeholder="Datetimepicker Addon">
+                                            </label><br/>
+                                        </div>
                                     </div>
-                                </div>
-                            </div></div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                        <h5>Item Achived</h5>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                         <div class="col-md-5">
+                                        <h6>Item Achived</h6>
                                             <label class="field prepend-icon">
                                                 <input type="text" name="itemAchived" id="firstname" class="gui-input"
                                                 placeholder="Qty item" title="masukkan Jumlah item yang didapat">
@@ -131,37 +127,39 @@
                                                     </span>
                                             </label><br/><br/>          
                                         </div>
-                                        <div class="col-md-6">
-                                            <h5>Item Target</h5>
+                                        <div class="col-md-5">
+                                            <h6>Item Target</h6>
                                             <label class="field prepend-icon">
                                                 <input type="text" name="itemTarget" id="firstname" class="gui-input"
                                                 placeholder="Username" title="Target Item" value="40" readonly>
                                             </label><br/><br/>  
                                         </div>
-                                    </div>    
-                                    <h5>Progress Notes</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <h6>Progress Notes</h6>
                                             <label class="field prepend-icon">
                                                 <textarea class="gui-textarea" id="comment" name="progressNote" placeholder="Tambahkan catatan progress disini jika ada"></textarea>
                                                 <span class="field-icon">
                                                 <i class="fa fa-list"></i>
                                                 </span>
-                                            </label><br/><br/><br/>
-                                        <button type="submit" class="btn btn-block btn-success"><strong>Simpan Data</strong></button>      
+                                            </label>
+                                    </div>
                                 </div>
-                            </div>         
+                            <!-- /section -->
+                             <br><br>
+                           <input type="submit" name="submit" class="btn btn-block btn-success" value="Simpan Data"> 
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- /AllCP Grid -->
+                        <!-- /AllCP Grid -->
 
-    </div>
-</div>
-<!-- /Column Center -->
-</div>
+                    </div>
             </div>
-           
+            <!-- /Column Center -->
+
         </section>
         <!-- /Content -->
 
