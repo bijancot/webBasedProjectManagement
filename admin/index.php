@@ -180,6 +180,14 @@ case 'addorder':
 		require 'view/layout/footer.php';
 	break;
 
+	//managejobprogress
+case 'jobprogress':
+	require 'view/layout/header.php';
+	require 'view/layout/sidebar.php';
+	require 'view/layout/progress/main.php';
+	require 'view/layout/footer.php';
+ break;
+
   //editorder
 case 'editorder':
 	require 'view/layout/header.php';
