@@ -16,6 +16,6 @@ $query->bindParam(":progressNote",$progressNote);
 
 $query->execute();
 
-header('location:?mmopilot=progressreport');
+echo "<script type=\"text/javascript\">alert(' Data berhasil disimpan');document.location='?mmopilot=jobprogress';</script>";
 }
 ?>
