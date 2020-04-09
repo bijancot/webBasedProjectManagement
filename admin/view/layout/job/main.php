@@ -84,7 +84,7 @@
                             <div class="panel-body pn>
                                 <div class="table-responsive">
                                     <?php
-                                    $select = $db->prepare("SELECT * FROM mmo_job where jobParent is null");
+                                    $select = $db->prepare("SELECT mmo_job.idJob,mmo_job.jobDescription,mmo_jobpriority.priorityKeterangan,mmo_job.createdDate FROM mmo_job JOIN mmo_jobpriority ON mmo_job.idPriority=mmo_jobpriority.idPriority WHERE mmo_job.jobParent IS null");
                                     $select->execute();
                                     $tampil = $select->fetchAll();
                                     ?>
@@ -105,31 +105,7 @@
                                         <tr>
                                             <td width="10%"><?php echo $value['idJob']; ?></td>
                                             <td><?php echo $value['jobDescription']; ?></td>
-                                            <td width="20%"><?php //echo $value['priority']; ?>
-                                            <span class="rating block">
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value['priority']==5){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r5">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value['priority']==4){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r4">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value['priority']==3){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r3">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value['priority']==2){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r2">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value['priority']==1){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r1">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                            </span>
-                                            
-                                            </td>
+                                            <td width="20%"><?php echo $value['priorityKeterangan'];?></td>
                                             <td width="15%"><?php echo $value['createdDate'];?></td>
                                             <td width="5%">
                                                 <a href="?mmopilot=add_subjob&id=<?php echo $value['idJob'];  ?>"><button type="button" class="btn btn-rounded btn-primary btn-block" title="Add Sub Job"><span class="fa fa-plus"></span></button></a>
@@ -184,7 +160,7 @@
                                                       <div class="table-responsive">
                                                         <?php
                                                           $ids = $value['idJob'];
-                                                          $select1 = $db->prepare("SELECT * FROM mmo_job where jobParent='$ids'");
+                                                          $select1 = $db->prepare("SELECT mmo_job.idJob,mmo_job.jobDescription,mmo_jobpriority.priorityKeterangan,mmo_job.createdDate FROM mmo_job JOIN mmo_jobpriority ON mmo_job.idPriority=mmo_jobpriority.idPriority WHERE mmo_job.jobParent='$ids'");
                                                           $select1->execute();
                                                           $tampil1 = $select1->fetchAll();
                                                           ?>
@@ -204,31 +180,7 @@
                                         <tr>
                                             <td width="10%"><?php echo $value1['idJob']; ?></td>
                                             <td><?php echo $value1['jobDescription']; ?></td>
-                                            <td width="20%"><?php //echo $value['priority']; ?>
-                                            <span class="rating block">
-                                              <input class="rating-input" id="r5" type="radio" name="priority" value="5" <?php if($value1['priority']==5){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r5">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r4" type="radio" name="priority" value="4" <?php if($value1['priority']==4){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r4">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r3" type="radio" name="priority" value="3" <?php if($value1['priority']==3){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r3">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r2" type="radio" name="priority" value="2" <?php if($value1['priority']==2){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r2">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                              <input class="rating-input" id="r1" type="radio" name="priority" value="1" <?php if($value1['priority']==1){echo "checked";}?> disabled>
-                                              <label class="rating-star" for="r1">
-                                                  <i class="fa fa-star"></i>
-                                              </label>
-                                            </span>
-                                            
-                                            </td>
+                                            <td width="20%"><?php echo $value1['priorityKeterangan']; ?></td>
                                             <td width="15%"><?php echo $value1['createdDate'];?></td>
                                             <td width="22%">
                                                 <table>
