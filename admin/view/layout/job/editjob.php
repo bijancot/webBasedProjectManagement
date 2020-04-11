@@ -76,10 +76,12 @@
 
                             </div>  
                                 <div class="panel-body pn">
-                                    <form method="post" action="?mmopilot=editedRole" id="form-ui">
+                                    <?php
+                                    $id = $_GET['id'];
+                                    ?>
+                                    <form method="post" action="?mmopilot=edit_job&id=<?php echo $id?>" id="form-ui">
                                         <!-- Basic -->
                                         <?php
-                                            $id = $_GET['id'];
                                             $select = $db->prepare("SELECT mmo_job.idJob,mmo_job.jobDescription,mmo_jobpriority.priorityKeterangan,mmo_job.time,mmo_job.itemTarget,mmo_jobpriority.idPriority,mmo_order.idOrder,mmo_order.orderNote FROM mmo_jobpriority JOIN mmo_job ON mmo_job.idPriority=mmo_jobpriority.idPriority JOIN mmo_order ON mmo_order.idOrder=mmo_job.idOrder WHERE idJob='$id'");
                                             $select->execute();
                                             $tampil = $select->fetchAll();
@@ -131,7 +133,7 @@
                                         <h6>Job Priority</h6>
                                              <label class="field prepend-icon">
                                                     <label class="field select">
-                                                    <select id="order" name="order" required>
+                                                    <select id="order" name="idPriority" required>
                                                     <option value="<?php echo $value['idPriority'];?>"><?php echo $value['priorityKeterangan'];?></option>
                                                     <option value="">Pilih Job Priority</option>
                                                         <?php
@@ -180,10 +182,12 @@
                                                             $tampil2 = $select2->fetchAll();
                                                            
                                                                     echo  "<div><label class=\"option block\">
-                                                                    <input type=\"checkbox\" name=\"menuList[]\" value=\"".$value['idItem']."\""; 
+                                                                    <input type=\"checkbox\" name=\"idItem[]\" value=\"".$value['idItem']."\""; 
                                                                     foreach($tampil2 as $value2){
                                                                         if($value2['idItem']==$value['idItem']){
-                                                                            echo " checked";
+                                                                            echo "checked";
+                                                                        }else{
+
                                                                         }
                                                                     }
                                                                     echo"><span class=\"checkbox\"></span>".$value['itemName']."</label><br/></div>";
