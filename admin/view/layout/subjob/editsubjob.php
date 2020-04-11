@@ -76,10 +76,12 @@
 
                             </div>  
                                 <div class="panel-body pn">
-                                    <form method="post" action="?mmopilot=edit_job" id="form-ui">
+                                    <?php
+                                    $id = $_GET['id'];
+                                    ?>
+                                    <form method="post" action="?mmopilot=edit_subjob&id=<?php echo $id?>" id="form-ui">
                                         <!-- Basic -->
                                         <?php
-                                            $id = $_GET['id'];
                                             $select = $db->prepare("SELECT mmo_job.idJob,mmo_job.jobDescription,mmo_jobpriority.priorityKeterangan,mmo_job.time,mmo_job.itemTarget,mmo_jobpriority.idPriority,mmo_order.idOrder,mmo_order.orderNote FROM mmo_jobpriority JOIN mmo_job ON mmo_job.idPriority=mmo_jobpriority.idPriority JOIN mmo_order ON mmo_order.idOrder=mmo_job.idOrder WHERE idJob='$id'");
                                             $select->execute();
                                             $tampil = $select->fetchAll();
