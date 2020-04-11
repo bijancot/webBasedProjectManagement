@@ -278,6 +278,11 @@ case 'addstaff':
  	require 'model/edit_job.php';
  	break;
 
+//aksi editsubjob
+ case 'edit_subjob':
+ 	require 'model/edit_subjob.php';
+ 	break;
+
 //aksi additem
  case 'input_item':
  	require 'model/input_item.php';
